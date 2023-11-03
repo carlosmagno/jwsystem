@@ -10,7 +10,7 @@ function firebaseLoginLogoff(){
     //Configurações do firebaseui
  var config={
     callbacks:{
-        signInSucessWithAuthResult:function(authResult){
+        signInSucessWithAuthResult:function(authResult, redirectUrl){
             console.log("authResult: ", authResult)
             document.getElementById('firebaseui-auth-container').style.display = 'none';
             if(user){
@@ -20,7 +20,7 @@ function firebaseLoginLogoff(){
         }
     },
     //signInSuccessUrl: 'http://127.0.0.1:5500/userarea.html',
-    signInSuccessUrl: window.location.href+'#'+congregationNumber,
+    signInSuccessUrl: window.location.href+'cong#'+congregationNumber,
     signInOptions:[
         {
             provider:firebase.auth.EmailAuthProvider.PROVIDER_ID,
@@ -34,6 +34,7 @@ function firebaseLoginLogoff(){
 
     ],
     signInFlow:'popup',
+     // Terms of service url.
     tosUrl: 'https://www.infonunes.com/como-limpar-o-cooler-do-dell-vostro/',
     privacyPolicyUrl: 'https://www.infonunes.com/como-limpar-o-cooler-do-dell-vostro/'
 };
