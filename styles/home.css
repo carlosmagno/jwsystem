@@ -18,13 +18,22 @@ nav.barra{
     left:0;
 }
    
-#barraSuperior>button{
+#barraSuperior>button, input{
    margin:5px;
    padding:5px;
    border-radius:5px;
-   background-color: rgb(255 255 208);
+   /* background-color: rgb(255 255 208); */
 }
 
 #barraSuperior>button:hover{
    cursor:pointer;
+}
+
+.input-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.input-number {
+    appearance: none;
+    -moz-appearance: textfield;
 }
