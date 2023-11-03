@@ -23,15 +23,17 @@
 <body>
     <nav id="barraSuperior" class="barra">
         <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" >
-        <button onclick="firebaseLoginLogoff()">LOGIN / LOGOFF</button>
+        <button onclick="firebaseLoginLogoff(), sumir()">LOGIN / LOGOFF</button>
     </nav>
        
     <h1>JW System</h1>
     
     
     <p id="messagemAuto" ></p>
+    <div id="boxlogin">
+        <div id="firebaseui-auth-container"></div> 
+    </div>
     
-    <div id="firebaseui-auth-container"></div> 
     
     <nav id="barraInferior" class="barra">
         <div id="Publicidade"></div> 

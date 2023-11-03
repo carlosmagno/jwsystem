@@ -46,4 +46,9 @@ function firebaseLoginLogoff(){
     
 }
 
+
+function sumir(){
+    var boxlogin = document.getElementById('boxlogin')
+    boxlogin.style.display="none"
+}
  
