@@ -26,6 +26,7 @@
     </nav>
 
     <h1>Congregação:</h1>
+    <p id="messagemAuto" ></p>
 
     <section>
         <h2>Publicadores</h2>
@@ -50,23 +51,91 @@
     <section>
         <h2>Resumo Mensal</h2>
     </section>
-    <!-- <div>
-        <details>
-            <summary>
-                <h2>Publicadores</h2>
-            </summary>
-            <p>
-                <button>Cadastrar</button>
-                <button>Consultar</button>
-            </p>
-        </details>
-    </div> -->
 
-    <p id="messagemAuto" ></p>
+    <div id="Publicadores">
 
-    <nav id="barraInferior" class="barra">
+    </div>
+
+    <div id="Publicadores">
+        <div id="RegistrarPublicador" class="telacheia aparente" >
+            <p class="direita">X</p>
+            <form action="" class="formulario">
+                
+                <h3>Registrar Publicador</h3>
+                <br>
+                <p>Grupo
+                    <select name="grupoPub" id="grupoPub">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </p>
+
+                <p><input type="text" name="nomePub" id="nomePub" placeholder="Nome do Publicador"></p>
+                <p>Data de nascimento:</p>
+                <p><input type="date" name="nascimento" id="nascimento" ></p>
+                <p>Data do batismo:</p>
+                <p><input type="date" name="batismo" id="batismo" ></p>
+                <!-- <p>Sexo</p> -->
+                <p><input type="checkbox" name="masculino" id="masculino">Masculino</p>
+                <p><input type="checkbox" name="feminino" id="feminino">Feminino</p>
+                <!-- <p>Esperança</p> -->
+                <p><input type="checkbox" name="oo" id="oo">Outras ovelhas</p>
+                <p><input type="checkbox" name="ungido" id="ungido">Ungido</p>
+                <!-- <p>Privilégios de Serviço</p> -->
+                <p><input type="checkbox" name="Ancião" id="anciao">Ancião</p>
+                <p><input type="checkbox" name="Servo Ministerial" id="servoministerial">Servo Ministerial</p>
+                <p><input type="checkbox" name="Pioneiro regular" id="pioneiroregular">Pioneiro regular</p>
+                <p><input type="checkbox" name="Pioneiro especial" id="pioneiroespecial">Pioneiro especial</p>
+                <p><input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo</p>
+
+            </form>
+        </div>
+
+    </div>
+
+    <div id="Relatorios">
+        <div id="EnviarRelatorios" class="telacheia oculto">
+            <p>X</p>
+            <form action="" class="formulario">
+                <h3>Enviar relatórios</h3>
+                <!-- Seção para ficar fixas as informações quando selecionadas -->
+                <p>Grupo
+                    <select name="grupoRel" id="grupoRel">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </p>
+                <p>Mês/Ano de Serviço
+                    <select name="mesRel" id="mesRel">
+                        <option value="Outubro/2024">Outubro/2024</option>
+                        <option value="Novembro/2024">Novembro/2024</option>
+                    </select>
+                </p>
+                <!-- Fim da seção fixa -->
+
+                <p>Publicador
+                    <select name="nomeRel" id="nomeRel">
+                        <option value="Carlos Magno">Carlos Magno</option>
+                        <option value="Guilherme Félix">Guilherme Félix</option>
+                    </select>
+                </p>
+                <p><input type="checkbox" name="" id="">Particiou </p>
+                <p><input type="number" name="" id="">Estudos Bíblicos</p>
+                <p><input type="checkbox" name="" id="">Pioneiro auxiliar</p>
+                <p><input type="number" name="" id="">Horas</p>
+                <p>Observações</p>
+                <p><input type="text" name="obs" id="obs" placeholder=""></p>
+                    
+                
+            </form>
+        </div>
+    </div>
+
+    
+
+    <!-- <nav id="barraInferior" class="barra">
         <div id="Publicidade"></div> 
-    </nav>
+    </nav> -->
     
 </body>
 </html>

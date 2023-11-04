@@ -1,3 +1,10 @@
+
+*{
+    /* margin:0 ;  */
+    /* padding:0; */
+    text-align:start;
+    /* font-family: arial; */
+}
 section{
     display: block;
     text-align: left;
@@ -20,4 +27,37 @@ section>h3{
     padding: 10px;
     border-radius: 8px;
     background-color: rgb(197, 185, 208);
+}
+
+div.oculto{
+    display: none;
+}
+
+div.aparente{
+    display: block;
+    z-index: 1;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    background-color: white;
+    
+}
+form.formulario{
+    /* display: block; */
+    /* margin:0; */
+    /* text-align: right; */
+    
+    width:50vw;
+    background-color: rgb(187, 181, 181);
+    padding: 10px;
+
+}
+p.direita{
+    margin-top: 20px;
+    padding: 10px;
+    width:50vw;
+    text-align: end;
+    background-color: rgb(22 200 200);
 }
