@@ -3,10 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Congregação</title>
+    <!-- Styles archives -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/cong.css">
+<!-- **************** -->
+<!-- Scripts pre-onload archives -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth__pt_br.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth__pt_br.js"></script> -->
+    <script  src="scripts/firebase-initialize.js"></script>  
+    <script src="scripts/firebase-authenticathion-UI.js"></script>
+<!-- *************************** -->
+    <title>JW System | Congregação</title>
 </head>
 <body>
-    <h1>Congregação ...</h1>
+    <nav id="barraSuperior" class="barra">
+        <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" disabled>
+        <button onclick="firebaseLoginLogoff()">LOGIN / LOGOFF</button>
+    </nav>
+
+    <h1>Congregação:</h1>
+
+    <section>
+        <h2>Publicadores</h2>
+        <h3>Registrar</h3>
+        <h3>Consultar registro - Grupo</h3>
+        <h3>Consultar registro - Individual</h3>
+
+    </section>
+
+    <section>
+        <h2>Relatórios</h2>
+        <h3>Enviar relatórios</h3>
+        <h3>Consultar relatório - Grupo</h3>
+        <h3>Consultar relatório - Individual</h3>
+
+    </section>
+    <section>
+        <h2>Reuniões</h2>
+        <h3>Enviar Assistência</h3>
+        <h3>Programação</h3>
+    </section>
+    <section>
+        <h2>Resumo Mensal</h2>
+    </section>
+    <!-- <div>
+        <details>
+            <summary>
+                <h2>Publicadores</h2>
+            </summary>
+            <p>
+                <button>Cadastrar</button>
+                <button>Consultar</button>
+            </p>
+        </details>
+    </div> -->
+
+    <p id="messagemAuto" ></p>
+
+    <nav id="barraInferior" class="barra">
+        <div id="Publicidade"></div> 
+    </nav>
     
 </body>
 </html>

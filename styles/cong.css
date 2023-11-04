@@ -1,0 +1,23 @@
+section{
+    display: block;
+    text-align: left;
+    /* background-color: rgb(222, 229, 229); */
+    /* height: 200px; */
+    width: 50vw;
+    /* border: 2px solid black; */
+    
+}
+h1{
+    margin-bottom: 10px;
+}
+section>h2{
+    background-color: rgb(43, 141, 226);
+    color: white;
+}
+
+section>h3{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(197, 185, 208);
+}
