@@ -57,8 +57,8 @@
     </div>
 
     <div id="Publicadores">
-        <div id="RegistrarPublicador" class="telacheia aparente" >
-            <p class="direita">X</p>
+        <div id="RegistrarPublicador" class="telacheia oculto" >
+            <p class="direita"><span>X</span></p>
             <form action="" class="formulario">
                 
                 <h3>Registrar Publicador</h3>
@@ -95,9 +95,12 @@
 
     <div id="Relatorios">
         <div id="EnviarRelatorios" class="telacheia oculto">
-            <p>X</p>
+           
+            <p class="direita">X</p> 
             <form action="" class="formulario">
+                
                 <h3>Enviar relatórios</h3>
+                <br>
                 <!-- Seção para ficar fixas as informações quando selecionadas -->
                 <p>Grupo
                     <select name="grupoRel" id="grupoRel">
@@ -105,24 +108,26 @@
                         <option value="2">2</option>
                     </select>
                 </p>
-                <p>Mês/Ano de Serviço
+                <p>Mês/Ano de Serviço</p>
+                <p>
                     <select name="mesRel" id="mesRel">
                         <option value="Outubro/2024">Outubro/2024</option>
                         <option value="Novembro/2024">Novembro/2024</option>
                     </select>
                 </p>
                 <!-- Fim da seção fixa -->
-
-                <p>Publicador
+                <p>Publicador</p>
+                <p>
                     <select name="nomeRel" id="nomeRel">
                         <option value="Carlos Magno">Carlos Magno</option>
                         <option value="Guilherme Félix">Guilherme Félix</option>
                     </select>
                 </p>
-                <p><input type="checkbox" name="" id="">Particiou </p>
-                <p><input type="number" name="" id="">Estudos Bíblicos</p>
-                <p><input type="checkbox" name="" id="">Pioneiro auxiliar</p>
-                <p><input type="number" name="" id="">Horas</p>
+                <p class="pCheck"><input type="checkbox" name="" id="">Participou </p>
+                <p class="pCheck"><input type="checkbox" name="" id="">Pioneiro auxiliar</p>
+                <p><input type="number" name="" id="" class="input-number">Estudos Bíblicos</p>
+                
+                <p><input type="number" name="" id="" class="input-number">Horas</p>
                 <p>Observações</p>
                 <p><input type="text" name="obs" id="obs" placeholder=""></p>
                     

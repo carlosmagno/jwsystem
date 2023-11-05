@@ -18,8 +18,11 @@ h1{
     margin-bottom: 10px;
 }
 section>h2{
-    background-color: rgb(43, 141, 226);
+    /* background-color: rgb(43, 141, 226); */
+    /* background-color: blueviolet; */
     color: white;
+    color:black;
+
 }
 
 section>h3{
@@ -51,13 +54,51 @@ form.formulario{
     
     width:50vw;
     background-color: rgb(187, 181, 181);
-    padding: 10px;
+    padding: 10px 10px 20px;
+    border-radius: 0 0 8px 8px ;
 
 }
 p.direita{
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
     margin-top: 20px;
     padding: 10px;
     width:50vw;
     text-align: end;
     background-color: rgb(22 200 200);
 }
+/* p.direita span{
+    border: 1px solid;
+} */
+p.direita span:hover{
+color:red;
+cursor: pointer;
+}
+#nomePub{
+width: 90%;
+}
+
+input[type=number]{
+    /* background-color: black; */
+    width:20px;
+    height: 20px;
+}
+input[type="checkbox"]{
+    /* background-color: black; */
+    margin: 18px 15px 0 12px;
+    width:20px;
+    scale: 2.7;
+}
+.pCheck{
+    height: 40px;
+    line-height: 40px;
+}
+@media screen and (max-width: 600px) {
+    form.formulario{
+        width:90vw;
+    }
+
+    p.direita{
+        width:90vw;
+    }
+  }
