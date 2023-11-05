@@ -14,6 +14,7 @@
   const firebaseConfig = {
     apiKey: "AIzaSyDGuACh-tTZBcGnP9s8Eld_XwtI2UU6F0g",
     authDomain: "jw-system.firebaseapp.com",
+    databaseURL: "https://jw-system-default-rtdb.firebaseio.com",
     projectId: "jw-system",
     storageBucket: "jw-system.appspot.com",
     messagingSenderId: "554165912633",

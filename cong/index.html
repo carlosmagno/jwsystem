@@ -11,11 +11,12 @@
 <!-- Scripts pre-onload archives -->
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script> 
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth__pt_br.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth__pt_br.js"></script> -->
-    <script  src="scripts/firebase-initialize.js"></script>  
-    <script src="scripts/firebase-authenticathion-UI.js"></script>
+    <script  src="../scripts/firebase-initialize.js"></script>  
+    <script src="../scripts/firebase-authenticathion-UI.js"></script>
 <!-- *************************** -->
     <title>JW System | Congregação</title>
 </head>
@@ -76,19 +77,58 @@
                 <p>Data do batismo:<input type="date" name="batismo" id="batismo" ></p>
                 <!-- <p></p> -->
                 <!-- <p>Sexo</p> -->
-                <p><input type="checkbox" name="masculino" id="masculino">Masculino</p>
-                <p><input type="checkbox" name="feminino" id="feminino">Feminino</p>
-                <!-- <p>Esperança</p> -->
-                <p><input type="checkbox" name="oo" id="oo">Outras ovelhas</p>
-                <p><input type="checkbox" name="ungido" id="ungido">Ungido</p>
-                <!-- <p>Privilégios de Serviço</p> -->
-                <p><input type="checkbox" name="Ancião" id="anciao">Ancião</p>
-                <p><input type="checkbox" name="Servo Ministerial" id="servoministerial">Servo Ministerial</p>
-                <p><input type="checkbox" name="Pioneiro regular" id="pioneiroregular">Pioneiro regular</p>
-                <p><input type="checkbox" name="Pioneiro especial" id="pioneiroespecial">Pioneiro especial</p>
-                <p><input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo</p>
+                <fieldset>
+                    <p>
+                        <!-- <input type="checkbox" name="grupo[1]" data-unique="1" value="masculino" id="masculino">Masculino -->
+                        <input type="radio" name="sexo" id="masculino" value="masculino"><label for="masculino">Masculino</label> 
+                    </p>
+                    <p>
+                        <!-- <input type="checkbox" name="grupo[1]" data-unique="0" value="feminino" id="feminino">Feminino -->
+                        <input type="radio" name="sexo" id="feminino" value="feminino"><label for="feminino">Feminino</label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <!-- <p>Esperança</p> -->
+                    <p>
+                        <input type="radio" name="esperanca" id="oo" value="oo"><label for="oo">Outras ovelhas</label>
+                        <!-- <input type="checkbox" name="esperanca" id="oo">Outras ovelhas -->
+                    </p>
+                    <p>
+                        <input type="radio" name="esperanca" id="ungido" value="ungido"><label for="ungido">Ungido</label>
+                        <!-- <input type="checkbox" name="ungido" id="ungido">Ungido -->
+                    </p>
+                </fieldset>
+
+                
+                <fieldset>
+                    <!-- <legend>ggggg</legend> -->
+                    <p>
+                        <input type="radio" name="PSvaroes" id="anciao" value="anciao"><label for="anciao">Ancião</label>
+                        <!-- <input type="checkbox" name="Ancião" id="anciao">Ancião -->
+                    </p>
+                    <p>
+                        <input type="radio" name="PSvaroes" id="servoministerial" value="servoministerial"><label for="servoministerial">Servo Ministerial</label>
+                        <!-- <input type="checkbox" name="Servo Ministerial" id="servoministerial">Servo Ministerial -->
+                    </p>
+                </fieldset>
+                <!-- <p>Privilégios de Serviço Varões</p> -->
+                
+                <fieldset>
+                    <!-- <p>Privilégios de Serviço Outros</p> -->
+                    <p>
+                        <input type="checkbox" name="Pioneiro regular" id="pioneiroregular">Pioneiro regular
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Pioneiro especial" id="pioneiroespecial">Pioneiro especial
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo
+                    </p>
+                </fieldset>
+
                 <br>
-                <button  class="" >ENVIAR</button>
+                <div  class="button" onclick="SalvarPublicador()">ENVIAR</div>
 
             </form>
             <div id="espacoFimForm"></div>
@@ -145,6 +185,7 @@
     <!-- <nav id="barraInferior" class="barra">
         <div id="Publicidade"></div> 
     </nav> -->
+    <script src="../scripts/firebase-realtimedb.js"></script>
     <script src="../scripts/registro-publicador.js"></script>
     <script src="../scripts/envio-relatorio.js"></script>
 </body>
