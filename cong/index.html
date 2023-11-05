@@ -22,34 +22,34 @@
 <body>
     <nav id="barraSuperior" class="barra">
         <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" disabled>
-        <button onclick="firebaseLoginLogoff()">LOGIN / LOGOFF</button>
+        <button onclick="firebaseLoginLogoff()">LOGOFF</button>
     </nav>
 
-    <h1>Congregação:</h1>
+    <!-- <h1>Congregação:</h1> -->
     <p id="messagemAuto" ></p>
 
     <section>
         <h2>Publicadores</h2>
-        <h3>Registrar</h3>
-        <h3>Consultar registro - Grupo</h3>
-        <h3>Consultar registro - Individual</h3>
+        <h3 onclick="abreRegPub()">Registrar</h3>
+        <h3>Consultar registro - Grupo <em>- desenvolvendo</em> </h3>
+        <h3>Consultar registro - Individual <em>- desenvolvendo</em></h3>
 
     </section>
 
     <section>
         <h2>Relatórios</h2>
-        <h3>Enviar relatórios</h3>
-        <h3>Consultar relatório - Grupo</h3>
-        <h3>Consultar relatório - Individual</h3>
+        <h3 onclick="abreEnvioRel()">Enviar relatórios</h3>
+        <h3>Consultar relatório - Grupo <em> - desenvolvendo</em></h3>
+        <h3>Consultar relatório - Individual <em> - desenvolvendo</em></h3>
 
     </section>
     <section>
         <h2>Reuniões</h2>
-        <h3>Enviar Assistência</h3>
-        <h3>Programação</h3>
+        <h3>Enviar Assistência <em> - desenvolvendo</em></h3>
+        <h3>Programação <em> - desenvolvendo</em></h3>
     </section>
     <section>
-        <h2>Resumo Mensal</h2>
+        <!-- <h2>Resumo Mensal</h2> -->
     </section>
 
     <div id="Publicadores">
@@ -57,24 +57,24 @@
     </div>
 
     <div id="Publicadores">
-        <div id="RegistrarPublicador" class="telacheia oculto" >
-            <p class="direita"><span>X</span></p>
+        <div id="RegistrarPublicador" class="oculto" >
+            <p class="direita"><span onclick="fechaRegPub()">X</span></p>
             <form action="" class="formulario">
                 
                 <h3>Registrar Publicador</h3>
                 <br>
                 <p>Grupo
-                    <select name="grupoPub" id="grupoPub">
+                    <select name="grupoPub" id="grupoPub" class="selectP">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
                 </p>
 
                 <p><input type="text" name="nomePub" id="nomePub" placeholder="Nome do Publicador"></p>
-                <p>Data de nascimento:</p>
-                <p><input type="date" name="nascimento" id="nascimento" ></p>
-                <p>Data do batismo:</p>
-                <p><input type="date" name="batismo" id="batismo" ></p>
+                <p>Data de nascimento:<input type="date" name="nascimento" id="nascimento" ></p>
+                <!-- <p></p> -->
+                <p>Data do batismo:<input type="date" name="batismo" id="batismo" ></p>
+                <!-- <p></p> -->
                 <!-- <p>Sexo</p> -->
                 <p><input type="checkbox" name="masculino" id="masculino">Masculino</p>
                 <p><input type="checkbox" name="feminino" id="feminino">Feminino</p>
@@ -87,30 +87,33 @@
                 <p><input type="checkbox" name="Pioneiro regular" id="pioneiroregular">Pioneiro regular</p>
                 <p><input type="checkbox" name="Pioneiro especial" id="pioneiroespecial">Pioneiro especial</p>
                 <p><input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo</p>
+                <br>
+                <button  class="" >ENVIAR</button>
 
             </form>
+            <div id="espacoFimForm"></div>
         </div>
 
     </div>
 
     <div id="Relatorios">
-        <div id="EnviarRelatorios" class="telacheia oculto">
+        <div id="EnviarRelatorios" class="oculto">
            
-            <p class="direita">X</p> 
+            <p class="direita"><span onclick="fechaEnvioRel()" >X</span></p> 
             <form action="" class="formulario">
                 
                 <h3>Enviar relatórios</h3>
                 <br>
                 <!-- Seção para ficar fixas as informações quando selecionadas -->
                 <p>Grupo
-                    <select name="grupoRel" id="grupoRel">
+                    <select name="grupoRel" id="grupoRel" class="selectP">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
                 </p>
                 <p>Mês/Ano de Serviço</p>
                 <p>
-                    <select name="mesRel" id="mesRel">
+                    <select name="mesRel" id="mesRel" class="selectG">
                         <option value="Outubro/2024">Outubro/2024</option>
                         <option value="Novembro/2024">Novembro/2024</option>
                     </select>
@@ -118,7 +121,7 @@
                 <!-- Fim da seção fixa -->
                 <p>Publicador</p>
                 <p>
-                    <select name="nomeRel" id="nomeRel">
+                    <select name="nomeRel" id="nomeRel" class="selectG">
                         <option value="Carlos Magno">Carlos Magno</option>
                         <option value="Guilherme Félix">Guilherme Félix</option>
                     </select>
@@ -127,12 +130,13 @@
                 <p class="pCheck"><input type="checkbox" name="" id="">Pioneiro auxiliar</p>
                 <p><input type="number" name="" id="" class="input-number">Estudos Bíblicos</p>
                 
-                <p><input type="number" name="" id="" class="input-number">Horas</p>
+                <p><input type="number" name="" id="" class="input-number">Horas (se pioneiro ou missionário)</p>
                 <p>Observações</p>
                 <p><input type="text" name="obs" id="obs" placeholder=""></p>
-                    
+                <button  class="" >ENVIAR</button>
                 
             </form>
+            <div id="espacoFimForm"></div>
         </div>
     </div>
 
@@ -141,6 +145,7 @@
     <!-- <nav id="barraInferior" class="barra">
         <div id="Publicidade"></div> 
     </nav> -->
-    
+    <script src="../scripts/registro-publicador.js"></script>
+    <script src="../scripts/envio-relatorio.js"></script>
 </body>
 </html>

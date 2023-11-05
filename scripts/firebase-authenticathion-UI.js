@@ -2,6 +2,7 @@ function firebaseLoginLogoff(){
 
     var congregationNumber = document.getElementById('congregationNumber').value.toString()
     console.log("congregationNumber: ", congregationNumber)
+    localStorage.setItem("cong", congregationNumber)
     //var textNumber = congregationNumber.toString()
     
     //window.location.href+='#'+congregationNumber
