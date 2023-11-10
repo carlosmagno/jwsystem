@@ -7,7 +7,7 @@
 * .child(): metodo que acessa o nó filho passado como parametro.
 */
 
-
+var NovoPublicador;
 //Criando a referencia principal do banco de dados realtime do firebase para os dados que quero trabalhar
 var ref = firebase.database().ref('Publicadores');
 
@@ -19,13 +19,14 @@ function SalvarPublicador() {
         var n = snapshot.numChildren();
         n=n+1;
         
-        var NovoPublicador = {
-            Professor: 'Antonio Abreu',
-            Categoria:'Planilhas',
-            TítuloCurso:'VBA Completo p/ Criação de Sistemas',
-            DescriçãoCurso:'O melhor curso de VBA de todos os tempos. Completo p/ Criação de Poderosos Sistemas',
-            Imagem:'https://',
-        };
+        capturaPublicador()
+        // NovoPublicador = {
+        //     Professor: 'Antonio Abreu',
+        //     Categoria:'Planilhas',
+        //     TítuloCurso:'VBA Completo p/ Criação de Sistemas',
+        //     DescriçãoCurso:'O melhor curso de VBA de todos os tempos. Completo p/ Criação de Poderosos Sistemas',
+        //     Imagem:'https://',
+        // };
         
         firebase.database().ref('Publicadores/' + NovoPublicador.Professor).set(NovoPublicador);
     });
@@ -33,10 +34,8 @@ function SalvarPublicador() {
 
 };
 
-var grupoPub = document.getElementById('grupoPub')
-// var  = document.getElementById('')
-// var  = document.getElementById('')
 
 // var  = document.getElementById('')
+// var  = document.getElementById('')
 
-
+// var  = document.getElementById('')

@@ -70,11 +70,15 @@
                         <option value="2">2</option>
                     </select>
                 </p>
+                <!-- IDs para criar variáveis
+                    nomePub, nascimento, batismo, sexo, esperanca, PSvaroes, PScampo
+
+                 -->
 
                 <p><input type="text" name="nomePub" id="nomePub" placeholder="Nome do Publicador"></p>
                 <p>Data de nascimento:<input type="date" name="nascimento" id="nascimento" ></p>
                 <!-- <p></p> -->
-                <p>Data do batismo:<input type="date" name="batismo" id="batismo" ></p>
+                <p>Data do batismo .... :<input type="date" name="batismo" id="batismo" ></p>
                 <!-- <p></p> -->
                 <!-- <p>Sexo</p> -->
                 <fieldset>
@@ -117,24 +121,32 @@
                 <fieldset>
                     <!-- <p>Privilégios de Serviço Outros</p> -->
                     <p>
-                        <input type="checkbox" name="Pioneiro regular" id="pioneiroregular">Pioneiro regular
+                        <input type="radio" name="PScampo" id="pioneiroregular" value="pioneiroregular"><label for="pioneiroregular">Pioneiro regular</label>
+                        <!-- <input type="checkbox" name="Pioneiro regular" id="pioneiroregular">Pioneiro regular -->
                     </p>
                     <p>
-                        <input type="checkbox" name="Pioneiro especial" id="pioneiroespecial">Pioneiro especial
+                        <input type="radio" name="PScampo" id="pioneiroespecial" value="pioneiroespecial"><label for="pioneiroespecial">Pioneiro especial</label>
+
+                        <!-- <input type="checkbox" name="Pioneiro especial" id="pioneiroespecial">Pioneiro especial -->
                     </p>
                     <p>
-                        <input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo
+                        <input type="radio" name="PScampo" id="missionarioemcampo" value="missionarioemcampo"><label for="missionarioemcampo">Missionário em Campo</label>
+                        <!-- <input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo -->
                     </p>
                 </fieldset>
 
                 <br>
-                <div  class="button" onclick="SalvarPublicador()">ENVIAR</div>
+                <div  class="button" onclick="capturaPublicador()">ENVIAR</div>
 
             </form>
             <div id="espacoFimForm"></div>
         </div>
 
     </div>
+    <!-- Variáveis para criar:
+        grupoRel, mesRel, nomeRel, participou, pAux, EB, horas, obs
+
+     -->
 
     <div id="Relatorios">
         <div id="EnviarRelatorios" class="oculto">
@@ -166,14 +178,14 @@
                         <option value="Guilherme Félix">Guilherme Félix</option>
                     </select>
                 </p>
-                <p class="pCheck"><input type="checkbox" name="" id="">Participou </p>
-                <p class="pCheck"><input type="checkbox" name="" id="">Pioneiro auxiliar</p>
-                <p><input type="number" name="" id="" class="input-number">Estudos Bíblicos</p>
+                <p class="pCheck"><input type="checkbox" name="" id="participou">Participou </p>
+                <p class="pCheck"><input type="checkbox" name="" id="pAux">Pioneiro auxiliar</p>
+                <p><input type="number" name="" id="EB" class="input-number">Estudos Bíblicos</p>
                 
-                <p><input type="number" name="" id="" class="input-number">Horas (se pioneiro ou missionário)</p>
+                <p><input type="number" name="" id="horas" class="input-number">Horas (pioneiro ou missionário)</p>
                 <p>Observações</p>
                 <p><input type="text" name="obs" id="obs" placeholder=""></p>
-                <button  class="" >ENVIAR</button>
+                <div  class="button" onclick="">ENVIAR</div>
                 
             </form>
             <div id="espacoFimForm"></div>

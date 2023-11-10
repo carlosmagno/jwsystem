@@ -100,7 +100,7 @@ cursor: pointer;
 }
 input[type=text]{
 height:30px;
-width: 90%;
+width: 88%;
 }
 
 .selectG{
@@ -124,9 +124,9 @@ input[type=number]{
 }
 input[type="checkbox"]  {
     /* background-color: black; */
-    margin: 18px 15px 0 12px;
+    /* margin: 18px 15px 0 12px; */
     width:20px;
-    scale: 2.7;
+    scale: 1.5;
 }
 
  /* input[type="radio"] { */
@@ -135,11 +135,12 @@ input[type="checkbox"]  {
     /* width:20px; */
     /* scale: 2.7; */
 /* } */
-
+/* 
 .pCheck{
-    height: 40px;
+    height: 20px;
     line-height: 40px;
-}
+} */
+
 fieldset{
     width: 93%;
     margin:5px 0;
