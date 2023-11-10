@@ -15,7 +15,9 @@ function firebaseLoginLogoff(){
             console.log("authResult: ", authResult)
             document.getElementById('firebaseui-auth-container').style.display = 'none';
             if(user){
+                localStorage.setItem("user", user)
                 console.log("usuario logado: ", user.displayName)
+                
             }
             return false;
         }

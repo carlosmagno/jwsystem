@@ -39,6 +39,11 @@ function SalvarPublicador() {
 
 };
 
+var congregationNumber = document.getElementById('congregationNumber')
+
+if(localStorage.getItem("cong")){
+    congregationNumber.value =localStorage.getItem("cong") 
+}
 
 // var  = document.getElementById('')
 // var  = document.getElementById('')
