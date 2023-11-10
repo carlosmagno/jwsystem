@@ -8,6 +8,7 @@
 */
 
 var NovoPublicador;
+var Congregacao;
 //Criando a referencia principal do banco de dados realtime do firebase para os dados que quero trabalhar
 var ref = firebase.database().ref('Publicadores');
 
@@ -27,8 +28,12 @@ function SalvarPublicador() {
         //     DescriçãoCurso:'O melhor curso de VBA de todos os tempos. Completo p/ Criação de Poderosos Sistemas',
         //     Imagem:'https://',
         // };
-        
-        firebase.database().ref('Publicadores/' + NovoPublicador.Professor).set(NovoPublicador);
+        console.log(NovoPublicador)
+        firebase.database().ref('Muribeca/Publicadores/' + NovoPublicador.nomePub).set(NovoPublicador)
+        .then(
+           console.log("Usuário cadastrado!")
+        );
+        document.getElementById("formRegPub").reset()
     });
 
 

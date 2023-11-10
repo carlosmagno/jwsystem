@@ -60,7 +60,7 @@
     <div id="Publicadores">
         <div id="RegistrarPublicador" class="oculto" >
             <p class="direita"><span onclick="fechaRegPub()">X</span></p>
-            <form action="" class="formulario">
+            <form action="" class="formulario" id="formRegPub">
                 
                 <h3>Registrar Publicador</h3>
                 <br>
@@ -84,22 +84,22 @@
                 <fieldset>
                     <p>
                         <!-- <input type="checkbox" name="grupo[1]" data-unique="1" value="masculino" id="masculino">Masculino -->
-                        <input type="radio" name="sexo" id="masculino" value="masculino"><label for="masculino">Masculino</label> 
+                        <input type="radio" name="sexo" id="masculino" value="Masculino"><label for="masculino">Masculino</label> 
                     </p>
                     <p>
                         <!-- <input type="checkbox" name="grupo[1]" data-unique="0" value="feminino" id="feminino">Feminino -->
-                        <input type="radio" name="sexo" id="feminino" value="feminino"><label for="feminino">Feminino</label>
+                        <input type="radio" name="sexo" id="feminino" value="Feminino"><label for="feminino">Feminino</label>
                     </p>
                 </fieldset>
 
                 <fieldset>
                     <!-- <p>Esperança</p> -->
                     <p>
-                        <input type="radio" name="esperanca" id="oo" value="oo"><label for="oo">Outras ovelhas</label>
+                        <input type="radio" name="esperanca" id="oo" value="Outras ovelhas"><label for="oo">Outras ovelhas</label>
                         <!-- <input type="checkbox" name="esperanca" id="oo">Outras ovelhas -->
                     </p>
                     <p>
-                        <input type="radio" name="esperanca" id="ungido" value="ungido"><label for="ungido">Ungido</label>
+                        <input type="radio" name="esperanca" id="ungido" value="Ungido"><label for="ungido">Ungido</label>
                         <!-- <input type="checkbox" name="ungido" id="ungido">Ungido -->
                     </p>
                 </fieldset>
@@ -108,11 +108,11 @@
                 <fieldset>
                     <!-- <legend>ggggg</legend> -->
                     <p>
-                        <input type="radio" name="PSvaroes" id="anciao" value="anciao"><label for="anciao">Ancião</label>
+                        <input type="radio" name="PSvaroes" id="anciao" value="Ancião"><label for="anciao">Ancião</label>
                         <!-- <input type="checkbox" name="Ancião" id="anciao">Ancião -->
                     </p>
                     <p>
-                        <input type="radio" name="PSvaroes" id="servoministerial" value="servoministerial"><label for="servoministerial">Servo Ministerial</label>
+                        <input type="radio" name="PSvaroes" id="servoministerial" value="Servo ministerial"><label for="servoministerial">Servo Ministerial</label>
                         <!-- <input type="checkbox" name="Servo Ministerial" id="servoministerial">Servo Ministerial -->
                     </p>
                 </fieldset>
@@ -121,22 +121,22 @@
                 <fieldset>
                     <!-- <p>Privilégios de Serviço Outros</p> -->
                     <p>
-                        <input type="radio" name="PScampo" id="pioneiroregular" value="pioneiroregular"><label for="pioneiroregular">Pioneiro regular</label>
+                        <input type="radio" name="PScampo" id="pioneiroregular" value="Pioneiro regular"><label for="pioneiroregular">Pioneiro regular</label>
                         <!-- <input type="checkbox" name="Pioneiro regular" id="pioneiroregular">Pioneiro regular -->
                     </p>
                     <p>
-                        <input type="radio" name="PScampo" id="pioneiroespecial" value="pioneiroespecial"><label for="pioneiroespecial">Pioneiro especial</label>
+                        <input type="radio" name="PScampo" id="pioneiroespecial" value="Pioneiro especial"><label for="pioneiroespecial">Pioneiro especial</label>
 
                         <!-- <input type="checkbox" name="Pioneiro especial" id="pioneiroespecial">Pioneiro especial -->
                     </p>
                     <p>
-                        <input type="radio" name="PScampo" id="missionarioemcampo" value="missionarioemcampo"><label for="missionarioemcampo">Missionário em Campo</label>
+                        <input type="radio" name="PScampo" id="missionarioemcampo" value="Missionário em campo"><label for="missionarioemcampo">Missionário em Campo</label>
                         <!-- <input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo -->
                     </p>
                 </fieldset>
 
                 <br>
-                <div  class="button" onclick="capturaPublicador()">ENVIAR</div>
+                <div  class="button" onclick="SalvarPublicador()">ENVIAR</div>
 
             </form>
             <div id="espacoFimForm"></div>

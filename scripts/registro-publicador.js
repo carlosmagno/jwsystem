@@ -13,14 +13,15 @@ function fechaRegPub(){
 function capturaPublicador(){
     
     // Variáveis dos formulários do Registro de Publicador
-    var grupoPub = document.getElementById('grupoPub').value
-    var nomePub = document.getElementById("nomePub").value
-    var nascimento = document.getElementById("nascimento").value
-    var batismo = document.getElementById("batismo").value
-    var sexo = document.getElementById("sexo").value
-    var esperanca = document.getElementById("esperanca").value
-    var PSvaroes = document.getElementById("PSvaroes").value
-    var PScampo = document.getElementById("PScampo").value
+    var formRegPub = document.getElementById("formRegPub")
+    var grupoPub = formRegPub.grupoPub.value
+    var nomePub = formRegPub.nomePub.value
+    var nascimento = formRegPub.nascimento.value
+    var batismo = formRegPub.batismo.value
+    var sexo = formRegPub.sexo.value
+    var esperanca = formRegPub.esperanca.value
+    var PSvaroes = formRegPub.PSvaroes.value
+    var PScampo = formRegPub.PScampo.value
 
 
     NovoPublicador = {
@@ -34,6 +35,6 @@ function capturaPublicador(){
         PScampo
 
     };
-    console.log(NovoPublicador)
-    return NovoPublicador
+    // console.log(NovoPublicador)
+    // return NovoPublicador
 }
