@@ -10,6 +10,29 @@ function firebaseLoginLogoff(){
     * once() retorna os dados lidos de uma URL
     * snapshot: objeto retornado pela leitura
     */
+    if(document.getElementById('divCong ')){
+        var a = divCong.getAttribute('class')
+    }
+   
+    if(a=="aparente"){
+        var formNovaContaCong = document.getElementById('formNovaContaCong')
+        var NumCong = formNovaContaCong.NumCong.value
+        var NomeCong = formNovaContaCong.NomeCong.value
+        var Cidade = formNovaContaCong.Cidade.value
+        var UF = formNovaContaCong.UF.value
+        var NomeAdmin = formNovaContaCong.NomeAdmin.value
+        var maior18 = formNovaContaCong.maior18.value
+        var adminDesig = formNovaContaCong.adminDesig.value
+        console.log( 'NomeCong', NomeCong)
+
+        if(NumCong==""||NomeCong==""||Cidade==""){
+            console.log("falta algo")
+        }
+        
+
+     }else{
+        console.log( 'none')
+    }
     refcong.once('value').then(snapshot=>{
         var a = snapshot.exists()
         //var a = snapshot.child(congregationNumber)
@@ -22,8 +45,10 @@ function firebaseLoginLogoff(){
             console.log("Sistema iniciado")
 
         }else{
-            alert('A conta desta congregação não foi criada!')
+           // alert('A conta desta congregação não foi criada!')
             // Exibe o formulário para criar a conta da congregação
+            document.getElementById('NovaContaCong').setAttribute("class", "aparente")
+
         }
         //console.log(snapshot.child())
         //console.log(snapshot.numChildren()); 
@@ -81,9 +106,29 @@ function firebaseLoginLogoff(){
     
 }
 
+function teste(){
+    
+    var divCong = document.getElementById('NovaContaCong')
+    console.log(divCong)
+    var a = divCong.getAttribute('class')
+    if(a=="aparente"){
+
+        console.log( 'block')
+
+    }else {
+        console.log( 'none')
+    }
+
+}
+
 
 function sumir(){
     var boxlogin = document.getElementById('boxlogin')
     boxlogin.style.display="none"
 }
+
+function fechaCadastroCong(){ 
+    var NovaContaCong = document.getElementById('NovaContaCong')
+    NovaContaCong.setAttribute("class","oculto")
+};
  
