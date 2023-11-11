@@ -12,7 +12,7 @@ var phoneNumber;
 var providerData;
 
 initApp = function() {
-  console.log("Usuário logado", user)
+  
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       
