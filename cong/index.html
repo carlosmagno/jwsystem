@@ -17,13 +17,14 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth__pt_br.js"></script> -->
     <script  src="../scripts/firebase-initialize.js"></script>  
     <script src="../scripts/firebase-authenticathion-UI.js"></script>
+    <script src="../scripts/firebase-state_auth.js"></script>
 <!-- *************************** -->
     <title>JW System | Congregação</title>
 </head>
 <body>
     <nav id="barraSuperior" class="barra">
         <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" disabled>
-        <button onclick="firebaseLoginLogoff()">LOGOFF</button>
+        <button onclick="firebaseLoginLogoff()" id="btnLogin">LOGOFF</button>
     </nav>
 
     <!-- <h1>Congregação:</h1> -->
