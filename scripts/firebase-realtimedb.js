@@ -19,15 +19,7 @@ function SalvarPublicador() {
         console.log(snapshot.numChildren());  
         var n = snapshot.numChildren();
         n=n+1;
-        
         capturaPublicador()
-        // NovoPublicador = {
-        //     Professor: 'Antonio Abreu',
-        //     Categoria:'Planilhas',
-        //     TítuloCurso:'VBA Completo p/ Criação de Sistemas',
-        //     DescriçãoCurso:'O melhor curso de VBA de todos os tempos. Completo p/ Criação de Poderosos Sistemas',
-        //     Imagem:'https://',
-        // };
         console.log(NovoPublicador)
         firebase.database().ref('Muribeca/Publicadores/' + NovoPublicador.nomePub).set(NovoPublicador)
         .then(
@@ -44,7 +36,16 @@ var congregationNumber = document.getElementById('congregationNumber')
 if(localStorage.getItem("cong")){
     congregationNumber.value =localStorage.getItem("cong") 
 }
+var url = window.location.href.split('#')
+console.log(url[1])
+function consultaBDCong(){
+    var url = window.location.href.split('#')
+    console.log(url[1])
+}
+//if (window.location.href.endsWith('#',1)){ //window.location.href+'cong#'+congregationNumber}
+function salvarUsuario(){
 
+}
 // var  = document.getElementById('')
 // var  = document.getElementById('')
 

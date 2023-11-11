@@ -3,9 +3,40 @@ function firebaseLoginLogoff(){
     var congregationNumber = document.getElementById('congregationNumber').value.toString()
     console.log("congregationNumber: ", congregationNumber)
     localStorage.setItem("cong", congregationNumber)
-    //var textNumber = congregationNumber.toString()
+
+    var refcong = firebase.database().ref().child(congregationNumber)
+    //console.log(refcong)
+    /**
+    * once() retorna os dados lidos de uma URL
+    * snapshot: objeto retornado pela leitura
+    */
+    refcong.once('value').then(snapshot=>{
+        var a = snapshot.exists()
+        //var a = snapshot.child(congregationNumber)
+        console.log(a)
+        if(a==true) {
+
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            ui.start('#firebaseui-auth-container', config)
+            console.log("Sistema iniciado")
+
+        }else{
+            alert('A conta desta congregação não foi criada!')
+            // Exibe o formulário para criar a conta da congregação
+        }
+        //console.log(snapshot.child())
+        //console.log(snapshot.numChildren()); 
+    //snapshot.forEach((childSnapshot) =>{
+        //console.log(childSnapshot)
+        //Aqui vai seu código se desejar usar o método de repetição forEach, por exemplo.
+   // });
+    }).catch (
+        function() {
+        console.log (error)
     
-    //window.location.href+='#'+congregationNumber
+    });
+
 
 
     //Configurações do firebaseui
@@ -43,9 +74,10 @@ function firebaseLoginLogoff(){
 };
 
     // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    ui.start('#firebaseui-auth-container', config)
-    console.log("Sistema iniciado")
+
+    // var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // ui.start('#firebaseui-auth-container', config)
+    // console.log("Sistema iniciado")
     
 }
 
