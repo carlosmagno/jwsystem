@@ -84,7 +84,7 @@ window.addEventListener('load', function() {
 function cadastraAdmin(){
 
   var congregationNumber = document.getElementById('congregationNumber').value.toString()
-  var refAdmincong = firebase.database().ref().child(congregationNumber).child('emailAdmin')
+  var refAdmincong = firebase.database().ref().child(congregationNumber).child('Congregação').child('emailAdmin')
 
   refAdmincong.once('value').then(snapshot=>{
     //var a = snapshot.exists()
