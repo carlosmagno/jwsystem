@@ -106,7 +106,7 @@ function firebaseLoginLogoff(){
         }
     },
     //signInSuccessUrl: 'http://127.0.0.1:5500/userarea.html',
-    //signInSuccessUrl: window.location.href+'cong#'+congregationNumber,
+    signInSuccessUrl: window.location.href+'cong#'+congregationNumber,
     signInOptions:[
         {
             provider:firebase.auth.EmailAuthProvider.PROVIDER_ID,
