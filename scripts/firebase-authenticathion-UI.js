@@ -46,28 +46,10 @@ function firebaseLoginLogoff(){
             firebase.database().ref(`${NumCong}/Congregação`).set(Congregacao)
             .then(
                console.log("Congregação cadastrada!"),
-
-               function(){
-                var usuario ={
-                    NomeAdmin,
-                    emailAdmin,
-                    perfil:'Admin'
-                }
-    
-                firebase.database().ref(`${NumCong}/Usuários/${emailAdmin}`).set(usuario)
-                    .then(
-                    console.log("Usuário cadastrado no BD!"),
-                    //document.getElementById('formNovaContaCong').reset(),
-                    //fechaCadastroCong()
-                    ).catch(
-                        console.log("error", error)
-                )
-    
-              },
                document.getElementById('formNovaContaCong').reset(),
                fechaCadastroCong()
             ).catch(
-                console.log("error", error)
+                console.log("error...")
             )
         }
         

@@ -36,6 +36,7 @@ initApp = function() {
       phoneNumber = user.phoneNumber;
       providerData = user.providerData;
       // exibeInfo();
+      cadastraAdmin()
       // user.getIdToken().then(function(accessToken) {
       //   document.getElementById('sign-in-status').textContent = 'Signed in';
       //   document.getElementById('sign-in').textContent = 'Sign out';
@@ -78,3 +79,36 @@ function exibeInfo(){
 window.addEventListener('load', function() {
   initApp()
 });
+
+
+function cadastraAdmin(){
+
+  var congregationNumber = document.getElementById('congregationNumber').value.toString()
+  var refAdmincong = firebase.database().ref().child(congregationNumber).child('emailAdmin')
+
+  refAdmincong.once('value').then(snapshot=>{
+    //var a = snapshot.exists()
+    //var a = snapshot.child(congregationNumber)
+    //console.log('tem snapshot?',a)
+    console.log(snapshot.data)
+}).catch (
+    function() {
+    console.log (error)
+
+});
+
+  // var usuario ={
+  //     NomeAdmin,
+  //     emailAdmin,
+  //     perfil:'Admin'
+  // }
+
+  // firebase.database().ref(`${NumCong}/Usuários/${emailAdmin}`).set(usuario)
+  //     .then(
+  //     console.log("Usuário cadastrado no BD!"),
+
+  //     ).catch(
+
+  // )
+
+};
