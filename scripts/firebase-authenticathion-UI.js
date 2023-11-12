@@ -10,8 +10,9 @@ function firebaseLoginLogoff(){
     * once() retorna os dados lidos de uma URL
     * snapshot: objeto retornado pela leitura
     */
-    if(document.getElementById('divCong ')){
-        var a = divCong.getAttribute('class')
+    if(document.getElementById('NovaContaCong')){
+        var NovaContaCong = document.getElementById('NovaContaCong')
+        var a = NovaContaCong.getAttribute('class')
     }
    
     if(a=="aparente"){
@@ -21,12 +22,33 @@ function firebaseLoginLogoff(){
         var Cidade = formNovaContaCong.Cidade.value
         var UF = formNovaContaCong.UF.value
         var NomeAdmin = formNovaContaCong.NomeAdmin.value
+        var emailAdmin = formNovaContaCong.emailAdmin.value
         var maior18 = formNovaContaCong.maior18.value
         var adminDesig = formNovaContaCong.adminDesig.value
         console.log( 'NomeCong', NomeCong)
 
-        if(NumCong==""||NomeCong==""||Cidade==""){
+        if((NumCong&&NomeCong&&Cidade&&UF&&NomeAdmin&&maior18&&adminDesig)==""){
             console.log("falta algo")
+        }else{
+            Congregacao = {
+                NumCong,
+                NomeCong,
+                Cidade,
+                UF,
+                NomeAdmin,
+                emailAdmin,
+                maior18,
+                adminDesig,
+        
+            };
+            console.log(Congregacao)
+
+            firebase.database().ref(`${NumCong}/Congregação`).set(Congregacao)
+            .then(
+               console.log("Congregação cadastrada!"),
+               document.getElementById('formNovaContaCong').reset(),
+               fechaCadastroCong()
+            )
         }
         
 
@@ -36,7 +58,7 @@ function firebaseLoginLogoff(){
     refcong.once('value').then(snapshot=>{
         var a = snapshot.exists()
         //var a = snapshot.child(congregationNumber)
-        console.log(a)
+        console.log('tem snapshot?',a)
         if(a==true) {
 
             // Initialize the FirebaseUI Widget using Firebase.
@@ -69,9 +91,10 @@ function firebaseLoginLogoff(){
     callbacks:{
         signInSucessWithAuthResult:function(authResult, redirectUrl){
             console.log("authResult: ", authResult)
-            document.getElementById('firebaseui-auth-container').style.display = 'none';
+            sumir()
+            //document.getElementById('firebaseui-auth-container').style.display = 'none';
             if(user){
-                localStorage.setItem("user", user)
+                //localStorage.setItem("user", user)
                 console.log("usuario logado: ", user.displayName)
                 
             }
@@ -79,7 +102,7 @@ function firebaseLoginLogoff(){
         }
     },
     //signInSuccessUrl: 'http://127.0.0.1:5500/userarea.html',
-    signInSuccessUrl: window.location.href+'cong#'+congregationNumber,
+    //signInSuccessUrl: window.location.href+'cong#'+congregationNumber,
     signInOptions:[
         {
             provider:firebase.auth.EmailAuthProvider.PROVIDER_ID,
