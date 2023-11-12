@@ -87,10 +87,18 @@ function cadastraAdmin(){
   var refAdmincong = firebase.database().ref().child(congregationNumber).child('Congregação').child('emailAdmin')
 
   refAdmincong.once('value').then(snapshot=>{
+
+    snapshot.forEach(function (childSnapshot){
+      console.log(childSnapshot.key)
+      console.log(childSnapshot.val())
+      if( email ==childSnapshot.val()){
+        console.log("Usuário admin logado. Prosseguir aqui!")
+      }
+    });
     //var a = snapshot.exists()
     //var a = snapshot.child(congregationNumber)
     //console.log('tem snapshot?',a)
-    console.log(snapshot.data)
+
 }).catch (
     function() {
     console.log (error)
