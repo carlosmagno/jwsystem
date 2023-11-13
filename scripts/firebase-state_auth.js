@@ -40,7 +40,13 @@ initApp = function() {
       var congregationNumber = document.getElementById('congregationNumber').value.toString()
       var refAdmincong = firebase.database().ref(congregationNumber).child('Congregação').child('emailAdmin')
     
-      refAdmincong.once('value').then(snapshot=>{
+      refAdmincong.get().then((snapshot)=>{
+        
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+        } else {
+          console.log("No data available");
+        }
     
         snapshot.forEach(function (childSnapshot){
           console.log(childSnapshot.key)
