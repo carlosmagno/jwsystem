@@ -41,20 +41,21 @@ initApp = function() {
       var refAdmincong = firebase.database().ref(congregationNumber).child('Congregação').child('emailAdmin')
     
       refAdmincong.get().then((snapshot)=>{
-        
+
         if (snapshot.exists()) {
           console.log(snapshot.val());
+          if( email ==snapshot.val()){
+            console.log("Usuário admin logado. Prosseguir aqui!")
+          }
         } else {
           console.log("No data available");
         }
     
-        snapshot.forEach(function (childSnapshot){
-          console.log(childSnapshot.key)
-          console.log(childSnapshot.val())
-          if( email ==childSnapshot.val()){
-            console.log("Usuário admin logado. Prosseguir aqui!")
-          }
-        });
+        // snapshot.forEach(function (childSnapshot){
+        //   console.log(childSnapshot.key)
+        //   console.log(childSnapshot.val())
+
+        // });
         //var a = snapshot.exists()
         //var a = snapshot.child(congregationNumber)
         //console.log('tem snapshot?',a)
