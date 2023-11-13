@@ -1,14 +1,16 @@
 
+
+
 var messagemAuto = document.getElementById('messagemAuto')
-var btnConfigAdmin = document.getElementById('btnConfigAdmin')
-var areaAdmin = document.getElementById('areaAdmin')
 
 
 function exibebtnConfigAdmin(){
-    btnConfigAdmin.setAttribute('class', 'imgBarraSuperior aparente')
+    var btnConfigAdmin = document.getElementById('btnConfigAdmin')
+    btnConfigAdmin.setAttribute('class', 'imgBarraSuperior')
 }
 
 function exibeAreaAdmin(){
+    var areaAdmin = document.getElementById('areaAdmin')
     areaAdmin.setAttribute('class', 'aparente')
 
 }
