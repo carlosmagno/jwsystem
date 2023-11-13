@@ -45,6 +45,7 @@ initApp = function() {
         if (snapshot.exists()) {
           console.log(snapshot.val());
           if( email ==snapshot.val()){
+            exibebtnConfigAdmin()
             console.log("Usuário admin logado. Prosseguir aqui!")
           }
         } else {

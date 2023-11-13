@@ -25,12 +25,14 @@
     <nav id="barraSuperior" class="barra">
         <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" disabled>
         <button onclick="firebaseLoginLogoff()" id="btnLogin">LOGOFF</button>
-        <img src="/icons-actions/settings_FILL0_wght400_GRAD0_opsz24.png" alt="" id="btnConfigAdmin" class="imgBarraSuperior">
+        <img src="/icons-actions/settings_FILL0_wght400_GRAD0_opsz24.png" alt="" id="btnConfigAdmin" class="imgBarraSuperior oculto">
     </nav>
 
     <!-- <h1>Congregação:</h1> -->
     <p id="messagemAuto" ></p>
     <div id="areaAdmin" class="oculto">
+        <p>Usuários da Congregação</p>
+        <!-- Colocar aqui pra renderizar de modo automático os usuários que tiver no BD para selecionar seu perfil de acesso -->
 
     </div>
 
@@ -205,5 +207,6 @@
     <script src="../scripts/firebase-realtimedb.js"></script>
     <script src="../scripts/registro-publicador.js"></script>
     <script src="../scripts/envio-relatorio.js"></script>
+    <script src="../scripts/pagina-cong.js"></script>
 </body>
 </html>
