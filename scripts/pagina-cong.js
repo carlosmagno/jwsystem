@@ -6,7 +6,6 @@ var areaAdmin = document.getElementById('areaAdmin')
 
 function exibebtnConfigAdmin(){
     btnConfigAdmin.setAttribute('class', 'imgBarraSuperior aparente')
-    btnConfigAdmin.addEventListener('click',exibeAreaAdmin() )
 }
 
 function exibeAreaAdmin(){
