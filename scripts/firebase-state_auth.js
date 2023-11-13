@@ -36,7 +36,24 @@ initApp = function() {
       phoneNumber = user.phoneNumber;
       providerData = user.providerData;
       // exibeInfo();
-      cadastraAdmin()
+      //cadastraAdmin()
+      var congregationNumber = document.getElementById('congregationNumber').value.toString()
+      var refAdmincong = firebase.database().ref(congregationNumber).child('Congregação').child('emailAdmin')
+    
+      refAdmincong.once('value').then(snapshot=>{
+    
+        snapshot.forEach(function (childSnapshot){
+          console.log(childSnapshot.key)
+          console.log(childSnapshot.val())
+          if( email ==childSnapshot.val()){
+            console.log("Usuário admin logado. Prosseguir aqui!")
+          }
+        });
+        //var a = snapshot.exists()
+        //var a = snapshot.child(congregationNumber)
+        //console.log('tem snapshot?',a)
+    
+    })
       // user.getIdToken().then(function(accessToken) {
       //   document.getElementById('sign-in-status').textContent = 'Signed in';
       //   document.getElementById('sign-in').textContent = 'Sign out';
