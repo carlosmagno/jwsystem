@@ -24,43 +24,46 @@
 <body>
     <nav id="barraSuperior" class="barra">
         <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" disabled>
-        <button onclick="firebaseLoginLogoff()" id="btnLogin">LOGOFF</button>
+        <button onclick="deslogar()" id="btnLogin">LOGOFF</button>
         <img src="/icons-actions/settings_FILL0_wght400_GRAD0_opsz24.png" alt="" id="btnConfigAdmin" class="imgBarraSuperior oculto">
     </nav>
 
     <!-- <h1>Congregação:</h1> -->
     <p id="messagemAuto" ></p>
     <div id="areaAdmin" class="oculto">
-        <p>Usuários da Congregação</p>
-        <!-- Colocar aqui pra renderizar de modo automático os usuários que tiver no BD para selecionar seu perfil de acesso -->
+        <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p>
+        <form action="" class="formulario" id="formAdmin">
+            <p>Usuários da Congregação</p>
+            <!-- Colocar aqui pra renderizar de modo automático os usuários que tiver no BD para selecionar seu perfil de acesso -->
+        </form>
+
 
     </div>
+    <div id="secoes">
+    
+        <section>
+            <h2>Publicadores</h2>
+            <h3 onclick="abreRegPub()">Registrar</h3>
+            <h3>Consultar registro - Grupo <em>- desenvolvendo</em> </h3>
+            <h3>Consultar registro - Individual <em>- desenvolvendo</em></h3>
 
-    <section>
-        <h2>Publicadores</h2>
-        <h3 onclick="abreRegPub()">Registrar</h3>
-        <h3>Consultar registro - Grupo <em>- desenvolvendo</em> </h3>
-        <h3>Consultar registro - Individual <em>- desenvolvendo</em></h3>
+        </section>
 
-    </section>
+        <section>
+            <h2>Relatórios</h2>
+            <h3 onclick="abreEnvioRel()">Enviar relatórios</h3>
+            <h3>Consultar relatório - Grupo <em> - desenvolvendo</em></h3>
+            <h3>Consultar relatório - Individual <em> - desenvolvendo</em></h3>
 
-    <section>
-        <h2>Relatórios</h2>
-        <h3 onclick="abreEnvioRel()">Enviar relatórios</h3>
-        <h3>Consultar relatório - Grupo <em> - desenvolvendo</em></h3>
-        <h3>Consultar relatório - Individual <em> - desenvolvendo</em></h3>
-
-    </section>
-    <section>
-        <h2>Reuniões</h2>
-        <h3>Enviar Assistência <em> - desenvolvendo</em></h3>
-        <h3>Programação <em> - desenvolvendo</em></h3>
-    </section>
-    <section>
-        <!-- <h2>Resumo Mensal</h2> -->
-    </section>
-
-    <div id="Publicadores">
+        </section>
+        <section>
+            <h2>Reuniões</h2>
+            <h3>Enviar Assistência <em> - desenvolvendo</em></h3>
+            <h3>Programação <em> - desenvolvendo</em></h3>
+        </section>
+        <section>
+            <!-- <h2>Resumo Mensal</h2> -->
+        </section>
 
     </div>
 

@@ -159,3 +159,15 @@ function fechaCadastroCong(){
     NovaContaCong.setAttribute("class","oculto")
 };
  
+function deslogar(){
+    firebase.auth().signOut().then(()=>{
+       // alert("Usuário deslogado!")
+        document.getElementById('secoes').setAttribute('class', 'oculto')
+        messagemAuto.innerText= `Você está deslogado!`
+        if(btnConfigAdmin){btnConfigAdmin.setAttribute('class', 'imgBarraSuperior oculto')
+
+        }
+        //localStorage.setItem("status", "ENTRAR")
+        //btnLogin.innerText=
+    })
+}

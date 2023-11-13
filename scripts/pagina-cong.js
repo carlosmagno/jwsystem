@@ -20,3 +20,7 @@ function exibemessagemAuto(){
 
 }
 
+function fechaAreaAdmin(){
+    var areaAdmin = document.getElementById('areaAdmin')
+    areaAdmin.setAttribute("class","oculto")
+};
