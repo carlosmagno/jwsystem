@@ -67,6 +67,7 @@ initApp = function() {
       //   }, null, '  ');
       // });
     } else {
+      window.location.href="../"
       // linkPainel.style.display="none"
       //btnLogin.innerText="LOGIN"
       // document.getElementById('firebaseui-auth').style.display = 'block';
