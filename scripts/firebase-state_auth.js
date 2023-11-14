@@ -35,8 +35,7 @@ initApp = function() {
       localStorage.setItem("UserID", uid)
       phoneNumber = user.phoneNumber;
       providerData = user.providerData;
-      // exibeInfo();
-      //cadastraAdmin()
+      
       var congregationNumber = document.getElementById('congregationNumber').value.toString()
       var refAdmincong = firebase.database().ref(congregationNumber).child('Congregação').child('emailAdmin')
     
@@ -51,15 +50,6 @@ initApp = function() {
         } else {
           console.log("No data available");
         }
-    
-        // snapshot.forEach(function (childSnapshot){
-        //   console.log(childSnapshot.key)
-        //   console.log(childSnapshot.val())
-
-        // });
-        //var a = snapshot.exists()
-        //var a = snapshot.child(congregationNumber)
-        //console.log('tem snapshot?',a)
     
     })
       // user.getIdToken().then(function(accessToken) {
@@ -78,7 +68,7 @@ initApp = function() {
       // });
     } else {
       // linkPainel.style.display="none"
-      btnLogin.innerText="LOGIN"
+      //btnLogin.innerText="LOGIN"
       // document.getElementById('firebaseui-auth').style.display = 'block';
       // User is signed out.
       // document.getElementById('sign-in-status').textContent = 'Signed out';

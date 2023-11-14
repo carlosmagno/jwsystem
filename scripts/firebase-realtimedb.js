@@ -10,7 +10,7 @@
 var NovoPublicador;
 var Congregacao;
 //Criando a referencia principal do banco de dados realtime do firebase para os dados que quero trabalhar
-var ref = firebase.database().ref('Publicadores');
+var ref = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
 
 function SalvarPublicador() {
     console.log("executandooo")
@@ -21,7 +21,7 @@ function SalvarPublicador() {
         n=n+1;
         capturaPublicador()
         console.log(NovoPublicador)
-        firebase.database().ref('Muribeca/Publicadores/' + NovoPublicador.nomePub).set(NovoPublicador)
+        firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores/${NovoPublicador.nomePub}`).set(NovoPublicador)
         .then(
            console.log("Usuário cadastrado!")
         );

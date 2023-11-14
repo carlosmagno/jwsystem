@@ -12,6 +12,19 @@ function exibebtnConfigAdmin(){
 function exibeAreaAdmin(){
     var areaAdmin = document.getElementById('areaAdmin')
     areaAdmin.setAttribute('class', 'aparente')
+    var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
+    refUsuarios.get().then((snapshot)=>{
+
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+            snapshot.array.forEach(element => {
+                console.log(element)
+            });
+        } else {
+          console.log("Não há dados neste nó");
+        }
+    
+    })
 
 }
 
