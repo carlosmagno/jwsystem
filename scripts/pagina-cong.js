@@ -17,12 +17,12 @@ function exibeAreaAdmin(){
 
         if (snapshot.exists()) {
           console.log(snapshot.val());
-            snapshot.array.forEach(element => {
+            snapshot.forEach(element => {
                 console.log(element)
 
                 
                 var divNova = document.createElement("div");
-                var conteudoNovo = document.createTextNode(element);
+                var conteudoNovo = document.createTextNode(element.emil);
                 var perfil = document.createElement('select')
                 perfil.setAttribute('id', 'selectPerfilUser')
                 perfil.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option>'
