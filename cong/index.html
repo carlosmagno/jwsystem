@@ -30,11 +30,18 @@
 
     <!-- <h1>Congregação:</h1> -->
     <p id="messagemAuto" ></p>
-    <div id="areaAdmin" class="oculto">
+    <div id="areaAdmin" class="">
         <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p>
         <form action="" class="formulario" id="formAdmin">
-            <p>Usuários da Congregação</p>
+            <p id="pTitulo">Usuários da Congregação</p>
+            <br>
+            <!-- <select name="selectPerfilUser" id="selectPerfilUser">
+                <option value="Leitor">Leitor</option>
+                <option value="Editor">Editor</option>
+            </select> -->
             <!-- Colocar aqui pra renderizar de modo automático os usuários que tiver no BD para selecionar seu perfil de acesso -->
+            <br>
+            <div id="btnSalvarConfigAdmin" class="button"><b>Salvar alterações</b></div>
         </form>
 
 
