@@ -15,6 +15,8 @@ initApp = function() {
   
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+
+      exibemessagemAuto();
       
       console.log("Usuário logado", user)
       // if(linkPainel){

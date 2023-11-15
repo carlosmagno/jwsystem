@@ -176,6 +176,8 @@ form>p{
 }
 .imgBarraSuperior{
    align-self: flex-end;
+   margin-left: 25px;
+
 }
 .imgBarraSuperior:hover{
     cursor: pointer;

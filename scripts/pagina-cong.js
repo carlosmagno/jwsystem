@@ -62,7 +62,7 @@ function exibeAreaAdmin(){
                       refUsuarios.child(uid).set(usuario)
                   })
                   divNova.appendChild(conteudoNovo);
-                  divNova.appendChild(perfil); //adiciona o nó de texto à nova div criada
+                  divNova.appendChild(perfilUpdate); //adiciona o nó de texto à nova div criada
   
                   // adiciona o novo elemento criado e seu conteúdo ao DOM
                   
