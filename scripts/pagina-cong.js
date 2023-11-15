@@ -20,6 +20,7 @@ function ocultabtnConfigAdmin(){
 function exibeAreaAdmin(){
     var areaAdmin = document.getElementById('areaAdmin')
     var formAdmin = document.getElementById('formAdmin')
+    var dadosBDAdmin = document.getElementById("dadosBDAdmin");
     areaAdmin.setAttribute('class', 'aparente')
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
     refUsuarios.get().then((snapshot)=>{
@@ -27,7 +28,7 @@ function exibeAreaAdmin(){
         if (snapshot.exists()) {
           console.log(snapshot.val());
 
-          if(formAdmin.innerHTML=='<p id="pTitulo">Usuários da Congregação</p><div id="btnSalvarConfigAdmin" class="button"><b>Salvar alterações</b></div>'){
+          if(dadosBDAdmin.innerHTML==''){
 
             snapshot.forEach((childSnapshot) =>{
               ValorNo = childSnapshot.val()
@@ -64,8 +65,8 @@ function exibeAreaAdmin(){
                   divNova.appendChild(perfil); //adiciona o nó de texto à nova div criada
   
                   // adiciona o novo elemento criado e seu conteúdo ao DOM
-                  var pAtual = document.getElementById("pTitulo");
-                  pAtual.insertAdjacentElement('afterend', divNova);
+                  
+                  dadosBDAdmin.insertAdjacentElement('afterbegin', divNova);
           
             });
           }else{
