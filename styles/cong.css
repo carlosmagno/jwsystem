@@ -47,7 +47,7 @@ section>h3{
     background-color: rgb(197, 185, 208);
 }
 
-div.oculto{
+.oculto{
     display: none;
 }
 .imgBarraSuperior{
@@ -55,7 +55,7 @@ div.oculto{
     height: 20px;
     vertical-align: middle;
 }
-div.aparente{
+.aparente{
     display: block;
     z-index: 1;
     position: fixed;
@@ -173,6 +173,12 @@ form>.button:hover{
 }
 form>p{
     margin: 5px 0;
+}
+.imgBarraSuperior{
+   align-self: flex-end;
+}
+.imgBarraSuperior:hover{
+    cursor: pointer;
 }
 @media screen and (max-width: 600px) {
     section{

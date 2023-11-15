@@ -43,12 +43,19 @@ initApp = function() {
 
         if (snapshot.exists()) {
           console.log(snapshot.val());
-          if( email ==snapshot.val()){
+          
+          if(email ==snapshot.val()){
             exibebtnConfigAdmin()
             console.log("Usuário admin logado. Prosseguir aqui!")
+          }else{
+            ocultabtnConfigAdmin()
+            console.log('Usuário não admin logado')
           }
+
+
         } else {
-          console.log("No data available");
+          console.log("Ainda não existe usuário Admin");
+          
         }
     
     })
@@ -81,16 +88,16 @@ initApp = function() {
   });
 };
 
-function exibeInfo(){
-  if(window.location.href.endsWith("meu-painel/")||window.location.href.endsWith("meu-painel/#")){
-    // exibeMinhaConta()
-    fotoE.setAttribute('src', photoURL);
-    displayNameE.textContent ="Nome: " + displayName;
-    emailE.innerText = email;
-    uidUserE.innerText = uid;
-  }
+// function exibeInfo(){
+//   if(window.location.href.endsWith("meu-painel/")||window.location.href.endsWith("meu-painel/#")){
+//     // exibeMinhaConta()
+//     fotoE.setAttribute('src', photoURL);
+//     displayNameE.textContent ="Nome: " + displayName;
+//     emailE.innerText = email;
+//     uidUserE.innerText = uid;
+//   }
 
-}
+// }
 
 window.addEventListener('load', function() {
   initApp()
