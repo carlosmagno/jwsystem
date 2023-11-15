@@ -38,14 +38,25 @@ function exibeAreaAdmin(){
   
                   var divNova = document.createElement("div");
                   var conteudoNovo = document.createTextNode(ValorNo.email);
-                  var perfil = document.createElement('select')
-                  perfil.setAttribute('id', 'selectPerfilUser')
-                  perfil.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option>'
-                  perfil.addEventListener('change',()=>{
+                  var perfilExistente = ValorNo.perfil
+                  //var perFIL;
+
+
+                  var perfilUpdate = document.createElement('select')
+                  perfilUpdate.setAttribute('id', 'selectPerfilUser')
+                  perfilUpdate.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option><option value="Admin">Admin</option>'
+
+                  if(perfilExistente){
+                   perfilUpdate.value = perfilExistente
+                  }else{
+
+                  }
+
+                  perfilUpdate.addEventListener('change',()=>{
                       var usuario ={
                           email,
                           displayName,
-                          perfil:perfil.value
+                          perfil:perfilUpdate.value
                         }
                       refUsuarios.child(uid).set(usuario)
                   })
