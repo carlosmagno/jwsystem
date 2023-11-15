@@ -17,23 +17,62 @@ function exibeAreaAdmin(){
 
         if (snapshot.exists()) {
           console.log(snapshot.val());
-            snapshot.forEach(element => {
-                console.log(element)
 
-                
+          snapshot.forEach((childSnapshot) =>{
+            ValorNo = childSnapshot.val()
+            chave = childSnapshot.key
+
+            console.log(ValorNo)
+            console.log(chave)
+
                 var divNova = document.createElement("div");
-                var conteudoNovo = document.createTextNode(element.emil);
+                var conteudoNovo = document.createTextNode(ValorNo.email);
                 var perfil = document.createElement('select')
                 perfil.setAttribute('id', 'selectPerfilUser')
                 perfil.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option>'
+                perfil.addEventListener('change',()=>{
+                    var usuario ={
+                        email,
+                        displayName,
+                        perfil:perfil.value
+                      }
+                    refUsuarios.child(uid).set(usuario)
+                })
                 divNova.appendChild(conteudoNovo);
                 divNova.appendChild(perfil); //adiciona o nó de texto à nova div criada
 
                 // adiciona o novo elemento criado e seu conteúdo ao DOM
                 var pAtual = document.getElementById("pTitulo");
-                pAtual.insertAdjacentElement('afterend', divAtual);
+                pAtual.insertAdjacentElement('afterend', divNova);
+        
+          });
+
+
+            // snapshot.forEach(element => {
+            //     console.log(snapshot.val()[element])
+
                 
-            });
+            //     var divNova = document.createElement("div");
+            //     var conteudoNovo = document.createTextNode(snapshot.val().email);
+            //     var perfil = document.createElement('select')
+            //     perfil.setAttribute('id', 'selectPerfilUser')
+            //     perfil.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option>'
+            //     perfil.addEventListener('change',()=>{
+            //         var usuario ={
+            //             email,
+            //             displayName,
+            //             perfil:perfil.value
+            //           }
+            //         refUsuarios.child(uid).set(usuario)
+            //     })
+            //     divNova.appendChild(conteudoNovo);
+            //     divNova.appendChild(perfil); //adiciona o nó de texto à nova div criada
+
+            //     // adiciona o novo elemento criado e seu conteúdo ao DOM
+            //     var pAtual = document.getElementById("pTitulo");
+            //     pAtual.insertAdjacentElement('afterend', divNova);
+                
+            // });
         } else {
           console.log("Não há dados neste nó, aguarde ...");
           var usuarioAdmin ={
