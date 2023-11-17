@@ -45,7 +45,7 @@
         <section>
             <h2>Publicadores</h2>
             <h3 onclick="abreRegPub()">Registrar</h3>
-            <h3>Consultar registro - Grupo <em>- desenvolvendo</em> </h3>
+            <h3 onclick="abreConsultaGrupo()" >Consultar registro - Grupo <em>- desenvolvendo</em> </h3>
             <h3>Consultar registro - Individual <em>- desenvolvendo</em></h3>
 
         </section>
@@ -144,8 +144,9 @@
                         <input type="radio" name="PScampo" id="missionarioemcampo" value="Missionário em campo"><label for="missionarioemcampo">Missionário em Campo</label>
                         <!-- <input type="checkbox" name="Missionário em Campo" id="missionarioemcampo">Missionário em Campo -->
                     </p>
+                    
                 </fieldset>
-
+                <p><input type="text" name="contatoEmg" id="contatoEmg" placeholder="Nome e telefone do contato de emergência"></p>
                 <br>
                 <div  class="button" onclick="SalvarPublicador()">ENVIAR</div>
 
@@ -153,7 +154,8 @@
             <div id="espacoFimForm"></div>
         </div>
 
-        <div id="ConsultaGrupo">
+        <div id="ConsultaGrupo" class="oculto">
+            <p class="direita largebar"><span onclick="fechaConsultaGrupo()">X</span></p>
             <table>
                 <thead>
                   <tr>
@@ -172,25 +174,38 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr id="tr1">
                     <td>Nome</td>
                     <td>Nascimento</td>
                     <td>Batismo</td>
                     <td>Sexo</td>
                     <td>Esperança</td>
-                    <td>Ancião</td>
-                    <td>Servo Ministerial</td>
+                    <td>Privilégio</td>
+                    <!-- <td>Servo Ministerial</td> -->
                     <td>Tempo Integral</td>
+                    <td>Contato de Emergência</td>
                   </tr>
-                  <tr>
-                    <td>Nome</td>
-                    <td>Nascimento</td>
-                    <td>Batismo</td>
-                    <td>Sexo</td>
-                    <td>Esperança</td>
+                  <tr id="tr2">
+                    <td>Carlos Magno Bandeira dos Santos</td>
+                    <td>30/07/1985</td>
+                    <td>13/06/1996</td>
+                    <td>M</td>
+                    <td>Outras ovelhas</td>
                     <td>Ancião</td>
-                    <td>Servo Ministerial</td>
-                    <td>Tempo Integral</td>
+                    <!-- <td>Servo Ministerial</td> -->
+                    <td>Pioneiro regular</td>
+                    <td></td>
+                  </tr>
+                  <tr id="tr3">
+                    <td>Carlos Magno Bandeira dos Santos</td>
+                    <td>30/07/1985</td>
+                    <td>13/06/1996</td>
+                    <td>M</td>
+                    <td>Outras ovelhas</td>
+                    <td>Ancião</td>
+                    <!-- <td>Servo Ministerial</td> -->
+                    <td>Pioneiro regular</td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>
@@ -256,5 +271,6 @@
     <script src="../scripts/registro-publicador.js"></script>
     <script src="../scripts/envio-relatorio.js"></script>
     <script src="../scripts/pagina-cong.js"></script>
+    <script src="../scripts/consultas-publicadores.js"></script>
 </body>
 </html>

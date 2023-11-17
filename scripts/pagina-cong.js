@@ -97,3 +97,8 @@ function fechaAreaAdmin(){
     var areaAdmin = document.getElementById('areaAdmin')
     areaAdmin.setAttribute("class","oculto")
 };
+
+function fechaConsultaGrupo(){
+  var ConsultaGrupo = document.getElementById('ConsultaGrupo')
+  ConsultaGrupo.setAttribute("class","oculto")
+};
