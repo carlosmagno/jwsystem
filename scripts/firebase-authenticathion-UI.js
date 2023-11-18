@@ -82,7 +82,7 @@ function firebaseLoginLogoff(){
    // });
     }).catch (
         function() {
-        console.log (error)
+        //console.log (error)
     
     });
 

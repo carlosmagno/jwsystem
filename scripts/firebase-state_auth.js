@@ -76,7 +76,7 @@ initApp = function() {
       //   }, null, '  ');
       // });
     } else {
-     // window.location.href="../"
+     window.location.href="../"
 
       // linkPainel.style.display="none"
       //btnLogin.innerText="LOGIN"
