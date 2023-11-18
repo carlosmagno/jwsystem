@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/cong.css">
+    <link rel="stylesheet" href="../styles/switch.css">
 <!-- **************** -->
 <!-- Scripts pre-onload archives -->
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
@@ -30,11 +31,35 @@
 
     <!-- <h1>Congregação:</h1> -->
     <p id="messagemAuto" ></p>
-    <div id="areaAdmin" class="oculto">
+    <div id="areaAdmin" class="">
         <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p>
         <form action="" class="formulario" id="formAdmin">
             <p id="pTitulo">Usuários da Congregação</p>
-            <div id="dadosBDAdmin"></div>
+            <div id="dadosBDAdmin">
+                <!-- 
+                    Aqui são inseridos dinamicamente os dados do BD dos usuários. Ao clicar em cada usuário na div abaixo exibe as configurações atuais do perfil dele.
+                -->
+            </div>
+            <hr>
+            <p id="pTituloPerfil">Perfil do Usuário: <span>...Quem?</span> </p>
+            <br>
+            <div id="dadosBDPerfil">
+                <p><b>Módulo Publicadores</b></p>
+                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <br>
+                <p><b>Módulo Relatórios</b></p>
+                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <br>
+                <p><b>Módulo Reuniões</b></p>
+                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <br>
+                <!-- 
+                    Aqui são inseridos dinamicamente os dados do BD, do nó de perfil dos usuários
+                -->
+            </div>
             <div id="btnSalvarConfigAdmin" class="button"><b>Salvar alterações</b></div>
         </form>
 

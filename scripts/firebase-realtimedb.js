@@ -21,7 +21,7 @@ function SalvarPublicador() {
         n=n+1;
         capturaPublicador()
         console.log(NovoPublicador)
-        firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores/${NovoPublicador.nomePub}`).set(NovoPublicador)
+        firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores/${NovoPublicador.grupoPub}/${NovoPublicador.nomePub}`).set(NovoPublicador)
         .then(
            console.log("Usuário cadastrado!")
         );
@@ -50,3 +50,34 @@ function salvarUsuario(){
 // var  = document.getElementById('')
 
 // var  = document.getElementById('')
+
+function perfilAcesso(){
+
+    /**
+     * Quando usuário for logado acessa o nó "Usuários/perfil" e verifica para cada módulo o nivel de acesso, exibindo apenas as divs correspondentes
+     *   perfil{
+     * 
+     *      Modulo_Publicadores{
+     *          Registro: "on" ou "off",
+     *          Consulta: "on" ou "off",
+     *      
+     *      }
+     * 
+     *      Modulo_Relatórios{
+     *          Registro:"on" ou "off",
+     *          Consulta: "on" ou "off",
+     *      
+     *      }
+     * 
+     *      Modulo_Reuniões{
+     *          Registro:"não" ou "editor",
+     *          Consultas: "não" ou "leitor",
+     *          Programação: "leitor" ou "editor", 
+     *      
+     *      } 
+     *   }
+       
+     */
+
+    //var perfil = 
+}
