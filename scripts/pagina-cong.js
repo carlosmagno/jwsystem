@@ -71,7 +71,7 @@ function exibeAreaAdmin(){
                   perfilUpdate.onchange=function(){
                     var perfilExistente =  objetoUsers[`${chave}`].perfil
                     spanNomeUsuario.innerText=""
-                    spanNomeUsuario.innerText = opcao.getAttribute('value');
+                    spanNomeUsuario.innerText = opcao.getAttribute('value').toString();
                     userEmAlteracao = opcao.getAttribute('id')
 
                     if(perfilExistente){

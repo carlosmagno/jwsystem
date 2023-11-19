@@ -104,7 +104,7 @@ initApp = function() {
         var usuario = {
           displayName,
           email,
-          peril: {
+          perfil: {
             chkRegPublicadores:"off",
             chkConPublicadores: "off",
             chkRegRelatorios: "off",
