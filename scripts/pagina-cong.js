@@ -18,6 +18,7 @@ function ocultabtnConfigAdmin(){
 }
 
 var objetoUsers = {};
+var userEmAlteracao;
 
 function exibeAreaAdmin(evt){
     var areaAdmin = document.getElementById('areaAdmin')
@@ -36,8 +37,6 @@ function exibeAreaAdmin(evt){
      var chkRegReunioes = document.getElementById('chkRegReunioes');
      var chkConReunioes = document.getElementById('chkConReunioes');
 
-     var userEmAlteracao;
-     
 
     areaAdmin.setAttribute('class', 'aparente')
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
