@@ -223,8 +223,14 @@ p#messagemAuto{
     text-align: center;
 }
 .divDinamica{
-    background-color: gray;
+    /* background-color: gray; */
     border-radius:5px;
+    padding: 8px;
+    margin: 5px 0;
+    box-shadow: #333;
+}
+.divDinamica:hover{
+    cursor:pointer;
 }
 @media screen and (max-width: 600px) {
     section{
