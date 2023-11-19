@@ -35,7 +35,7 @@ function exibeAreaAdmin(){
      var chkConReunioes = document.getElementById('chkConReunioes');
 
      var userEmAlteracao;
-     var objetoUsers;
+     var objetoUsers = {};
 
     areaAdmin.setAttribute('class', 'aparente')
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
@@ -53,7 +53,7 @@ function exibeAreaAdmin(){
               ValorNo = childSnapshot.val()
               chave = childSnapshot.key
 
-              objetoUsers.chave=ValorNo
+              objetoUsers[`${chave}`]=ValorNo
   
               console.log(ValorNo)
               console.log(chave)
