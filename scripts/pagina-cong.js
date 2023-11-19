@@ -69,7 +69,7 @@ function exibeAreaAdmin(){
                   perfilUpdate.appendChild(opcao)
 
                   perfilUpdate.onchange=function(){
-                    var perfilExistente =  objetoUsers.chave.perfil
+                    var perfilExistente =  objetoUsers[`${chave}`].perfil
                     spanNomeUsuario.innerText=""
                     spanNomeUsuario.innerText = opcao.getAttribute('value');
                     userEmAlteracao = opcao.getAttribute('id')
