@@ -19,7 +19,7 @@ function ocultabtnConfigAdmin(){
 
 var objetoUsers = {};
 
-function exibeAreaAdmin(){
+function exibeAreaAdmin(evt){
     var areaAdmin = document.getElementById('areaAdmin')
     var formAdmin = document.getElementById('formAdmin')
     var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
@@ -63,21 +63,24 @@ function exibeAreaAdmin(){
   
                   //var divNova = document.createElement("div");
                   var conteudoNovo = document.createTextNode(ValorNo.email);
+                  //var nomeUsuario = ValorNo.displayName
                   
 
                   var opcao = document.createElement('option')
-                  opcao.setAttribute("value", conteudoNovo)
-                  opcao.setAttribute('id', chave)
+                  opcao.setAttribute("label", conteudoNovo)
+                  opcao.setAttribute('value', chave)
                   opcao.appendChild(conteudoNovo)
                   perfilUpdate.appendChild(opcao)
-                  spanNomeUsuario.innerText = perfilUpdate.value;
+                  spanNomeUsuario.innerText = conteudoNovo;
 
                   perfilUpdate.onchange=function(){
-                    console.log(this.id)
-                    var perfilExistente =  objetoUsers[`${this.id}`].perfil
+                    console.log('evt.target: ', evt.target) 
+                    console.log("value: ", this.value)
+                    console.log("label: ", this.label)
+                    var perfilExistente =  objetoUsers[`${this.value}`].perfil
                     spanNomeUsuario.innerText=""
-                    spanNomeUsuario.innerText = this.value;
-                    userEmAlteracao = this.id
+                    spanNomeUsuario.innerText = this.label;
+                    userEmAlteracao = this.value
 
                     if(perfilExistente){
                       //perfilUpdate.value = perfilExistente
