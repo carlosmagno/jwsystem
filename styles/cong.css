@@ -219,6 +219,13 @@ tfoot {
 p.largebar{
     width: 69.1vw;
 }
+p#messagemAuto{
+    text-align: center;
+}
+.divDinamica{
+    background-color: gray;
+    border-radius:5px;
+}
 @media screen and (max-width: 600px) {
     section{
         width: 100vw;

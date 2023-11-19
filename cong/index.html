@@ -35,26 +35,27 @@
         <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p>
         <form action="" class="formulario" id="formAdmin">
             <p id="pTitulo">Usuários da Congregação</p>
-            <div id="dadosBDAdmin">
                 <!-- 
-                    Aqui são inseridos dinamicamente os dados do BD dos usuários. Ao clicar em cada usuário na div abaixo exibe as configurações atuais do perfil dele.
+                    Aqui na div abaixo são inseridos dinamicamente os dados do BD dos usuários. Ao clicar em cada usuário na div abaixo exibe as configurações atuais do perfil dele.
                 -->
+            <div id="dadosBDAdmin">
+
             </div>
             <hr>
-            <p id="pTituloPerfil">Perfil do Usuário: <span>...Quem?</span> </p>
+            <p id="pTituloPerfil">Perfil do Usuário: <span id="spanNomeUsuario">...Quem?</span> </p>
             <br>
             <div id="dadosBDPerfil">
                 <p><b>Módulo Publicadores</b></p>
-                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
-                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkRegPublicadores"><span class="slider round"></span></label></p>
+                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkConPublicadores"><span class="slider round"></span></label></p>
                 <br>
                 <p><b>Módulo Relatórios</b></p>
-                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
-                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkRegRelatorios"><span class="slider round"></span></label></p>
+                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkConRelatorios"><span class="slider round"></span></label></p>
                 <br>
                 <p><b>Módulo Reuniões</b></p>
-                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
-                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox"><span class="slider round"></span></label></p>
+                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkRegReunioes"><span class="slider round"></span></label></p>
+                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkConReunioes"><span class="slider round"></span></label></p>
                 <br>
                 <!-- 
                     Aqui são inseridos dinamicamente os dados do BD, do nó de perfil dos usuários
@@ -69,23 +70,23 @@
     
         <section>
             <h2>Publicadores</h2>
-            <h3 onclick="abreRegPub()">Registrar</h3>
-            <h3 onclick="abreConsultaGrupo()" >Consultar registro - Grupo <em>- desenvolvendo</em> </h3>
-            <h3>Consultar registro - Individual <em>- desenvolvendo</em></h3>
+            <h3 id ="h3PubReg" onclick="abreRegPub()" class="oculto">Registro</h3>
+            <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="oculto">Consulta - Grupo <em>- desenvolvendo</em> </h3>
+            <h3 id ="h3PubCongI"class="oculto">Consulta - Individual <em>- desenvolvendo</em></h3>
 
         </section>
 
         <section>
             <h2>Relatórios</h2>
-            <h3 onclick="abreEnvioRel()">Enviar relatórios</h3>
-            <h3>Consultar relatório - Grupo <em> - desenvolvendo</em></h3>
-            <h3>Consultar relatório - Individual <em> - desenvolvendo</em></h3>
+            <h3 id ="h3RelReg" onclick="abreEnvioRel()" class="oculto">Registro</h3>
+            <h3 id ="h3RelConG" class="oculto">Consulta - Grupo <em> - desenvolvendo</em></h3>
+            <h3 id ="h3RelConI" class="oculto">Consulta - Individual <em> - desenvolvendo</em></h3>
 
         </section>
         <section>
             <h2>Reuniões</h2>
-            <h3>Enviar Assistência <em> - desenvolvendo</em></h3>
-            <h3>Programação <em> - desenvolvendo</em></h3>
+            <h3 id ="h3ReuReg" class="oculto">Registro <em> - desenvolvendo</em></h3>
+            <h3 id ="h3ReuCons" class="oculto">Consulta <em> - desenvolvendo</em></h3>
         </section>
         <section>
             <!-- <h2>Resumo Mensal</h2> -->

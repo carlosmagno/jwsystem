@@ -16,7 +16,7 @@ initApp = function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
 
-      exibemessagemAuto();
+      
       
       console.log("Usuário logado", user)
       // if(linkPainel){
@@ -37,9 +37,12 @@ initApp = function() {
       localStorage.setItem("UserID", uid)
       phoneNumber = user.phoneNumber;
       providerData = user.providerData;
+
+      exibemessagemAuto();
       
       var congregationNumber = document.getElementById('congregationNumber').value.toString()
       var refAdmincong = firebase.database().ref(congregationNumber).child('Congregação').child('emailAdmin')
+     
     
       refAdmincong.get().then((snapshot)=>{
 
@@ -49,6 +52,7 @@ initApp = function() {
           if(email ==snapshot.val()){
             exibebtnConfigAdmin()
             console.log("Usuário admin logado. Prosseguir aqui!")
+           
           }else{
             ocultabtnConfigAdmin()
             console.log('Usuário não admin logado')
@@ -60,7 +64,59 @@ initApp = function() {
           
         }
     
-    })
+    });
+
+    var refUser = firebase.database().ref(congregationNumber).child('Usuários').child(uid)
+    refUser.get().then((snapshot)=>{
+
+      if(snapshot.exists()){
+        var h3PubReg = document.getElementById('h3PubReg')
+        var h3PubConG = document.getElementById('h3PubConG')
+        var h3PubCongI = document.getElementById('h3PubCongI')
+        var h3RelReg = document.getElementById('h3RelReg')
+        var h3RelConG = document.getElementById('h3RelConG')
+        var h3RelConI = document.getElementById('h3RelConI')
+        var h3ReuReg = document.getElementById('h3ReuReg')
+        var h3ReuCons = document.getElementById('h3ReuCons')
+        console.log("Nó do usuário criado no BD.")
+        var valor = snapshot.val()
+        if(valor.chkRegPublicadores=="on"){
+          h3PubReg.setAttribute('class', "")
+        }
+        if(valor.chkConPublicadores=="on"){
+          h3PubConG.setAttribute('class', "")
+          h3PubCongI.setAttribute('class', "")
+        }
+        if(valor.chkRegRelatorios=="on"){
+          h3RelReg.setAttribute('class', "")
+        }
+        if(valor.chkConRelatorios=="on"){
+          h3RelConG.setAttribute('class', "")
+          h3RelConI.setAttribute('class', "")
+        }
+        if(valor.chkRegReunioes=="on"){
+          h3ReuReg.setAttribute('class', "")
+        }
+        if(valor.chkConReunioes=="on"){
+          h3ReuCons.setAttribute('class', "")
+        }
+      }else{
+        var usuario = {
+          displayName,
+          email,
+          peril: {
+            chkRegPublicadores:"off",
+            chkConPublicadores: "off",
+            chkRegRelatorios: "off",
+            chkConRelatorios: "off",
+            chkRegReunioes: "off",
+            chkConReunioes: "off",
+          }
+        }
+        refUser.set(usuario);
+      }
+
+    });
       // user.getIdToken().then(function(accessToken) {
       //   document.getElementById('sign-in-status').textContent = 'Signed in';
       //   document.getElementById('sign-in').textContent = 'Sign out';
