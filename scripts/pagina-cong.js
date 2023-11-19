@@ -34,6 +34,9 @@ function exibeAreaAdmin(){
      var chkRegReunioes = document.getElementById('chkRegReunioes');
      var chkConReunioes = document.getElementById('chkConReunioes');
 
+     var userEmAlteracao;
+     var objetoUsers;
+
     areaAdmin.setAttribute('class', 'aparente')
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
     refUsuarios.get().then((snapshot)=>{
@@ -41,42 +44,53 @@ function exibeAreaAdmin(){
         if (snapshot.exists()) {
           console.log(snapshot.val());
 
+          var perfilUpdate = document.createElement('select')
+          perfilUpdate.setAttribute('class', 'selectDinamica')
+
           if(dadosBDAdmin.innerHTML==''){
 
             snapshot.forEach((childSnapshot) =>{
               ValorNo = childSnapshot.val()
               chave = childSnapshot.key
+
+              objetoUsers.chave=ValorNo
   
               console.log(ValorNo)
               console.log(chave)
   
-                  var divNova = document.createElement("div");
+                  //var divNova = document.createElement("div");
                   var conteudoNovo = document.createTextNode(ValorNo.email);
-                  var perfilExistente = ValorNo.perfil
-                  //var perFIL;
-                //spanNomeUsuario
+                  
 
-                  //var perfilUpdate = document.createElement('select')
-                  divNova.setAttribute('class', 'divDinamica')
-                  divNova.setAttribute('id', ValorNo.displayName)
-                  divNova.onclick=function(){
+                  var opcao = document.createElement('option')
+                  opcao.setAttribute("value", conteudoNovo)
+                  opcao.setAttribute('id', chave)
+                  opcao.appendChild(conteudoNovo)
+                  perfilUpdate.appendChild(opcao)
+
+                  perfilUpdate.onchange=function(){
+                    var perfilExistente =  objetoUsers.chave.perfil
                     spanNomeUsuario.innerText=""
-                    spanNomeUsuario.innerText = divNova.getAttribute('id')
+                    spanNomeUsuario.innerText = opcao.getAttribute('value');
+                    userEmAlteracao = opcao.getAttribute('id')
+
+                    if(perfilExistente){
+                      //perfilUpdate.value = perfilExistente
+                      console.log('perfil existente: ', perfilExistente )
+                      chkRegPublicadores.value = perfilExistente.chkRegPublicadores,
+                      chkConPublicadores.value = perfilExistente.chkConPublicadores,
+                      chkRegRelatorios.value = perfilExistente.chkRegRelatorios,
+                      chkConRelatorios.value = perfilExistente.chkConRelatorios,
+                      chkRegReunioes.value = perfilExistente.chkRegReunioes,
+                      chkConReunioes.value = perfilExistente.chkConReunioes
+                     }else{
+                       console.log('ainda não existe perfil')
+                     }
+
                   }
                  // perfilUpdate.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option><option value="Admin">Admin</option>'
 
-                  if(perfilExistente){
-                   //perfilUpdate.value = perfilExistente
-                   console.log('perfil existente: ', perfilExistente )
-                   chkRegPublicadores.value = perfilExistente.chkRegPublicadores,
-                   chkConPublicadores.value = perfilExistente.chkConPublicadores,
-                   chkRegRelatorios.value = perfilExistente.chkRegRelatorios,
-                   chkConRelatorios.value = perfilExistente.chkConRelatorios,
-                   chkRegReunioes.value = perfilExistente.chkRegReunioes,
-                   chkConReunioes.value = perfilExistente.chkConReunioes
-                  }else{
-                    console.log('ainda não existe perfil')
-                  }
+
 
                   btnSalvarConfigAdmin.addEventListener('click',()=>{
                       var perfilBD ={
@@ -87,16 +101,18 @@ function exibeAreaAdmin(){
                           chkRegReunioes: chkRegReunioes.value,
                           chkConReunioes: chkConReunioes.value,
                         }
-                      refUsuarios.child(uid).child("perfil").update(perfilBD)
+                      refUsuarios.child(userEmAlteracao).child("perfil").update(perfilBD)
                   })
-                  divNova.appendChild(conteudoNovo);
+                  
                   //divNova.appendChild(perfilUpdate); //adiciona o nó de texto à nova div criada
   
                   // adiciona o novo elemento criado e seu conteúdo ao DOM
                   
-                  dadosBDAdmin.insertAdjacentElement('afterbegin', divNova);
+                  //dadosBDAdmin.insertAdjacentElement('afterbegin', perfilUpdate);
           
             });
+            dadosBDAdmin.appendChild(perfilUpdate);
+
           }else{
             console.log("Já está exibindo os usuários")
           }

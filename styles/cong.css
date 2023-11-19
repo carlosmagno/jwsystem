@@ -222,14 +222,14 @@ p.largebar{
 p#messagemAuto{
     text-align: center;
 }
-.divDinamica{
+.selectDinamica{
     /* background-color: gray; */
     border-radius:5px;
     padding: 8px;
     margin: 5px 0;
-    box-shadow: #333;
+    box-shadow: 3px 3px 10px gray;
 }
-.divDinamica:hover{
+.selectDinamica:hover{
     cursor:pointer;
 }
 @media screen and (max-width: 600px) {
