@@ -17,6 +17,8 @@ function ocultabtnConfigAdmin(){
 
 }
 
+var objetoUsers = {};
+
 function exibeAreaAdmin(){
     var areaAdmin = document.getElementById('areaAdmin')
     var formAdmin = document.getElementById('formAdmin')
@@ -35,7 +37,7 @@ function exibeAreaAdmin(){
      var chkConReunioes = document.getElementById('chkConReunioes');
 
      var userEmAlteracao;
-     var objetoUsers = {};
+     
 
     areaAdmin.setAttribute('class', 'aparente')
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
@@ -57,6 +59,7 @@ function exibeAreaAdmin(){
   
               console.log(ValorNo)
               console.log(chave)
+              console.log(objetoUsers[`${chave}`])
   
                   //var divNova = document.createElement("div");
                   var conteudoNovo = document.createTextNode(ValorNo.email);
@@ -67,12 +70,14 @@ function exibeAreaAdmin(){
                   opcao.setAttribute('id', chave)
                   opcao.appendChild(conteudoNovo)
                   perfilUpdate.appendChild(opcao)
+                  spanNomeUsuario.innerText = perfilUpdate.value;
 
                   perfilUpdate.onchange=function(){
-                    var perfilExistente =  objetoUsers[`${chave}`].perfil
+                    console.log(this.id)
+                    var perfilExistente =  objetoUsers[`${this.id}`].perfil
                     spanNomeUsuario.innerText=""
-                    spanNomeUsuario.innerText = opcao.getAttribute('value').toString();
-                    userEmAlteracao = opcao.getAttribute('id')
+                    spanNomeUsuario.innerText = this.value;
+                    userEmAlteracao = this.id
 
                     if(perfilExistente){
                       //perfilUpdate.value = perfilExistente
