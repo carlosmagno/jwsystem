@@ -66,7 +66,7 @@ initApp = function() {
     });
 
     var refUser = firebase.database().ref(congregationNumber).child('Usuários').child(uid)
-    refUser.get().then((snapshot)=>{
+    refUser.child('perfil').get().then((snapshot)=>{
 
       if(snapshot.exists()){
         var h3PubReg = document.getElementById('h3PubReg')
