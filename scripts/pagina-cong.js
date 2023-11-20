@@ -66,19 +66,19 @@ function exibeAreaAdmin(evt){
                   
 
                   var opcao = document.createElement('option')
-                  opcao.setAttribute("label", conteudoNovo)
+                  opcao.setAttribute("label", ValorNo.email)
                   opcao.setAttribute('value', chave)
                   opcao.appendChild(conteudoNovo)
                   perfilUpdate.appendChild(opcao)
-                  spanNomeUsuario.innerText = conteudoNovo;
+                  spanNomeUsuario.innerText = ValorNo.email;
 
                   perfilUpdate.onchange=function(){
-                    console.log('evt.target: ', evt.target) 
+                    //console.log('evt.target: ', evt.target) 
                     console.log("value: ", this.value)
                     console.log("label: ", this.label)
                     var perfilExistente =  objetoUsers[`${this.value}`].perfil
                     spanNomeUsuario.innerText=""
-                    spanNomeUsuario.innerText = this.label;
+                    spanNomeUsuario.innerText = perfilExistente.displayName;
                     userEmAlteracao = this.value
 
                     if(perfilExistente){
