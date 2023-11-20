@@ -47,6 +47,9 @@ function exibeAreaAdmin(evt){
 
           var perfilUpdate = document.createElement('select')
           perfilUpdate.setAttribute('class', 'selectDinamica')
+            var opcao2 = document.createElement('option')
+            opcao2.setAttribute("label", "")
+            perfilUpdate.appendChild(opcao2)
 
           if(dadosBDAdmin.innerHTML==''){
 
@@ -81,7 +84,16 @@ function exibeAreaAdmin(evt){
                     //.innerText = perfilExistente.displayName;
                     userEmAlteracao = this.value
 
+                      
                     if(perfilExistente){
+                
+                      chkRegPublicadores.removeAttribute("checked")
+                      chkConPublicadores.removeAttribute("checked")
+                      chkRegRelatorios.removeAttribute("checked")
+                      chkConRelatorios.removeAttribute("checked")
+                      chkRegReunioes.removeAttribute("checked")
+                      chkConReunioes.removeAttribute("checked")
+                        
                       //perfilUpdate.value = perfilExistente
                       console.log('perfil existente: ', perfilExistente )
                       if(perfilExistente.chkRegPublicadores=="on"){chkRegPublicadores.setAttribute("checked","checked")}
