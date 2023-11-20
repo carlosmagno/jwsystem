@@ -83,16 +83,17 @@ function exibeAreaAdmin(evt){
                    // spanNomeUsuario.innerText=""
                     //.innerText = perfilExistente.displayName;
                     userEmAlteracao = this.value
-
                       
-                    if(perfilExistente){
-                
                       chkRegPublicadores.removeAttribute("checked")
                       chkConPublicadores.removeAttribute("checked")
                       chkRegRelatorios.removeAttribute("checked")
                       chkConRelatorios.removeAttribute("checked")
                       chkRegReunioes.removeAttribute("checked")
                       chkConReunioes.removeAttribute("checked")
+                      
+                    if(perfilExistente){
+                
+
                         
                       //perfilUpdate.value = perfilExistente
                       console.log('perfil existente: ', perfilExistente )
@@ -110,18 +111,8 @@ function exibeAreaAdmin(evt){
                  // perfilUpdate.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option><option value="Admin">Admin</option>'
 
 
+                // Saiu daqui o btnSalvarConfigAdmin.addEventListener
 
-                  btnSalvarConfigAdmin.addEventListener('click',()=>{
-                      var perfilBD ={
-                          chkRegPublicadores: chkRegPublicadores.value,
-                          chkConPublicadores: chkConPublicadores.value,
-                          chkRegRelatorios: chkRegRelatorios.value,
-                          chkConRelatorios: chkConRelatorios.value,
-                          chkRegReunioes: chkRegReunioes.value,
-                          chkConReunioes: chkConReunioes.value,
-                        }
-                      refUsuarios.child(userEmAlteracao).child("perfil").update(perfilBD)
-                  })
                   
                   //divNova.appendChild(perfilUpdate); //adiciona o nó de texto à nova div criada
   
@@ -130,6 +121,20 @@ function exibeAreaAdmin(evt){
                   //dadosBDAdmin.insertAdjacentElement('afterbegin', perfilUpdate);
           
             });
+                      btnSalvarConfigAdmin.addEventListener('click',()=>{
+                      var perfilBD ={
+                          chkRegPublicadores: chkRegPublicadores.value,
+                          chkConPublicadores: chkConPublicadores.value,
+                          chkRegRelatorios: chkRegRelatorios.value,
+                          chkConRelatorios: chkConRelatorios.value,
+                          chkRegReunioes: chkRegReunioes.value,
+                          chkConReunioes: chkConReunioes.value,
+                        }
+                      refUsuarios.child(userEmAlteracao).child("perfil").set(perfilBD).then(
+                        alert("Perfil do usuário salvo!")
+                      )
+                      
+                  })  
             dadosBDAdmin.appendChild(perfilUpdate);
 
           }else{
