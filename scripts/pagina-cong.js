@@ -84,12 +84,12 @@ function exibeAreaAdmin(evt){
                     if(perfilExistente){
                       //perfilUpdate.value = perfilExistente
                       console.log('perfil existente: ', perfilExistente )
-                      chkRegPublicadores.value = perfilExistente.chkRegPublicadores,
-                      chkConPublicadores.value = perfilExistente.chkConPublicadores,
-                      chkRegRelatorios.value = perfilExistente.chkRegRelatorios,
-                      chkConRelatorios.value = perfilExistente.chkConRelatorios,
-                      chkRegReunioes.value = perfilExistente.chkRegReunioes,
-                      chkConReunioes.value = perfilExistente.chkConReunioes
+                      if(perfilExistente.chkRegPublicadores=="on"){chkRegPublicadores.setAttribute("checked","checked")}
+                      if(perfilExistente.chkConPublicadores=="on") {chkConPublicadores.setAttribute("checked","checked")}
+                      if(perfilExistente.chkRegRelatorios=="on") {chkRegRelatorios.setAttribute("checked","checked")}
+                      if(perfilExistente.chkConRelatorios=="on") {chkConRelatorios.setAttribute("checked","checked")}        
+                      if(perfilExistente.chkRegReunioes=="on") {chkRegReunioes.setAttribute("checked","checked")}
+                      if(perfilExistente.chkConReunioes=="on") {chkConReunioes.setAttribute("checked","checked")}
                      }else{
                        console.log('ainda não existe perfil')
                      }
