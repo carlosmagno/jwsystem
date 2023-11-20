@@ -23,7 +23,7 @@ var userEmAlteracao;
 function exibeAreaAdmin(evt){
     var areaAdmin = document.getElementById('areaAdmin')
     var formAdmin = document.getElementById('formAdmin')
-    var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
+
     var dadosBDAdmin = document.getElementById("dadosBDAdmin");
     var spanNomeUsuario = document.getElementById('spanNomeUsuario');
     /**
@@ -39,6 +39,7 @@ function exibeAreaAdmin(evt){
 
 
     areaAdmin.setAttribute('class', 'aparente')
+    var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
     refUsuarios.get().then((snapshot)=>{
 
@@ -184,6 +185,9 @@ function salvaPerfil(){
 //   checK.setAttribute('checked','checked')
 // }
 // alert(valor)
+var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
+var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
+
 var val1 = analisaCheckboxes(chkRegPublicadores)
 var val2 = analisaCheckboxes(chkConPublicadores)
 var val3 = analisaCheckboxes(chkRegRelatorios)
