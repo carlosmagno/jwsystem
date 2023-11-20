@@ -162,54 +162,38 @@ function analisaCheckboxes(checK){
   return valor
 }
 
+if (document.getElementById('btnSalvarConfigAdmin')){
+  var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
+  btnSalvarConfigAdmin.addEventListener('click',()=>{
+    salvaPerfil()
+  })  
+}
+
 function salvaPerfil(){
 
-      /**
-     *Elementos dos checkboxes
-     */
+    var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
 
-    //  var chkRegPublicadores = document.getElementById('chkRegPublicadores');
-    //  var chkConPublicadores = document.getElementById('chkConPublicadores');
-    //  var chkRegRelatorios = document.getElementById('chkRegRelatorios');
-    //  var chkConRelatorios = document.getElementById('chkConRelatorios');
-    //  var chkRegReunioes = document.getElementById('chkRegReunioes');
-    //  var chkConReunioes = document.getElementById('chkConReunioes');
+    var val1 = analisaCheckboxes(chkRegPublicadores)
+    var val2 = analisaCheckboxes(chkConPublicadores)
+    var val3 = analisaCheckboxes(chkRegRelatorios)
+    var val4 = analisaCheckboxes(chkConRelatorios)
+    var val5 = analisaCheckboxes(chkRegReunioes)
+    var val6 = analisaCheckboxes(chkConReunioes)
 
-
-// var valor = checK.getAttribute('checked')
-//   if(valor=="" ||valor=="checked"){
-//   valor = "on"
-//   checK.removeAttribute('checked')
-// }else if(valor==null){
-//   valor = "off"
-//   checK.setAttribute('checked','checked')
-// }
-// alert(valor)
-var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
-var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
-
-var val1 = analisaCheckboxes(chkRegPublicadores)
-var val2 = analisaCheckboxes(chkConPublicadores)
-var val3 = analisaCheckboxes(chkRegRelatorios)
-var val4 = analisaCheckboxes(chkConRelatorios)
-var val5 = analisaCheckboxes(chkRegReunioes)
-var val6 = analisaCheckboxes(chkConReunioes)
-
-
-  btnSalvarConfigAdmin.addEventListener('click',()=>{
     var perfilBD ={
-        chkRegPublicadores: val1,
-        chkConPublicadores: val2,
-        chkRegRelatorios: val3,
-        chkConRelatorios: val4,
-        chkRegReunioes: val5,
-        chkConReunioes: val6,
-      }
+      chkRegPublicadores: val1,
+      chkConPublicadores: val2,
+      chkRegRelatorios: val3,
+      chkConRelatorios: val4,
+      chkRegReunioes: val5,
+      chkConReunioes: val6,
+    }
+
     refUsuarios.child(userEmAlteracao).child("perfil").update(perfilBD).then(
-      alert("Perfil do usuário salvo!")
+    alert("Perfil do usuário salvo!")
     )
-    
-})  
+
+
   
 }
 
