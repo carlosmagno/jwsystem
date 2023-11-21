@@ -69,18 +69,21 @@ function exibeAreaAdmin(){
                     //console.log("value: ", this.value)
                     //console.log("label: ", this.label)
                     userEmAlteracao = this.value
+
+                    chkRegPublicadores.removeAttribute("checked")
+                    chkConPublicadores.removeAttribute("checked")
+                    chkRegRelatorios.removeAttribute("checked")
+                    chkConRelatorios.removeAttribute("checked")
+                    chkRegReunioes.removeAttribute("checked")
+                    chkConReunioes.removeAttribute("checked")
+
                     refUsuarios.child(userEmAlteracao).child('perfil').get().then((snapshot)=>{
                       perfilExistente =  snapshot.val()
                       
                       spanNomeUsuario.innerText=""
                       spanNomeUsuario.innerText = this.value;
                       console.log("perfil baixado do BD")
-                      chkRegPublicadores.removeAttribute("checked")
-                      chkConPublicadores.removeAttribute("checked")
-                      chkRegRelatorios.removeAttribute("checked")
-                      chkConRelatorios.removeAttribute("checked")
-                      chkRegReunioes.removeAttribute("checked")
-                      chkConReunioes.removeAttribute("checked")
+
                       
                     if(perfilExistente){
                       console.log('perfil existente: ', perfilExistente )
