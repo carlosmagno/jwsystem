@@ -75,7 +75,7 @@ function exibeAreaAdmin(evt){
                   opcao.setAttribute('value', chave)
                   opcao.appendChild(conteudoNovo)
                   perfilUpdate.appendChild(opcao)
-                  spanNomeUsuario.innerText = chave;
+                  //spanNomeUsuario.innerText = chave;
 
                   perfilUpdate.onchange=function(){
                     //console.log('evt.target: ', evt.target) 
@@ -87,7 +87,7 @@ function exibeAreaAdmin(evt){
                     }
                     
                    spanNomeUsuario.innerText=""
-                    spanNomeUsuario.innerText = chave;
+                    spanNomeUsuario.innerText = this.value;
                     
                       
                       chkRegPublicadores.removeAttribute("checked")
