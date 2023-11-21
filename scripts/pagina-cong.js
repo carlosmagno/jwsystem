@@ -81,17 +81,15 @@ function exibeAreaAdmin(evt){
                     //console.log('evt.target: ', evt.target) 
                     //console.log("value: ", this.value)
                     //console.log("label: ", this.label)
-
-                    refUsuarios.child(this.value).child('perfil').get().then((snapshot)=>{
+                    userEmAlteracao = this.value
+                    refUsuarios.child(userEmAlteracao).child('perfil').get().then((snapshot)=>{
                       perfilExistente =  snapshot.val()
-                      userEmAlteracao = this.value
+                      
                       spanNomeUsuario.innerText=""
                       spanNomeUsuario.innerText = this.value;
-                    })
-                    .then(
                       console.log("perfil baixado do BD")
-                    );
-
+                    });
+                    
                     
                       
                       chkRegPublicadores.removeAttribute("checked")
