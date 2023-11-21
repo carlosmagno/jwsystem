@@ -153,10 +153,10 @@ function analisaCheckboxes(checK){
 
   if(valor=="" ||valor=="checked"){
     valor = "on"
-    checK.removeAttribute('checked')
+    checK1.removeAttribute('checked')
   }else if(valor==null){
     valor = "off"
-    checK.setAttribute('checked','checked')
+    checK1.setAttribute('checked','checked')
   }
   //alert(valor)
   return valor

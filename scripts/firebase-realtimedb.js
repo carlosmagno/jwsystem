@@ -44,5 +44,5 @@ function consultaBDCong(){
 }
 
 function salvarRelatorio(){
-    var grupoRel;
+    var grupoRel, mesRel, nomeRel, participou, pAux, EB, horas, obs;
 }
