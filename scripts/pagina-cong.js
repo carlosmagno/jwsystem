@@ -148,8 +148,8 @@ function exibeAreaAdmin(evt){
 }
 
 function analisaCheckboxes(checK){
-  var checK = document.getElementById(checK);
-  var valor = checK.getAttribute('checked')
+  var checK1 = document.getElementById(`${checK}`);
+  var valor = checK1.getAttribute('checked')
 
   if(valor=="" ||valor=="checked"){
     valor = "on"
