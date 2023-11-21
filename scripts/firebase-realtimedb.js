@@ -44,5 +44,10 @@ function consultaBDCong(){
 }
 
 function salvarRelatorio(){
-    var grupoRel, mesRel, nomeRel, participou, pAux, EB, horas, obs;
+    var grupoRel, mesRel, nomeRel, participou, pAux, EB, horas, obs, btnEnviaRelatorio;
+
+    grupoRel = document.getElementById("grupoRel")
+     = document.getElementById("")
+     
+
 }

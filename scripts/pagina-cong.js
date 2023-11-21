@@ -26,6 +26,7 @@ function exibeAreaAdmin(evt){
 
     var dadosBDAdmin = document.getElementById("dadosBDAdmin");
     var spanNomeUsuario = document.getElementById('spanNomeUsuario');
+    
     /**
      *Elementos dos checkboxes
      */
@@ -74,7 +75,7 @@ function exibeAreaAdmin(evt){
                   opcao.setAttribute('value', chave)
                   opcao.appendChild(conteudoNovo)
                   perfilUpdate.appendChild(opcao)
-                  //spanNomeUsuario.innerText = ValorNo.email;
+                  spanNomeUsuario.innerText = chave;
 
                   perfilUpdate.onchange=function(){
                     //console.log('evt.target: ', evt.target) 
@@ -85,8 +86,8 @@ function exibeAreaAdmin(evt){
                       userEmAlteracao = this.value
                     }
                     
-                   // spanNomeUsuario.innerText=""
-                    //.innerText = perfilExistente.displayName;
+                   spanNomeUsuario.innerText=""
+                    spanNomeUsuario.innerText = chave;
                     
                       
                       chkRegPublicadores.removeAttribute("checked")
@@ -153,10 +154,10 @@ function analisaCheckboxes(checK){
 
   if(valor=="" ||valor=="checked"){
     valor = "on"
-    checK1.removeAttribute('checked')
+    //checK1.removeAttribute('checked')
   }else if(valor==null){
     valor = "off"
-    checK1.setAttribute('checked','checked')
+    //checK1.setAttribute('checked','checked')
   }
   //alert(valor)
   return valor
@@ -170,6 +171,8 @@ if (document.getElementById('btnSalvarConfigAdmin')){
 }
 
 function salvaPerfil(){
+
+    var spanNomeUsuario = document.getElementById('spanNomeUsuario');
 
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
 
@@ -189,8 +192,8 @@ function salvaPerfil(){
       chkConReunioes: val6,
     }
 
-    refUsuarios.child(userEmAlteracao).child("perfil").update(perfilBD).then(
-    alert("Perfil do usuário salvo!")
+    refUsuarios.child(spanNomeUsuario.innerText).child("perfil").update(perfilBD).then(
+    console.log("Perfil do usuário salvo!")
     )
 
 

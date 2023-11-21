@@ -40,7 +40,7 @@
                 -->
             <div id="dadosBDAdmin"></div>
             <hr>
-            <p id="pTituloPerfil"><b>Perfil do Usuário: <span id="spanNomeUsuario"></span></b></p>
+            <p id="pTituloPerfil"><b>ID do Usuário: <span id="spanNomeUsuario"></span></b></p>
             <br>
             <div id="dadosBDPerfil">
                 <p><b>Módulo Publicadores</b></p>
@@ -246,7 +246,7 @@
         <div id="EnviarRelatorios" class="oculto">
            
             <p class="direita"><span onclick="fechaEnvioRel()" >X</span></p> 
-            <form action="" class="formulario">
+            <form action="" class="formulario" id="formRelatorio" name="formRelatorio">
                 
                 <h3>Enviar relatórios</h3>
                 <br>
@@ -279,7 +279,7 @@
                 <p><input type="number" name="" id="horas" class="input-number">Horas (pioneiro ou missionário)</p>
                 <p>Observações</p>
                 <p><input type="text" name="obs" id="obs" placeholder=""></p>
-                <div  class="button" onclick="">ENVIAR</div>
+                <div  class="button" onclick="" id="btnEnviaRelatorio">ENVIAR</div>
                 
             </form>
             <div id="espacoFimForm"></div>
