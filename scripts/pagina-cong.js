@@ -17,13 +17,11 @@ function ocultabtnConfigAdmin(){
 
 }
 
-//var objetoUsers = {};
+
 var userEmAlteracao;
 
-function exibeAreaAdmin(evt){
+function exibeAreaAdmin(){
     var areaAdmin = document.getElementById('areaAdmin')
-   // var formAdmin = document.getElementById('formAdmin')
-
     var dadosBDAdmin = document.getElementById("dadosBDAdmin");
     var spanNomeUsuario = document.getElementById('spanNomeUsuario');
     
@@ -40,18 +38,16 @@ function exibeAreaAdmin(evt){
 
 
     areaAdmin.setAttribute('class', 'aparente')
-    //var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
     refUsuarios.get().then((snapshot)=>{
 
         if (snapshot.exists()) {
-          //console.log(snapshot.val());
 
           var perfilUpdate = document.createElement('select')
           perfilUpdate.setAttribute('class', 'selectDinamica')
-            var opcao2 = document.createElement('option')
-            opcao2.setAttribute("label", "")
-            perfilUpdate.appendChild(opcao2)
+          var opcao2 = document.createElement('option')
+          opcao2.setAttribute("label", "")
+          perfilUpdate.appendChild(opcao2)
 
           if(dadosBDAdmin.innerHTML==''){
 
@@ -59,24 +55,15 @@ function exibeAreaAdmin(evt){
               ValorNo = childSnapshot.val()
               chave = childSnapshot.key
 
-             // objetoUsers[`${chave}`]=ValorNo
-  
-              //console.log(ValorNo)
-              //console.log(chave)
-              //console.log(objetoUsers[`${chave}`])
-  
-                  //var divNova = document.createElement("div");
                   var conteudoNovo = document.createTextNode(ValorNo.email);
-                  //var nomeUsuario = ValorNo.displayName
-                  
-
                   var opcao = document.createElement('option')
+                  var perfilExistente
+
                   opcao.setAttribute("label", ValorNo.email)
                   opcao.setAttribute('value', chave)
                   opcao.appendChild(conteudoNovo)
                   perfilUpdate.appendChild(opcao)
-                  //spanNomeUsuario.innerText = chave;
-                  var perfilExistente;
+                  
                   perfilUpdate.onchange=function(){
                     //console.log('evt.target: ', evt.target) 
                     //console.log("value: ", this.value)
@@ -88,10 +75,6 @@ function exibeAreaAdmin(evt){
                       spanNomeUsuario.innerText=""
                       spanNomeUsuario.innerText = this.value;
                       console.log("perfil baixado do BD")
-                    });
-                    
-                    
-                      
                       chkRegPublicadores.removeAttribute("checked")
                       chkConPublicadores.removeAttribute("checked")
                       chkRegRelatorios.removeAttribute("checked")
@@ -100,10 +83,6 @@ function exibeAreaAdmin(evt){
                       chkConReunioes.removeAttribute("checked")
                       
                     if(perfilExistente){
-                
-
-                        
-                      //perfilUpdate.value = perfilExistente
                       console.log('perfil existente: ', perfilExistente )
                       if(perfilExistente.chkRegPublicadores=="on"){chkRegPublicadores.setAttribute("checked","checked")}
                       else{chkRegPublicadores.removeAttribute("checked")};
@@ -123,23 +102,14 @@ function exibeAreaAdmin(evt){
                       if(perfilExistente.chkConReunioes=="on") {chkConReunioes.setAttribute("checked","checked")}
                       else{chkConReunioes.removeAttribute("checked")};
 
-                     }else{
-                       console.log('ainda não existe perfil')
-                     }
+                    }else{
+                      console.log('ainda não existe perfil')
+                    }
+
+                    });
+                    
 
                   }
-                 // perfilUpdate.innerHTML ='<option value="Leitor">Leitor</option><option value="Editor">Editor</option><option value="Admin">Admin</option>'
-
-
-                // Saiu daqui o btnSalvarConfigAdmin.addEventListener
-
-                  
-                  //divNova.appendChild(perfilUpdate); //adiciona o nó de texto à nova div criada
-  
-                  // adiciona o novo elemento criado e seu conteúdo ao DOM
-                  
-                  //dadosBDAdmin.insertAdjacentElement('afterbegin', perfilUpdate);
-          
             });
 
             dadosBDAdmin.appendChild(perfilUpdate);
