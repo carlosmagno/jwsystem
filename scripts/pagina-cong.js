@@ -159,7 +159,7 @@ function analisaCheckboxes(checK){
     valor = "off"
     //checK1.setAttribute('checked','checked')
   }
-  //alert(valor)
+  console.log(valor)
   return valor
 }
 
