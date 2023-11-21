@@ -192,7 +192,7 @@ function salvaPerfil(){
       chkConReunioes: val6,
     }
 
-    refUsuarios.child(spanNomeUsuario.innerText).child("perfil").update(perfilBD).then(
+    refUsuarios.child(spanNomeUsuario.innerText).child("perfil").set(perfilBD).then(
     console.log("Perfil do usuário salvo!")
     )
 
