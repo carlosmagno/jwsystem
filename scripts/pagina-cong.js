@@ -173,12 +173,12 @@ function salvaPerfil(){
 
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
 
-    var val1 = analisaCheckboxes(chkRegPublicadores)
-    var val2 = analisaCheckboxes(chkConPublicadores)
-    var val3 = analisaCheckboxes(chkRegRelatorios)
-    var val4 = analisaCheckboxes(chkConRelatorios)
-    var val5 = analisaCheckboxes(chkRegReunioes)
-    var val6 = analisaCheckboxes(chkConReunioes)
+    var val1 = analisaCheckboxes('chkRegPublicadores')
+    var val2 = analisaCheckboxes('chkConPublicadores')
+    var val3 = analisaCheckboxes('chkRegRelatorios')
+    var val4 = analisaCheckboxes('chkConRelatorios')
+    var val5 = analisaCheckboxes('chkRegReunioes')
+    var val6 = analisaCheckboxes('chkConReunioes')
 
     var perfilBD ={
       chkRegPublicadores: val1,

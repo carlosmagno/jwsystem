@@ -42,42 +42,7 @@ function consultaBDCong(){
     var url = window.location.href.split('#')
     console.log(url[1])
 }
-//if (window.location.href.endsWith('#',1)){ //window.location.href+'cong#'+congregationNumber}
-function salvarUsuario(){
 
-}
-// var  = document.getElementById('')
-// var  = document.getElementById('')
-
-// var  = document.getElementById('')
-
-function perfilAcesso(){
-
-    /**
-     * Quando usuário for logado acessa o nó "Usuários/perfil" e verifica para cada módulo o nivel de acesso, exibindo apenas as divs correspondentes
-     *   perfil{
-     * 
-     *      Modulo_Publicadores{
-     *          Registro: "on" ou "off",
-     *          Consulta: "on" ou "off",
-     *      
-     *      }
-     * 
-     *      Modulo_Relatórios{
-     *          Registro:"on" ou "off",
-     *          Consulta: "on" ou "off",
-     *      
-     *      }
-     * 
-     *      Modulo_Reuniões{
-     *          Registro:"não" ou "editor",
-     *          Consultas: "não" ou "leitor",
-     *          Programação: "leitor" ou "editor", 
-     *      
-     *      } 
-     *   }
-       
-     */
-
-    //var perfil = 
+function salvarRelatorio(){
+    var grupoRel;
 }
