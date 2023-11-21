@@ -17,7 +17,7 @@ function ocultabtnConfigAdmin(){
 
 }
 
-var objetoUsers = {};
+//var objetoUsers = {};
 var userEmAlteracao;
 
 function exibeAreaAdmin(evt){
@@ -59,7 +59,7 @@ function exibeAreaAdmin(evt){
               ValorNo = childSnapshot.val()
               chave = childSnapshot.key
 
-              objetoUsers[`${chave}`]=ValorNo
+             // objetoUsers[`${chave}`]=ValorNo
   
               //console.log(ValorNo)
               //console.log(chave)
@@ -76,18 +76,22 @@ function exibeAreaAdmin(evt){
                   opcao.appendChild(conteudoNovo)
                   perfilUpdate.appendChild(opcao)
                   //spanNomeUsuario.innerText = chave;
-
+                  var perfilExistente;
                   perfilUpdate.onchange=function(){
                     //console.log('evt.target: ', evt.target) 
                     //console.log("value: ", this.value)
                     //console.log("label: ", this.label)
-                    if(objetoUsers[`${this.value}`].perfil){
-                      var perfilExistente =  objetoUsers[`${this.value}`].perfil
+
+                    refUsuarios.child(this.value).child('perfil').get().then((snapshot)=>{
+                      perfilExistente =  snapshot.val()
                       userEmAlteracao = this.value
-                    }
-                    
-                   spanNomeUsuario.innerText=""
-                    spanNomeUsuario.innerText = this.value;
+                      spanNomeUsuario.innerText=""
+                      spanNomeUsuario.innerText = this.value;
+                    })
+                    .then(
+                      console.log("perfil baixado do BD")
+                    );
+
                     
                       
                       chkRegPublicadores.removeAttribute("checked")
