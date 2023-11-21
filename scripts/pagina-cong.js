@@ -22,7 +22,7 @@ var userEmAlteracao;
 
 function exibeAreaAdmin(evt){
     var areaAdmin = document.getElementById('areaAdmin')
-    var formAdmin = document.getElementById('formAdmin')
+   // var formAdmin = document.getElementById('formAdmin')
 
     var dadosBDAdmin = document.getElementById("dadosBDAdmin");
     var spanNomeUsuario = document.getElementById('spanNomeUsuario');
@@ -40,7 +40,7 @@ function exibeAreaAdmin(evt){
 
 
     areaAdmin.setAttribute('class', 'aparente')
-    var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
+    //var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
     refUsuarios.get().then((snapshot)=>{
 
@@ -104,11 +104,23 @@ function exibeAreaAdmin(evt){
                       //perfilUpdate.value = perfilExistente
                       console.log('perfil existente: ', perfilExistente )
                       if(perfilExistente.chkRegPublicadores=="on"){chkRegPublicadores.setAttribute("checked","checked")}
+                      else{chkRegPublicadores.removeAttribute("checked")};
+
                       if(perfilExistente.chkConPublicadores=="on") {chkConPublicadores.setAttribute("checked","checked")}
+                      else{chkConPublicadores.removeAttribute("checked")};
+
                       if(perfilExistente.chkRegRelatorios=="on") {chkRegRelatorios.setAttribute("checked","checked")}
-                      if(perfilExistente.chkConRelatorios=="on") {chkConRelatorios.setAttribute("checked","checked")}        
+                      else{chkRegRelatorios.removeAttribute("checked")};
+
+                      if(perfilExistente.chkConRelatorios=="on") {chkConRelatorios.setAttribute("checked","checked")}
+                      else{chkConRelatorios.removeAttribute("checked")}; 
+
                       if(perfilExistente.chkRegReunioes=="on") {chkRegReunioes.setAttribute("checked","checked")}
+                      else{chkRegReunioes.removeAttribute("checked")};
+
                       if(perfilExistente.chkConReunioes=="on") {chkConReunioes.setAttribute("checked","checked")}
+                      else{chkConReunioes.removeAttribute("checked")};
+
                      }else{
                        console.log('ainda não existe perfil')
                      }
@@ -154,10 +166,10 @@ function analisaCheckboxes(checK){
 
   if(valor=="" ||valor=="checked"){
     valor = "on"
-    //checK1.removeAttribute('checked')
+    checK1.setAttribute('checked','checked')
   }else if(valor==null){
     valor = "off"
-    //checK1.setAttribute('checked','checked')
+    checK1.removeAttribute('checked')
   }
   console.log(valor)
   return valor
