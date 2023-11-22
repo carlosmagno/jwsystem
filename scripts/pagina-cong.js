@@ -58,7 +58,7 @@ function exibeAreaAdmin(){
 
             dadosBDAdmin.appendChild(perfilUpdate);
             var selectUsers = document.getElementById('selectUsers')
-            selectUsers.onchange = alteraPerfil()
+            selectUsers.onchange = alteraPerfil
 
           }else{
             console.log("Já está exibindo os usuários")
@@ -152,7 +152,7 @@ function fechaConsultaGrupo(){
   ConsultaGrupo.setAttribute("class","oculto")
 };
 
-function alteraPerfil(arg){
+function alteraPerfil(){
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
 
     var chkRegPublicadores = document.getElementById('chkRegPublicadores');
