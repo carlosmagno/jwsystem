@@ -44,22 +44,48 @@
             <br>
             <div id="dadosBDPerfil">
                 <p><b>Módulo Publicadores</b></p>
-                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkRegPublicadores"><span class="slider round"></span></label></p>
-                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkConPublicadores"><span class="slider round"></span></label></p>
+                <p>Registro
+                        <select id ="chkRegPublicadores">
+                            <option value="off">off</option>
+                            <option value="on">on</option>
+                        </select>
+                </p>
+                <p>Consultas   
+                    <select id ="chkConPublicadores">
+                        <option value="off">off</option>
+                        <option value="on">on</option>
+                    </select>
+                </p>
                 <br>
                 <p><b>Módulo Relatórios</b></p>
-                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkRegRelatorios"><span class="slider round"></span></label></p>
-                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkConRelatorios"><span class="slider round"></span></label></p>
+                <p>Registro
+                    <select id ="chkRegRelatorios">
+                        <option value="off">off</option>
+                        <option value="on">on</option>
+                    </select>
+                <p>Consultas
+                    <select id ="chkConRelatorios">
+                        <option value="off">off</option>
+                        <option value="on">on</option>
+                    </select>
                 <br>
                 <p><b>Módulo Reuniões</b></p>
-                <p>Registro   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkRegReunioes"><span class="slider round"></span></label></p>
-                <p>Consultas   <!-- Rounded switch --><label class="switch"><input type="checkbox" id ="chkConReunioes"><span class="slider round"></span></label></p>
+                <p>Registro
+                    <select id ="chkRegReunioes">
+                        <option value="off">off</option>
+                        <option value="on">on</option>
+                    </select>
+                <p>Consultas
+                    <select id ="chkConReunioes">
+                        <option value="off">off</option>
+                        <option value="on">on</option>
+                    </select>
                 <br>
                 <!-- 
                     Aqui são inseridos dinamicamente os dados do BD, do nó de perfil dos usuários
                 -->
             </div>
-            <div id="btnSalvarConfigAdmin" class="button"><b>Salvar alterações</b></div>
+            <div id="btnSalvarConfigAdmin" class="button" onclick="salvaPerfil()"><b>Salvar alterações</b></div>
         </form>
 
 

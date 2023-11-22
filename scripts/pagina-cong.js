@@ -83,28 +83,25 @@ function atualizaUsuario(){
 }
 
 function analisaCheckboxes(checK){
-  var checK1 = document.getElementById(`${checK}`);
-  var valor = checK1.getAttribute('checked')
+  var checK1 = document.getElementById(`${checK}`).value;
+   //var valor = checK1.getAttribute('checked')
 
-  if(valor=="" ||valor=="checked"){
-    checK1.setAttribute('checked','checked')
-    valor = "on"
+  // if(valor=="" ||valor=="checked"){
+  //   checK1.setAttribute('checked','checked')
+  //   valor = "on"
     
-  }else if(valor==null){
+  // }else if(valor==null){
 
-    checK1.removeAttribute('checked')
-    valor = "off"
-  }
-  console.log(valor)
-  return valor
+  //   checK1.removeAttribute('checked')
+  //   valor = "off"
+  // }
+  console.log(checK1)
+  return checK1
+
 }
 
-if (document.getElementById('btnSalvarConfigAdmin')){
-  var btnSalvarConfigAdmin = document.getElementById('btnSalvarConfigAdmin');
-  btnSalvarConfigAdmin.addEventListener('click',()=>{
-    salvaPerfil()
-  })  
-}
+
+
 
 function salvaPerfil(){
 
@@ -129,7 +126,7 @@ function salvaPerfil(){
     }
 
     refUsuarios.child(spanNomeUsuario.innerText).child("perfil").set(perfilBD).then(
-    console.log("Perfil do usuário salvo!")
+    console.log("Perfil do usuário salvo!"), console.log(perfilBD)
     )
 
 
@@ -169,13 +166,6 @@ function alteraPerfil(){
     userEmAlteracao = this.value
     console.log("value: ", this.value)
   
-    chkRegPublicadores.removeAttribute("checked")
-    chkConPublicadores.removeAttribute("checked")
-    chkRegRelatorios.removeAttribute("checked")
-    chkConRelatorios.removeAttribute("checked")
-    chkRegReunioes.removeAttribute("checked")
-    chkConReunioes.removeAttribute("checked")
-  
     refUsuarios.child(userEmAlteracao).child('perfil').get().then((snapshot)=>{
       var perfilExistente =  snapshot.val()
       
@@ -186,23 +176,30 @@ function alteraPerfil(){
       
     if(perfilExistente){
       console.log('perfil existente: ', perfilExistente )
-      if(perfilExistente.chkRegPublicadores=="on"){chkRegPublicadores.setAttribute("checked","checked")}
-      else{chkRegPublicadores.removeAttribute("checked")};
+      chkRegPublicadores.value = perfilExistente.chkRegPublicadores
+      chkRegRelatorios.value = perfilExistente.chkRegRelatorios
+      chkRegRelatorios.value = perfilExistente.chkRegRelatorios
+      chkConRelatorios.value = perfilExistente.chkConRelatorios
+      chkRegReunioes.value = perfilExistente.chkRegReunioes
+      chkConReunioes.value = perfilExistente.chkConReunioes
+
+      // if(perfilExistente.chkRegPublicadores=="on"){chkRegPublicadores.setAttribute("checked","checked")}
+      // else{chkRegPublicadores.removeAttribute("checked")};
   
-      if(perfilExistente.chkConPublicadores=="on") {chkConPublicadores.setAttribute("checked","checked")}
-      else{chkConPublicadores.removeAttribute("checked")};
+      // if(perfilExistente.chkConPublicadores=="on") {chkConPublicadores.setAttribute("checked","checked")}
+      // else{chkConPublicadores.removeAttribute("checked")};
   
-      if(perfilExistente.chkRegRelatorios=="on") {chkRegRelatorios.setAttribute("checked","checked")}
-      else{chkRegRelatorios.removeAttribute("checked")};
+      // if(perfilExistente.chkRegRelatorios=="on") {chkRegRelatorios.setAttribute("checked","checked")}
+      // else{chkRegRelatorios.removeAttribute("checked")};
   
-      if(perfilExistente.chkConRelatorios=="on") {chkConRelatorios.setAttribute("checked","checked")}
-      else{chkConRelatorios.removeAttribute("checked")}; 
+      // if(perfilExistente.chkConRelatorios=="on") {chkConRelatorios.setAttribute("checked","checked")}
+      // else{chkConRelatorios.removeAttribute("checked")}; 
   
-      if(perfilExistente.chkRegReunioes=="on") {chkRegReunioes.setAttribute("checked","checked")}
-      else{chkRegReunioes.removeAttribute("checked")};
+      // if(perfilExistente.chkRegReunioes=="on") {chkRegReunioes.setAttribute("checked","checked")}
+      // else{chkRegReunioes.removeAttribute("checked")};
   
-      if(perfilExistente.chkConReunioes=="on") {chkConReunioes.setAttribute("checked","checked")}
-      else{chkConReunioes.removeAttribute("checked")};
+      // if(perfilExistente.chkConReunioes=="on") {chkConReunioes.setAttribute("checked","checked")}
+      // else{chkConReunioes.removeAttribute("checked")};
   
     }else{
       console.log('ainda não existe perfil')
