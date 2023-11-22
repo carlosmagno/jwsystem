@@ -155,6 +155,7 @@ function fechaConsultaGrupo(){
 if(document.getElementById('selectUsers')){
   var selectUsers = document.getElementById('selectUsers')
   selectUsers.onchange=function(){
+    var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
 
     var chkRegPublicadores = document.getElementById('chkRegPublicadores');
     var chkConPublicadores = document.getElementById('chkConPublicadores');
@@ -168,6 +169,7 @@ if(document.getElementById('selectUsers')){
     //console.log("value: ", this.value)
     //console.log("label: ", this.label)
     userEmAlteracao = this.value
+    console.log("value: ", this.value)
   
     chkRegPublicadores.removeAttribute("checked")
     chkConPublicadores.removeAttribute("checked")
