@@ -24,9 +24,6 @@ function exibeAreaAdmin(){
     var areaAdmin = document.getElementById('areaAdmin')
     var dadosBDAdmin = document.getElementById("dadosBDAdmin");
   
-
-
-
     areaAdmin.setAttribute('class', 'aparente')
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
     refUsuarios.get().then((snapshot)=>{
@@ -36,6 +33,7 @@ function exibeAreaAdmin(){
           var perfilUpdate = document.createElement('select')
           perfilUpdate.setAttribute('class', 'selectDinamica')
           perfilUpdate.setAttribute( 'id','selectUsers')
+
           var opcao2 = document.createElement('option')
           opcao2.setAttribute("label", "")
           perfilUpdate.appendChild(opcao2)
@@ -59,6 +57,8 @@ function exibeAreaAdmin(){
             });
 
             dadosBDAdmin.appendChild(perfilUpdate);
+            var selectUsers = document.getElementById('selectUsers')
+            selectUsers.onchange = alteraPerfil()
 
           }else{
             console.log("Já está exibindo os usuários")
@@ -152,9 +152,7 @@ function fechaConsultaGrupo(){
   ConsultaGrupo.setAttribute("class","oculto")
 };
 
-if(document.getElementById('selectUsers')){
-  var selectUsers = document.getElementById('selectUsers')
-  selectUsers.onchange=function(){
+function alteraPerfil(arg){
     var refUsuarios = firebase.database().ref(`${localStorage.getItem("cong")}/Usuários`);
 
     var chkRegPublicadores = document.getElementById('chkRegPublicadores');
@@ -213,6 +211,6 @@ if(document.getElementById('selectUsers')){
     });
     
   
-  }
 }
+
 
