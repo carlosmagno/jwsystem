@@ -44,10 +44,31 @@ function consultaBDCong(){
 }
 
 function salvarRelatorio(){
-    //var mesRel, nomeRel, participou, pAux, EB, horas, obs, btnEnviaRelatorio;
 
-    var grupoRel = document.getElementById("grupoRel")
-     //= document.getElementById("")
+    const refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Relatórios`);
+    var formRelatorio = document.getElementById('formRelatorio')
+    //const btnEnviaRelatorio = document.getElementById("btnEnviaRelatorio")
+
+    refRelatorios.once('value').then(snapshot =>{
+        //console.log(snapshot.numChildren());  
+        //var n = snapshot.numChildren();
+        //n=n+1;
+        capturaRelatorio()
+        console.log(novoRelatorio)
+        refRelatorios.child(grupoRel).child(mesRel).child(novoRelatorio.nomeRel).set(novoRelatorio)
+        .then(
+           console.log("Relatório enviado!"),
+           formRelatorio.reset(),
+           formRelatorio.nomeRel.value ="", //document.getElementById("nomeRel")
+           formRelatorio.participou.value="", //document.getElementById("participou")
+           formRelatorio.pAux.value="", //document.getElementById("pAux")
+           formRelatorio.eb.value ="", //document.getElementById("EB")
+           formRelatorio.horas.value="", //document.getElementById("horas")
+           formRelatorio.obs.value="" //document.getElementById("obs")
+        );
+        
+    });
+    
 
 
 }

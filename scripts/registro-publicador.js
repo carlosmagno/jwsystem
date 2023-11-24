@@ -22,6 +22,7 @@ function capturaPublicador(){
     var esperanca = formRegPub.esperanca.value
     var PSvaroes = formRegPub.PSvaroes.value
     var PScampo = formRegPub.PScampo.value
+    var contatoEmg = formRegPub.contatoEmg.value
 
 
     NovoPublicador = {
@@ -32,7 +33,8 @@ function capturaPublicador(){
         sexo,
         esperanca,
         PSvaroes,
-        PScampo
+        PScampo,
+        contatoEmg
 
     };
     // console.log(NovoPublicador)
