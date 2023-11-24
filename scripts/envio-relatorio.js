@@ -5,7 +5,7 @@ function abreEnvioRel(){
     var grupoRel = document.getElementById('grupoRel')
     var mesRel = document.getElementById('mesRel')
     var date = new Date
-    var mesatual = `${date.getMonth}/${date.getFullYear}`
+    var mesatual = `${date.getMonth()}/${date.getFullYear()}`
     console.log(mesatual)
     mesRel.value = mesatual
 
@@ -13,7 +13,7 @@ function abreEnvioRel(){
         console.log(grupoRel.value)
         var nomeRel = document.getElementById('nomeRel')
         const refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
-        refRelatorios.child(grupoRel.value).get().then((snapshot)=>{
+        refPublicadores.child(grupoRel.value).get().then((snapshot)=>{
             console.log(snapshot.val())
             snapshot.forEach((childSnapshot) =>{
                 var ValorNo1 = childSnapshot.val()
@@ -24,7 +24,9 @@ function abreEnvioRel(){
                 novoNome.setAttribute('value', chave1 )
                 nomeRel.appendChild(novoNome)
             });
-        });
+        }).catch(
+            console.log("Não existe nada")
+        )
 
     }
 };
