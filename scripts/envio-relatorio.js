@@ -21,6 +21,7 @@ function abreEnvioRel(){
                 
                 var novoNome = document.createElement("option")
                 novoNome.setAttribute('label', chave1 )
+                novoNome.setAttribute('value', chave1 )
                 nomeRel.appendChild(novoNome)
             });
         });
