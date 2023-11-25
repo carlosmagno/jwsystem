@@ -79,7 +79,7 @@ function capturaRelatorio(){
     var grupoRel = formRelatorio.grupoRel.value// document.getElementById("grupoRel")
     var anoRel = formRelatorio.anoRel.value
     var mesRel = formRelatorio.mesRel.value //document.getElementById("mesRel")
-    var nomeRel = formRelatorio.nomeRel.value //document.getElementById("nomeRel")
+    var inpuTnomeRel = formRelatorio.inpuTnomeRel.value //document.getElementById("nomeRel")
     var participou = formRelatorio.participou.value //document.getElementById("participou")
     var pAux = formRelatorio.pAux.value //document.getElementById("pAux")
     var eb = formRelatorio.eb.value //document.getElementById("EB")
@@ -90,7 +90,7 @@ function capturaRelatorio(){
         grupoRel,
         anoRel,
         mesRel,
-        nomeRel,
+        inpuTnomeRel,
         participou,
         pAux,
         eb,

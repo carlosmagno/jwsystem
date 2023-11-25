@@ -51,11 +51,11 @@ function salvarRelatorio(){
     //const btnEnviaRelatorio = document.getElementById("btnEnviaRelatorio")
     capturaRelatorio()
     console.log(novoRelatorio)
-    refRelatorios.child(grupoRel).child(`${mesRel}/${anoRel}`).child(nomeRel).set(novoRelatorio)
+    refRelatorios.child(grupoRel).child(`${mesRel}/${anoRel}`).child(inpuTnomeRel).set(novoRelatorio)
     .then(
        console.log("Relatório enviado!"),
        alert("Relatório enviado!"),
-       formRelatorio.nomeRel.value ="", //document.getElementById("nomeRel")
+       formRelatorio.inpuTnomeRel.value ="", //document.getElementById("nomeRel")
        formRelatorio.participou.value="", //document.getElementById("participou")
        formRelatorio.pAux.value="", //document.getElementById("pAux")
        formRelatorio.eb.value ="", //document.getElementById("EB")
