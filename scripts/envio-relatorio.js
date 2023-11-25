@@ -6,25 +6,26 @@ function abreEnvioRel(){
     var mesRel = document.getElementById('mesRel')
     var anoRel = document.getElementById('anoRel')
     var date = new Date
-    var mesatual = date.getMonth()
-    var anoAtualResult = function(){
+    var mesatual = date.getMonth()+1
+    var anoAtual;
         if(date.getMonth()==9||date.getMonth()==10||date.getMonth()==11||date.getMonth()==12){
-            var anoAtual=date.getFullYear()+1
+            anoAtual=date.getFullYear()+1
             console.log(anoAtual)
+            return anoAtual
         }
-        return anoAtual
-    };
+        
+   
 
     console.log(mesatual)
     mesRel.value = mesatual
 
     var ano = document.createElement('option')
-    ano.setAttribute('value', anoAtualResult)
-    ano.innerText=anoAtualResult
+    ano.setAttribute('value', anoAtual)
+    ano.innerText=anoAtual
 
     var ano2 = document.createElement('option')
-    ano2.setAttribute('value', anoAtualResult+1)
-    ano2.innerText=anoAtualResult+1
+    ano2.setAttribute('value', anoAtual+1)
+    ano2.innerText=anoAtual+1
 
     anoRel.appendChild(ano)
     anoRel.appendChild(ano2)
