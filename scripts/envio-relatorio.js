@@ -7,24 +7,33 @@ function abreEnvioRel(){
     var anoRel = document.getElementById('anoRel')
     var date = new Date
     var mesatual = date.getMonth()+1
+    var nomeMesAtual;
     var anoAtual;
-        if(date.getMonth()==9||date.getMonth()==10||date.getMonth()==11||date.getMonth()==12){
+        if(mesatual ==9||mesatual ==10||mesatual ==11||mesatual ==12){
             anoAtual=date.getFullYear()+1
             console.log(anoAtual)
             //return anoAtual
+        }else{
+            anoAtual=date.getFullYear()
         }
         
    
 
     console.log(mesatual)
-    mesRel.value = mesatual
+    
+    if(mesatual==1){nomeMesAtual=="Janeiro"};if(mesatual==2){nomeMesAtual=="Fevereiro"};if(mesatual==3){nomeMesAtual=="Março"};
+    if(mesatual==4){nomeMesAtual=="Abril"};if(mesatual==5){nomeMesAtual=="Maio"};;if(mesatual==6){nomeMesAtual=="Junho"};
+    if(mesatual==7){nomeMesAtual=="Julho"};if(mesatual==8){nomeMesAtual=="Agosto"};;if(mesatual==9){nomeMesAtual=="Setembro"};
+    if(mesatual==10){nomeMesAtual=="Outubro"};if(mesatual==11){nomeMesAtual=="Novembro"};;if(mesatual==12){nomeMesAtual=="Dezembro"};
+
+    mesRel.value = nomeMesAtual
 
     var ano = document.createElement('option')
     ano.setAttribute('value', anoAtual)
     ano.innerText=anoAtual
 
     var ano2 = document.createElement('option')
-    ano2.setAttribute('value', anoAtual+1)
+    ano2.setAttribute('value', anoAtual-1)
     ano2.innerText=anoAtual+1
 
     anoRel.appendChild(ano)
@@ -33,6 +42,7 @@ function abreEnvioRel(){
 
     grupoRel.onchange=function(){
         console.log(grupoRel.value)
+        nomeRel.innerHTML="";
         var nomeRel = document.getElementById('nomeRel')
         const refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
         refPublicadores.child(grupoRel.value).get().then((snapshot)=>{
