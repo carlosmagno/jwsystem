@@ -56,7 +56,7 @@ function abreEnvioRel(){
                 console.log(chave1)
                 
                 var novoNome = document.createElement("option")
-                novoNome.innerText= chave1
+                //novoNome.innerText= chave1
                 novoNome.setAttribute('value', chave1 )
                 nomeRel.appendChild(novoNome)
             });
@@ -65,14 +65,19 @@ function abreEnvioRel(){
 };
 
 function fechaEnvioRel(){ 
+    var formRelatorio = document.getElementById('formRelatorio')
+    formRelatorio.reset()
     var telaEnviarRelatorios = document.getElementById('EnviarRelatorios')
     telaEnviarRelatorios.setAttribute("class","oculto")
+
 };
 
+var novoRelatorio;
 function capturaRelatorio(){
     
     var formRelatorio = document.getElementById('formRelatorio')
     var grupoRel = formRelatorio.grupoRel.value// document.getElementById("grupoRel")
+    var anoRel = formRelatorio.anoRel.value
     var mesRel = formRelatorio.mesRel.value //document.getElementById("mesRel")
     var nomeRel = formRelatorio.nomeRel.value //document.getElementById("nomeRel")
     var participou = formRelatorio.participou.value //document.getElementById("participou")
@@ -81,8 +86,9 @@ function capturaRelatorio(){
     var horas = formRelatorio.horas.value //document.getElementById("horas")
     var obs = formRelatorio.obs.value //document.getElementById("obs")
 
-    var novoRelatorio = {
+    novoRelatorio = {
         grupoRel,
+        anoRel,
         mesRel,
         nomeRel,
         participou,

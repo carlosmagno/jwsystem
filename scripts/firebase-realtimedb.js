@@ -23,7 +23,8 @@ function SalvarPublicador() {
         console.log(NovoPublicador)
         firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores/${NovoPublicador.grupoPub}/${NovoPublicador.nomePub}`).set(NovoPublicador)
         .then(
-           console.log("Usuário cadastrado!")
+           console.log("Usuário cadastrado!"),
+           alert("Usuário cadastrado!")
         );
         document.getElementById("formRegPub").reset()
     });
@@ -45,29 +46,29 @@ function consultaBDCong(){
 
 function salvarRelatorio(){
 
-    const refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Relatórios`);
+    var refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Relatórios`);
     var formRelatorio = document.getElementById('formRelatorio')
     //const btnEnviaRelatorio = document.getElementById("btnEnviaRelatorio")
+    capturaRelatorio()
+    console.log(novoRelatorio)
+    refRelatorios.child(grupoRel).child(`${mesRel}/${anoRel}`).child(nomeRel).set(novoRelatorio)
+    .then(
+       console.log("Relatório enviado!"),
+       alert("Relatório enviado!"),
+       formRelatorio.nomeRel.value ="", //document.getElementById("nomeRel")
+       formRelatorio.participou.value="", //document.getElementById("participou")
+       formRelatorio.pAux.value="", //document.getElementById("pAux")
+       formRelatorio.eb.value ="", //document.getElementById("EB")
+       formRelatorio.horas.value="", //document.getElementById("horas")
+       formRelatorio.obs.value="" //document.getElementById("obs")
+    );
+    // refRelatorios.once('value').then(snapshot =>{
+    //     //console.log(snapshot.numChildren());  
+    //     //var n = snapshot.numChildren();
+    //     //n=n+1;
 
-    refRelatorios.once('value').then(snapshot =>{
-        //console.log(snapshot.numChildren());  
-        //var n = snapshot.numChildren();
-        //n=n+1;
-        capturaRelatorio()
-        console.log(novoRelatorio)
-        refRelatorios.child(grupoRel).child(mesRel).child(novoRelatorio.nomeRel).set(novoRelatorio)
-        .then(
-           console.log("Relatório enviado!"),
-           formRelatorio.reset(),
-           formRelatorio.nomeRel.value ="", //document.getElementById("nomeRel")
-           formRelatorio.participou.value="", //document.getElementById("participou")
-           formRelatorio.pAux.value="", //document.getElementById("pAux")
-           formRelatorio.eb.value ="", //document.getElementById("EB")
-           formRelatorio.horas.value="", //document.getElementById("horas")
-           formRelatorio.obs.value="" //document.getElementById("obs")
-        );
         
-    });
+    // });
     
 
 
