@@ -95,7 +95,7 @@
         <section>
             <h2>Publicadores</h2>
             <h3 id ="h3PubReg" onclick="abreRegPub()" class="oculto">Registro</h3>
-            <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="oculto">Consulta - Grupo <em>- desenvolvendo</em> </h3>
+            <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="oculto">Consulta - Grupo</h3>
             <h3 id ="h3PubCongI"class="oculto">Consulta - Individual <em>- desenvolvendo</em></h3>
 
         </section>
@@ -213,8 +213,8 @@
                   <tr>
                     <th colspan="8">
                        Grupo de Campo
-                       <select>
-                            <option value ="" ></option>
+                       <select id="grupoCampoCG">
+                            <option value ="" >Selecione</option>
                             <option value ="1" >1</option>
                             <option value ="2" >2</option>
                             <option value ="3" >3</option>
@@ -223,43 +223,22 @@
                             <option value ="6" >6</option>
                        </select>
                     </th>
+                    <th>
+                        <tr id="tr1">
+                            <td>Nome</td>
+                            <td>Nascimento</td>
+                            <td>Batismo</td>
+                            <td>Sexo</td>
+                            <td>Esperança</td>
+                            <td>Privilégio</td>
+                            <!-- <td>Servo Ministerial</td> -->
+                            <td>Tempo Integral</td>
+                            <td>Contato de Emergência</td>
+                          </tr>
+                    </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr id="tr1">
-                    <td>Nome</td>
-                    <td>Nascimento</td>
-                    <td>Batismo</td>
-                    <td>Sexo</td>
-                    <td>Esperança</td>
-                    <td>Privilégio</td>
-                    <!-- <td>Servo Ministerial</td> -->
-                    <td>Tempo Integral</td>
-                    <td>Contato de Emergência</td>
-                  </tr>
-                  <tr id="tr2">
-                    <td>Carlos Magno Bandeira dos Santos</td>
-                    <td>30/07/1985</td>
-                    <td>13/06/1996</td>
-                    <td>M</td>
-                    <td>Outras ovelhas</td>
-                    <td>Ancião</td>
-                    <!-- <td>Servo Ministerial</td> -->
-                    <td>Pioneiro regular</td>
-                    <td></td>
-                  </tr>
-                  <tr id="tr3">
-                    <td>Carlos Magno Bandeira dos Santos</td>
-                    <td>30/07/1985</td>
-                    <td>13/06/1996</td>
-                    <td>M</td>
-                    <td>Outras ovelhas</td>
-                    <td>Ancião</td>
-                    <!-- <td>Servo Ministerial</td> -->
-                    <td>Pioneiro regular</td>
-                    <td></td>
-                  </tr>
-                </tbody>
+                <tbody id ="contentCG"></tbody>
               </table>
 
         </div>

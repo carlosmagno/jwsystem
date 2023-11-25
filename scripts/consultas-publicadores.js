@@ -6,4 +6,5 @@ function fechaConsultaGrupo(){
   function abreConsultaGrupo(){ 
     var ConsultaGrupo = document.getElementById('ConsultaGrupo')
     ConsultaGrupo.setAttribute("class","aparente")
+   
 };
