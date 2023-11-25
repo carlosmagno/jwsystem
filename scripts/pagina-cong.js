@@ -210,4 +210,15 @@ function alteraPerfil(){
   
 }
 
+window.onload = function (){
+  anorodape()
+}
+  
+
+function anorodape(){
+  var novaData = new Date
+  var ano = novaData.getFullYear()
+  var spananoRodape = document.getElementById('anoRodape')
+  spananoRodape.innerText = ano
+}
 

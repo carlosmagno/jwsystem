@@ -18,7 +18,9 @@ nav.barra{
     bottom:0;
     left:0;
 }
-   
+#barraInferior>p{
+    margin:0 auto;
+}   
 #barraSuperior>button, input{
    margin:5px;
    padding:5px;

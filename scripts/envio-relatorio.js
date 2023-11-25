@@ -11,7 +11,7 @@ function abreEnvioRel(){
         if(date.getMonth()==9||date.getMonth()==10||date.getMonth()==11||date.getMonth()==12){
             anoAtual=date.getFullYear()+1
             console.log(anoAtual)
-            return anoAtual
+            //return anoAtual
         }
         
    
