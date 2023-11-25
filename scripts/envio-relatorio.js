@@ -4,10 +4,31 @@ function abreEnvioRel(){
 
     var grupoRel = document.getElementById('grupoRel')
     var mesRel = document.getElementById('mesRel')
+    var anoRel = document.getElementById('anoRel')
     var date = new Date
-    var mesatual = `${date.getMonth()}/${date.getFullYear()}`
+    var mesatual = date.getMonth()
+    var anoAtualResult = function(){
+        if(date.getMonth()==9||date.getMonth()==10||date.getMonth()==11||date.getMonth()==12){
+            var anoAtual=date.getFullYear()+1
+            console.log(anoAtual)
+        }
+        return anoAtual
+    };
+
     console.log(mesatual)
     mesRel.value = mesatual
+
+    var ano = document.createElement('option')
+    ano.setAttribute('value', anoAtual)
+    ano.innerText=anoAtual
+
+    var ano2 = document.createElement('option')
+    ano2.setAttribute('value', anoAtual+1)
+    ano2.innerText=anoAtual+1
+
+    anoRel.appendChild(ano)
+    anoRel.appendChild(ano2)
+
 
     grupoRel.onchange=function(){
         console.log(grupoRel.value)
@@ -18,16 +39,16 @@ function abreEnvioRel(){
             snapshot.forEach((childSnapshot) =>{
                 var ValorNo1 = childSnapshot.val()
                 var chave1 = childSnapshot.key
+
+                console.log(ValorNo1)
+                console.log(chave1)
                 
                 var novoNome = document.createElement("option")
-                novoNome.setAttribute('label', chave1 )
+                novoNome.innerText= chave1
                 novoNome.setAttribute('value', chave1 )
                 nomeRel.appendChild(novoNome)
             });
-        }).catch(
-            console.log("Não existe nada")
-        )
-
+        })
     }
 };
 
