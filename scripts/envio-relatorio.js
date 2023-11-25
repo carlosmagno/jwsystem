@@ -67,6 +67,7 @@ function abreEnvioRel(){
 function fechaEnvioRel(){ 
     var formRelatorio = document.getElementById('formRelatorio')
     formRelatorio.reset()
+    formRelatorio.inpuTnomeRel.innerHTML=""
     var telaEnviarRelatorios = document.getElementById('EnviarRelatorios')
     telaEnviarRelatorios.setAttribute("class","oculto")
 

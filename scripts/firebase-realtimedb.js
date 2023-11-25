@@ -51,7 +51,8 @@ function salvarRelatorio(){
     //const btnEnviaRelatorio = document.getElementById("btnEnviaRelatorio")
     capturaRelatorio()
     console.log(novoRelatorio)
-    refRelatorios.child(novoRelatorio.grupoRel).child(`${novoRelatorio.mesRel}/${novoRelatorio.anoRel}`).child(novoRelatorio.inpuTnomeRel).set(novoRelatorio)
+    //var mes = 
+    refRelatorios.child(novoRelatorio.grupoRel).child(`${novoRelatorio.anoRel}/${novoRelatorio.mesRel}`).child(novoRelatorio.inpuTnomeRel).set(novoRelatorio)
     .then(
        console.log("Relatório enviado!"),
        alert("Relatório enviado!"),
