@@ -19,12 +19,12 @@ function abreEnvioRel(){
     mesRel.value = mesatual
 
     var ano = document.createElement('option')
-    ano.setAttribute('value', anoAtual)
-    ano.innerText=anoAtual
+    ano.setAttribute('value', anoAtualResult)
+    ano.innerText=anoAtualResult
 
     var ano2 = document.createElement('option')
-    ano2.setAttribute('value', anoAtual+1)
-    ano2.innerText=anoAtual+1
+    ano2.setAttribute('value', anoAtualResult+1)
+    ano2.innerText=anoAtualResult+1
 
     anoRel.appendChild(ano)
     anoRel.appendChild(ano2)
