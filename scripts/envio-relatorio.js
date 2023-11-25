@@ -34,7 +34,7 @@ function abreEnvioRel(){
 
     var ano2 = document.createElement('option')
     ano2.setAttribute('value', anoAtual-1)
-    ano2.innerText=anoAtual+1
+    ano2.innerText=anoAtual-1
 
     anoRel.appendChild(ano)
     anoRel.appendChild(ano2)
