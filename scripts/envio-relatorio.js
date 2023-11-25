@@ -21,10 +21,10 @@ function abreEnvioRel(){
 
     console.log(mesatual)
     
-    if(mesatual==1){nomeMesAtual=="Janeiro"};if(mesatual==2){nomeMesAtual=="Fevereiro"};if(mesatual==3){nomeMesAtual=="Março"};
-    if(mesatual==4){nomeMesAtual=="Abril"};if(mesatual==5){nomeMesAtual=="Maio"};;if(mesatual==6){nomeMesAtual=="Junho"};
-    if(mesatual==7){nomeMesAtual=="Julho"};if(mesatual==8){nomeMesAtual=="Agosto"};;if(mesatual==9){nomeMesAtual=="Setembro"};
-    if(mesatual==10){nomeMesAtual=="Outubro"};if(mesatual==11){nomeMesAtual=="Novembro"};;if(mesatual==12){nomeMesAtual=="Dezembro"};
+    if(mesatual==1){nomeMesAtual="Janeiro"};if(mesatual==2){nomeMesAtual="Fevereiro"};if(mesatual==3){nomeMesAtual="Março"};
+    if(mesatual==4){nomeMesAtual="Abril"};if(mesatual==5){nomeMesAtual="Maio"};;if(mesatual==6){nomeMesAtual="Junho"};
+    if(mesatual==7){nomeMesAtual="Julho"};if(mesatual==8){nomeMesAtual="Agosto"};;if(mesatual==9){nomeMesAtual="Setembro"};
+    if(mesatual==10){nomeMesAtual="Outubro"};if(mesatual==11){nomeMesAtual="Novembro"};;if(mesatual==12){nomeMesAtual="Dezembro"};
 
     mesRel.value = nomeMesAtual
 
@@ -42,8 +42,9 @@ function abreEnvioRel(){
 
     grupoRel.onchange=function(){
         console.log(grupoRel.value)
-        nomeRel.innerHTML="";
+       
         var nomeRel = document.getElementById('nomeRel')
+ nomeRel.innerHTML="";
         const refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
         refPublicadores.child(grupoRel.value).get().then((snapshot)=>{
             console.log(snapshot.val())
