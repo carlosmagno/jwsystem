@@ -177,7 +177,7 @@ function alteraPerfil(){
     if(perfilExistente){
       console.log('perfil existente: ', perfilExistente )
       chkRegPublicadores.value = perfilExistente.chkRegPublicadores
-      chkRegRelatorios.value = perfilExistente.chkRegRelatorios
+      chkConPublicadores.value = perfilExistente.chkConPublicadores
       chkRegRelatorios.value = perfilExistente.chkRegRelatorios
       chkConRelatorios.value = perfilExistente.chkConRelatorios
       chkRegReunioes.value = perfilExistente.chkRegReunioes
