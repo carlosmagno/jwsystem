@@ -103,7 +103,7 @@
         <section>
             <h2>Relatórios</h2>
             <h3 id ="h3RelReg" onclick="abreEnvioRel()" class="oculto">Registro</h3>
-            <h3 id ="h3RelConG" class="oculto">Consulta - Grupo <em> - desenvolvendo</em></h3>
+            <h3 id ="h3RelConG" class="oculto" onclick="abreConsultaGrupo()">Consulta - Grupo <em> - desenvolvendo</em></h3>
             <h3 id ="h3RelConI" class="oculto">Consulta - Individual <em> - desenvolvendo</em></h3>
 
         </section>
@@ -311,6 +311,83 @@
             </form>
             <div id="espacoFimForm"></div>
         </div>
+        <div id="ConsultarRelatoriosGrupo" class="oculto">
+            <p class="direita"><span onclick="fechaConsultaRelGrupo()" >X</span></p> 
+            <form action="" class="formulario" id="formConsultaRelGrupo" name="formConsultaRelGrupo">
+                
+                <h3>Consultar relatórios</h3>
+                <br>
+                <!-- Seção para ficar fixas as informações quando selecionadas -->
+                <p>Grupo
+                    <select name="grupoConsRelGrupo" id="grupoConsRelGrupo" class="selectP">
+                        <option value="">Selecione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <!-- <button onclick="consultaRelGrupo()" >CONSULTAR</button> -->
+                    
+                <!-- </p> -->
+                <!-- <p> -->
+                    Ano de Serviço
+                    <select name="anoConsReGrupo" id="anoConsReGrupo" class="">
+                        <option value=""></option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                       
+                    </select>
+                <!-- </p> -->
+ 
+                <!-- <p> -->
+                    Mês
+                    <select name="mesConsRelGrupo" id="mesConsRelGrupo" class="">
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+                </p>
+                <div  class="button"  onclick ="consultaRelGrupo()" style="display: inline-block;">CONSULTAR</div>
+                <!-- Fim da seção fixa -->
+                <!-- <div id="contentConsRelGrupo"></div> -->
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+
+                        </th>
+                        <th colspan="6">
+                            <tr id="tr1">
+                                <td>Nome</td>
+                                <td>Participou</td>
+                                <td>P. auxiliar</td>
+                                <td>Est. Bíblicos</td>
+                                <td>Horas</td>
+                                <td>Observações</td>
+                            </tr>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id ="contentConsRelGrupo"></tbody>
+              </table>
+
+
+            <div id="espacoFimForm"></div>
+        </div>
     </div>
     <nav id="barraInferior" class="barra">
         <p>Copyright © <span id="anoRodape"></span> | <a href="https://github.com/CARLOSMAGNO">Carlos Magno</a>  | Todos os direitos reservados.</p>
@@ -329,5 +406,6 @@
     <script src="../scripts/envio-relatorio.js"></script>
     <script src="../scripts/pagina-cong.js"></script>
     <script src="../scripts/consultas-publicadores.js"></script>
+    <script src="../scripts/consultas-relatorios.js"></script>
 </body>
 </html>

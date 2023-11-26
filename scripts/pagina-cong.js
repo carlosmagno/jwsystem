@@ -41,8 +41,8 @@ function exibeAreaAdmin(){
           if(dadosBDAdmin.innerHTML==''){
 
             snapshot.forEach((childSnapshot) =>{
-              ValorNo = childSnapshot.val()
-              chave = childSnapshot.key
+              var ValorNo = childSnapshot.val()
+             var  chave = childSnapshot.key
 
                   var conteudoNovo = document.createTextNode(ValorNo.email);
                   var opcao = document.createElement('option')
