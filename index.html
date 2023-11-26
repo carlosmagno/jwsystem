@@ -24,12 +24,29 @@
 </head>
 <body>
     <nav id="barraSuperior" class="barra">
-        <span>JWS</span>
+        <span>JWSystem</span>
         <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" >
         <button onclick="firebaseLoginLogoff()">LOGIN</button>
     </nav>
        
-    <h1>JW System</h1>
+    <div id="secTexto">
+        <section>
+            <h1>O que é JWSystem ?</h1>
+            <p>Não é um software oficial desenvolvido pelas Testemunhas de Jeová. É um software web independente desenvolvido por uma testemunha de Jeová para gerenciar assuntos gerais da congregação.</p>
+            <h4>Armazenamento dos dados</h4>
+            <p>Os dados são armazenados em nuvem num dos servidores do Firebase, um serviço oferecido pelo Google para desenvolvimento de aplicativos e sites. A própria ferramenta de login do google, que inclui outros métodos de entrada é aplicada para permitir acesso aos dados. </p>
+            <p>Cada usuário só pode acessar os dados da sua congregação, com permissões cadastradas por um administrador, que será o primeiro usuário responsável por criar a conta da congregação.</p>
+            <h4>Módulos</h4>
+            <p>O Programa está organizado em módulos. Na versão de lançamento (1.0) em 26/11/2023 estão disponíveis os módulos: <i>Publicadores</i>, <i>Relatórios</i> e <i>Reuniões</i>. Cada módulo pode ser configurado com permissões de leitura e gravação das informações pelo usuário administrador.</p>
+            <p>O módulo <i>Publicadores</i> permite cadastrar e consultar os publicadores por grupo, atualmente com limite para 10 grupos.</p>
+            <p>O módulo <i>Relatórios</i> permite enviar os relatórios no novo modelo válido a partir de outubro/2023. As consultas podem ser feitas por grupo/mês/ano.</p>
+            <p>O módulo <i>Reuniões</i> permite enviar as assistências das reuniões e consutar por mês/ano.</p>
+            <h4>Responsabilidade</h4>
+            <p>O usuário que cria a conta da congregação e gerencia o acesso de outros usuários à mesma é responsável pelo tratamento dos dados armazenados.</p>
+            <div class="fimPagina"></div>
+        </section>
+
+    </div>
     
     
     <p id="messagemAuto" ></p>
@@ -40,6 +57,7 @@
         <p class="direita"><span onclick="fechaCadastroCong()" >X</span></p> 
         <form action="" id="formNovaContaCong" class="formulario">
             <p>Esta congregação ainda não tem uma conta criada. Preencha todas as informações para prosseguir com o cadastro da congregação.</p>
+            <br>
             <fieldset>
                 <legend>
                     Informações p/ Relatório mensal S-1-T
@@ -58,8 +76,9 @@
                 <p><input type="checkbox" name="maior18" id="maior18" class="pCheck" required >Confirmo que sou maior de 18 anos e residente no Brasil.</p>
                 <p><input type="checkbox" name="adminDesig" id="adminDesig" class="pCheck" required >Confirmo que sou o designado pela congregação como responsável pelas informações a serem tratadas.</p>
             </fieldset>
-
-            <p><em>Após clicar no botão "Cadastrar" será criada a conta da congregação. Em seguida você precisará fazer login com o mesmo e-mail informado no cadastro para ter acesso como administrador da conta.</em></p>
+            <br>
+            <p id="ultimoP"><em>Após clicar no botão "Cadastrar" será criada a conta da congregação. Em seguida você precisará fazer login com o mesmo e-mail informado no cadastro para ter acesso como administrador da conta.</em></p>
+            <br>
             <div  class="button" onclick="firebaseLoginLogoff()">CADASTRAR</div>
             <!-- <button onclick="">LOGIN / LOGOFF</button> -->
 
@@ -67,6 +86,7 @@
     </div>
     
     <nav id="barraInferior" class="barra">
+        <p>Copyright © <span id="anoRodape"></span> | <a href="https://github.com/CARLOSMAGNO">Autor do software</a>  | Todos os direitos reservados</p>
         <div id="Publicidade">
             
         </div> 

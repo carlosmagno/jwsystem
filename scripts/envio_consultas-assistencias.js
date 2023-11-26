@@ -55,7 +55,7 @@ function consultarAssistencia(){
             console.log("Resultado da consulta")
             
             //const matriz = [];
-
+            contentConsAssistencia.innerHTML=""
             snapshot.forEach(function (childSnapshot){
                 var valorNO =  childSnapshot.val()
                 var nomePublicador = childSnapshot.key

@@ -24,6 +24,7 @@
 </head>
 <body>
     <nav id="barraSuperior" class="barra">
+        <span>JWSystem</span>
         <input type="number" name="congregationNumber" id="congregationNumber" class="input-number" disabled>
         <button onclick="deslogar()" id="btnLogin">LOGOFF</button>
         <img src="../icons-actions/settings_FILL0_wght400_GRAD0_opsz24.png" alt="" id="btnConfigAdmin" class="imgBarraSuperior oculto" onclick="exibeAreaAdmin()">
@@ -94,22 +95,22 @@
     
         <section>
             <h2>Publicadores</h2>
-            <h3 id ="h3PubReg" onclick="abreRegPub()" class="oculto">Registro</h3>
-            <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="oculto">Consulta - Grupo</h3>
-            <h3 id ="h3PubCongI"class="oculto">Consulta - Individual <em>- desenvolvendo</em></h3>
+            <h3 id ="h3PubReg" onclick="abreRegPub()" class="">Registro</h3>
+            <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="">Consulta - Grupo</h3>
+            <!-- <h3 id ="h3PubCongI"class="oculto">Consulta - Individual <em>- desenvolvendo</em></h3> -->
 
         </section>
 
         <section>
             <h2>Relatórios</h2>
-            <h3 id ="h3RelReg" onclick="abreEnvioRel()" class="oculto">Registro</h3>
-            <h3 id ="h3RelConG" class="oculto" onclick="abreConsultaRelGrupo()">Consulta - Grupo</h3>
-            <h3 id ="h3RelConI" class="oculto">Consulta - Individual <em> - desenvolvendo</em></h3>
+            <h3 id ="h3RelReg" onclick="abreEnvioRel()" class="">Registro</h3>
+            <h3 id ="h3RelConG" class="" onclick="abreConsultaRelGrupo()">Consulta - Grupo</h3>
+            <!-- <h3 id ="h3RelConI" class="oculto">Consulta - Individual <em> - desenvolvendo</em></h3> -->
 
         </section>
         <section>
             <h2>Reuniões</h2>
-            <h3 id ="h3ReuReg" class="oculto" onclick="abreEnvioAssistencia()">Registro/Consulta</h3>
+            <h3 id ="h3ReuReg" class="" onclick="abreEnvioAssistencia()">Registro/Consulta</h3>
             <!-- <h3 id ="h3ReuCons" class="" onclick="abreConsultaAssistencia()">Consulta <em> - desenvolvendo</em></h3> -->
         </section>
         <section>
@@ -207,12 +208,16 @@
         </div>
 
         <div id="ConsultaGrupo" class="oculto">
-            <p class="direita largebar"><span onclick="fechaConsultaGrupo()">X</span></p>
-            <table>
+            <p class="direita"><span onclick="fechaConsultaGrupo()">X</span></p>
+            <div class="rolavel">
+            <table >
                 <thead>
                   <tr>
-                    <th colspan="8">
-                       Grupo de Campo
+
+                    <th colspan="4">
+                        <!-- <p class="direita"><span onclick="fechaConsultaGrupo()">X</span></p>
+                       <p>-->
+                        Grupo de Campo
                        <select id="grupoCampoCG">
                             <option value ="" >Selecione</option>
                             <option value ="1" >1</option>
@@ -222,6 +227,7 @@
                             <option value ="5" >5</option>
                             <option value ="6" >6</option>
                        </select>
+                    </p>
                     </th>
                     <th>
                         <tr class="tr1">
@@ -239,8 +245,8 @@
                   </tr>
                 </thead>
                 <tbody id ="contentCG"></tbody>
-              </table>
-
+            </table>
+            </div>
         </div>
 
     </div>
@@ -328,8 +334,8 @@
                     </select>
                     <!-- <button onclick="consultaRelGrupo()" >CONSULTAR</button> -->
                     
-                <!-- </p> -->
-                <!-- <p> -->
+                </p>
+                <p>
                     Ano de Serviço
                     <select name="anoConsReGrupo" id="anoConsReGrupo" class="">
                         <option value=""></option>
@@ -359,11 +365,14 @@
                         <option value="Novembro">Novembro</option>
                         <option value="Dezembro">Dezembro</option>
                     </select>
+                    <span onclick="consultaRelGrupo()" id="btnConsultaAssitencia" class="spanBTN">&#128269;</span>
                 </p>
-                <div  class="button"  onclick ="consultaRelGrupo()" style="display: inline-block;">CONSULTAR</div>
+                <!-- <div  class="button"  onclick ="consultaRelGrupo()" style="display: inline-block;">CONSULTAR</div> -->
+                
                 <!-- Fim da seção fixa -->
                 <!-- <div id="contentConsRelGrupo"></div> -->
             </form>
+            <div class="rolavel">
             <table id="td">
                 <thead>
                     <tr>
@@ -383,8 +392,8 @@
                     </tr>
                 </thead>
                 <tbody id ="contentConsRelGrupo"></tbody>
-              </table>
-
+            </table>
+            </div>
 
             <div id="espacoFimForm"></div>
         </div>
@@ -398,11 +407,11 @@
                 <br>
                 <input type="date" name="dataAssitencia" id="dataAssitencia">
                 <input type="number" name="numAssistencia" id="numAssistencia">
-                <span class="spanBTN" onclick ="enviarAssistencia()" >⬆️</span>
+                <span title="Enviar" class="spanBTN" onclick ="enviarAssistencia()" >⬆️</span>
                 <!-- <div  class="button" id="btnEnviaAssistencia" onclick ="enviarAssistencia()">ENVIAR</div> -->
                 
-                <br>
-                <hr>
+                <br><br>
+                <hr><br>
                 <h3>Consultar assistência por mês</h3>
                 <br>
                 Ano
@@ -431,10 +440,10 @@
                     <option value="11">Novembro</option>
                     <option value="12">Dezembro</option>
                 </select>
-                <span onclick="consultarAssistencia()" id="btnConsultaAssitencia" class="spanBTN">&#128269;</span>
+                <span title="Consultar" onclick="consultarAssistencia()" id="btnConsultaAssitencia" class="spanBTN">&#128269;</span>
                 <!-- <span>Média meio Semana</span><input type="text" id="inputTextPeq"><span>Média Fim Semana</span><input type="text" name="" id="inputTextPeq2"> -->
                 <br>
-                <table class="tabelaPequena">
+                <table class="">
                     <br>
                     <thead>
                         <tr>
@@ -459,7 +468,7 @@
     </div>
 
     <nav id="barraInferior" class="barra">
-        <p>Copyright © <span id="anoRodape"></span> | <a href="https://github.com/CARLOSMAGNO">Carlos Magno</a>  | Todos os direitos reservados.</p>
+        <p>Copyright © <span id="anoRodape"></span> | <a href="https://github.com/CARLOSMAGNO">Autor do software</a>  | Todos os direitos reservados</p>
         <div id="Publicidade">
             
         </div> 

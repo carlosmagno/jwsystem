@@ -1,9 +1,9 @@
 
 *{
-    /* margin:0 ;  */
-    /* padding:0; */
+    margin:0 auto; 
+    padding:0;
     text-align:start;
-    /* font-family: arial; */
+    font-family: arial;
 }
 em{
     color: red;
@@ -12,6 +12,7 @@ em{
     background-color: black;
 } */
 section{
+    margin-top: 5px;
     display: block;
     text-align: left;
     /* background-color: rgb(222, 229, 229); */
@@ -21,12 +22,19 @@ section{
     /* border: 2px solid black; */
     
 }
-section>h3{
-    transition: transform 0.3s;
+/* section>h3{
+    
+} */
+
+button{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-weight: 900;
 }
-section>h3:hover{
+
+section>h3:hover, button:hover{
     cursor: pointer;
-    transform: scale(1.02);
+    transform: scale(1.05);
    
 }
 h1{
@@ -41,10 +49,12 @@ section>h2{
 }
 
 section>h3{
-    margin: 10px;
+    margin: 10px 0;
     padding: 10px;
     border-radius: 8px;
-    background-color: rgb(197, 185, 208);
+    background-color: rgb(225, 224, 229);
+    box-shadow: #333 3px 3px 3px;
+    transition: transform 0.3s;
 }
 
 .oculto{
@@ -68,16 +78,16 @@ section>h3{
     
     
 }
-form.formulario{
+.formulario{
     /* display: block; */
-    /* margin:0; */
+    margin-top:10px;
     /* text-align: right; */
     overflow-y:auto;
     width:50vw;
     /* background-color: rgb(187, 181, 181); */
-    padding: 10px 10px 20px;
-    border: 1px solid black;
-    border-radius: 0 0 8px 8px ;
+    /* padding: 10px 10px 20px; */
+    /* border: 1px solid black; */
+    /* border-radius: 0 0 8px 8px ; */
 
 }
 #espacoFimForm{
@@ -85,27 +95,34 @@ margin-bottom: 20px;
 }
 p.direita{
     font-weight: bold;
-    border-radius: 8px 8px 0 0;
-    margin-top: 20px;
+    /* border-radius: 8px 8px 0 0; */
+    /* margin: 10px 0; */
     padding: 10px;
-    width:50vw;
+    /* width:100%; */
     text-align: end;
     background-color: blueviolet;
     color:white;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* background-color: rgb(22 200 200); */
 }
-/* p.direita span{
-    border: 1px solid;
-} */
-p.direita span:hover{
-color:red;
+p.direita> span{
+    /* border: 1px solid; */
+    display: inline-block;
+    border: 1px solid rgb(197, 41, 41);
+    padding: 2px 5px;
+    border-radius:4px;
+    background-color:rgb(203, 26, 26);
+    transition: transform 0.3s;
+}
+p.direita> span:hover{
+/* color:red; */
 cursor: pointer;
+transform: scale(1.2);
 }
 input[type=text]{
     
 height:30px;
-width: 90%;
+width: 93%;
 /* max-width:fit-content; */
 }
 .input-number2{
@@ -150,9 +167,9 @@ input[type="checkbox"]  {
 } */
 
 fieldset{
-    width: 95%;
-    /* margin:5px 0; */
-    padding: 1%;
+    width: 90%;
+    margin:5px 0;
+    /* padding: 1%; */
     /* align-self: flex-start; */
 }
 
@@ -187,13 +204,21 @@ form>p{
 table{
      border: 1px solid #333;
      /* border-radius: 5px; */
-     width: 95vw;
+    width: 50vw;
+     /* overflow-x: visible; */
+     /* background-color: aliceblue; */
+}
+.rolavel{
+    overflow:auto;
+    max-width: 100vw;
+    /* background-color: red; */
+    /* content-visibility: auto; */
 }
 td {
   /* border: 1px solid #333; */
   /* border-radius: 5px; */
   padding: 5px;
-  max-width: fit-content;
+  /* max-width: fit-content; */
 }
 th{
     height: 28px;
@@ -216,7 +241,7 @@ tfoot {
   color: black;
   padding: 2px;
 }
-p.largebar{
+.largebar{
     width: 93.5vw;
 }
 p#messagemAuto{
@@ -232,22 +257,45 @@ p#messagemAuto{
 .selectDinamica:hover, #btnConsultaAssitencia{
     cursor:pointer;
 }
-#pFormConsGrupo, #formConsultaRelGrupo{
-    width: 93.5vw;
-    /* background-color:black */
-}
+/* #formConsultaRelGrupo,#pFormConsGrupo{
+    width: 93.5vw; 
+    background-color:black
+} */
+
 .tabelaPequena{
     width: 50vw;
 }
 .spanBTN{
-    font-size: 28px;
-    line-break: 28px;
+    display: inline-block;
+    font-size: 20px;
+    line-break: 20px;
     vertical-align: middle;
+    background-color: aliceblue;
+    border:solid 0.5px gray;
+    padding: 3px;
+    border-radius:3px;
+    box-shadow: #333 3px 3px 3px;
+    transition: transform .2s;
+    
+    
 }
 .spanBTN:hover{
 cursor:pointer;
+transform: scale(1.05); 
 }
-
+nav>p{
+    width: 100vw;
+    text-align: center;
+    padding-top: 5px;
+    color:white;
+}
+nav a{
+    color:white;
+    text-decoration: none;
+}
+nav a:visited{
+    color:white
+}
 #inputTextPeq, #inputTextPeq2{
     display: inline-block;
     width: 40px;
@@ -255,11 +303,15 @@ cursor:pointer;
 }
 @media screen and (max-width: 600px) {
     section{
-        width: 100vw;
+        width: 95vw;
     }
-    form.formulario{
-        width:100vw;
+    .formulario{
+        width:95vw;
         border:none;
+    }
+
+    table{
+       width: 95vw;
     }
 
     p.direita{

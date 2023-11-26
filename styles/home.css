@@ -40,3 +40,20 @@ nav.barra{
     appearance: none;
     -moz-appearance: textfield;
 }
+
+#formNovaContaCong #ultimoP{
+margin:5px 0;
+width: 46vw;
+}
+
+#formNovaContaCong fieldset{
+padding: 5px;
+}
+#secTexto p{
+ margin:10px 0;
+ text-align: justify;
+}
+
+.fimPagina{
+    margin-bottom: 60px;
+}
