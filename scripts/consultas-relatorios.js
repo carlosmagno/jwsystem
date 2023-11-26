@@ -3,7 +3,7 @@ function fechaConsultaRelGrupo(){
     ConsultarRelatoriosGrupo.setAttribute("class","oculto")
   };
 
-  function abreConsultaGrupo(){ 
+  function abreConsultaRelGrupo(){ 
     var ConsultarRelatoriosGrupo = document.getElementById('ConsultarRelatoriosGrupo')
     ConsultarRelatoriosGrupo.setAttribute("class","aparente")
    

@@ -187,7 +187,7 @@ form>p{
 table{
      border: 1px solid #333;
      /* border-radius: 5px; */
-     width: 70.5vw;
+     width: 95vw;
 }
 td {
   /* border: 1px solid #333; */
@@ -200,7 +200,7 @@ th{
     text-align: center;
     border-radius: 5px 5px 0 0;
 }
-tr#tr1{
+tr.tr1{
     border-bottom: 1px solid black;
     background-color: blueviolet;
     font-weight: bold;
@@ -217,7 +217,7 @@ tfoot {
   padding: 2px;
 }
 p.largebar{
-    width: 69.1vw;
+    width: 93.5vw;
 }
 p#messagemAuto{
     text-align: center;
@@ -229,8 +229,29 @@ p#messagemAuto{
     margin: 5px 0;
     box-shadow: 3px 3px 10px gray;
 }
-.selectDinamica:hover{
+.selectDinamica:hover, #btnConsultaAssitencia{
     cursor:pointer;
+}
+#pFormConsGrupo, #formConsultaRelGrupo{
+    width: 93.5vw;
+    /* background-color:black */
+}
+.tabelaPequena{
+    width: 50vw;
+}
+.spanBTN{
+    font-size: 28px;
+    line-break: 28px;
+    vertical-align: middle;
+}
+.spanBTN:hover{
+cursor:pointer;
+}
+
+#inputTextPeq, #inputTextPeq2{
+    display: inline-block;
+    width: 40px;
+    height: 20px;
 }
 @media screen and (max-width: 600px) {
     section{
