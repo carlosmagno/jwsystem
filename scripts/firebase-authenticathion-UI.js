@@ -121,8 +121,8 @@ function firebaseLoginLogoff(){
     ],
     signInFlow:'popup',
      // Terms of service url.
-    tosUrl: 'https://www.infonunes.com/como-limpar-o-cooler-do-dell-vostro/',
-    privacyPolicyUrl: 'https://www.infonunes.com/como-limpar-o-cooler-do-dell-vostro/'
+    //tosUrl: 'https://www.infonunes.com/como-limpar-o-cooler-do-dell-vostro/',
+    //privacyPolicyUrl: 'https://www.infonunes.com/como-limpar-o-cooler-do-dell-vostro/'
 };
 
     // Initialize the FirebaseUI Widget using Firebase.

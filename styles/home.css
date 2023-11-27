@@ -57,3 +57,11 @@ padding: 5px;
 .fimPagina{
     margin-bottom: 60px;
 }
+
+@media screen and (max-width: 600px) {
+    #formNovaContaCong #ultimoP{
+        width: 95vw;
+    }
+        
+    
+}

@@ -311,9 +311,13 @@ nav a:visited{
     }
 
     table{
-       width: 95vw;
-    }
+       max-width: 200vw;
 
+   }
+   .rolavel{
+       max-width: 200vw;
+
+   }
     p.direita{
         /* font-weight: bold; */
         width:100vw;

@@ -39,7 +39,8 @@ function enviarAssistencia(){
     }
 
     refAssistencias.child(ano).child(mes).child(dataAss).set(assistencia).then(
-
+        formAssistencia.reset(),
+        alert("A assistência foi enviada.")
     );
 }
 
