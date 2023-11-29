@@ -87,8 +87,16 @@ function capturaRelatorio(){
     var horas = formRelatorio.horas.value //document.getElementById("horas")
     var obs = formRelatorio.obs.value //document.getElementById("obs")
 
-    if(participou=="on"){participou="sim"}else{{participou="não"}}
-    if(pAux=="on"){pAux="sim"}else{{pAux="não"}}
+    if(participou=="on"){
+        participou="sim"
+    }else{
+        participou="não"
+    }
+    if(pAux=="on"){
+        pAux="sim"
+    }else{
+        pAux="não"
+    }
 
     novoRelatorio = {
         grupoRel,
