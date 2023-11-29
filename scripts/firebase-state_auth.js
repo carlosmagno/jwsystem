@@ -71,12 +71,12 @@ initApp = function() {
       if(snapshot.exists()){
         var h3PubReg = document.getElementById('h3PubReg')
         var h3PubConG = document.getElementById('h3PubConG')
-        var h3PubCongI = document.getElementById('h3PubCongI')
+        //var h3PubCongI = document.getElementById('h3PubCongI')
         var h3RelReg = document.getElementById('h3RelReg')
         var h3RelConG = document.getElementById('h3RelConG')
         var h3RelConI = document.getElementById('h3RelConI')
         var h3ReuReg = document.getElementById('h3ReuReg')
-        var h3ReuCons = document.getElementById('h3ReuCons')
+        //var h3ReuCons = document.getElementById('h3ReuCons')
         console.log("Nó do usuário criado no BD.")
         var valor = snapshot.val()
         if(valor.chkRegPublicadores=="on"){
@@ -84,7 +84,7 @@ initApp = function() {
         }
         if(valor.chkConPublicadores=="on"){
           h3PubConG.setAttribute('class', "")
-          h3PubCongI.setAttribute('class', "")
+          //h3PubCongI.setAttribute('class', "")
         }
         if(valor.chkRegRelatorios=="on"){
           h3RelReg.setAttribute('class', "")
@@ -97,7 +97,7 @@ initApp = function() {
           h3ReuReg.setAttribute('class', "")
         }
         if(valor.chkConReunioes=="on"){
-          h3ReuCons.setAttribute('class', "")
+          //h3ReuCons.setAttribute('class', "")
         }
       }else{
         var usuario = {

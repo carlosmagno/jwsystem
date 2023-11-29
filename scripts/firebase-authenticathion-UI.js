@@ -1,5 +1,7 @@
 function firebaseLoginLogoff(){
 
+    var boxlogin = document.getElementById('boxlogin')
+    boxlogin.setAttribute( 'class', "aparentelogin"  )
     var congregationNumber = document.getElementById('congregationNumber').value.toString()
     console.log("congregationNumber: ", congregationNumber)
     localStorage.setItem("cong", congregationNumber)
@@ -151,7 +153,9 @@ function teste(){
 
 function sumir(){
     var boxlogin = document.getElementById('boxlogin')
+    boxlogin.setAttribute('class', "")
     boxlogin.style.display="none"
+
 }
 
 function fechaCadastroCong(){ 

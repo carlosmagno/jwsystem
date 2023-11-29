@@ -65,6 +65,16 @@ section>h3{
     height: 20px;
     vertical-align: middle;
 }
+
+.aparentelogin{
+    display: block;
+    z-index: 1;
+    position: fixed;  
+    top:50px; 
+    width:100vw;
+    height: calc(100vh - 100px);
+    background-color: white;
+}
 .aparente{
     display: block;
     z-index: 1;
@@ -312,6 +322,7 @@ nav a:visited{
 
     table{
        max-width: 200vw;
+       min-width: 95vw;
 
    }
    .rolavel{

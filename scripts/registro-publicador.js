@@ -4,8 +4,10 @@ function abreRegPub(){
 };
 
 function fechaRegPub(){
+    document.getElementById("formRegPub").reset()
     var telaRegistrarPublicador = document.getElementById('RegistrarPublicador')
     telaRegistrarPublicador.setAttribute("class","oculto")
+    
 };
 
 

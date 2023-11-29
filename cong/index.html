@@ -97,7 +97,7 @@
             <h2>Publicadores</h2>
             <h3 id ="h3PubReg" onclick="abreRegPub()" class="oculto">Registro</h3>
             <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="oculto">Consulta - Grupo</h3>
-            <h3 id ="h3PubCongI"class="oculto">Consulta - Individual <em>- desenvolvendo</em></h3>
+            <!-- <h3 id ="h3PubCongI"class="oculto">Consulta - Individual <em>- desenvolvendo</em></h3> -->
 
         </section>
 
@@ -111,7 +111,7 @@
         <section>
             <h2>Reuniões</h2>
             <h3 id ="h3ReuReg" class="oculto" onclick="abreEnvioAssistencia()">Registro/Consulta</h3>
-            <h3 id ="h3ReuCons" class="" onclick="abreConsultaAssistencia()">Consulta <em> - desenvolvendo</em></h3>
+            <!-- <h3 id ="h3ReuCons" class="" onclick="abreConsultaAssistencia()">Consulta <em> - desenvolvendo</em></h3> -->
         </section>
         <section>
             <!-- <h2>Resumo Mensal</h2> -->
@@ -145,7 +145,7 @@
 
                  -->
 
-                <p><input type="text" name="nomePub" id="nomePub" placeholder="Nome do Publicador"></p>
+                <p><input type="text" name="nomePub" id="nomePub" placeholder="Nome do Publicador" required></p>
                 <p>Data de nascimento:<input type="date" name="nascimento" id="nascimento" ></p>
                 <!-- <p></p> -->
                 <p>Data do batismo .... :<input type="date" name="batismo" id="batismo" ></p>
@@ -359,7 +359,7 @@
                 </p>
                 <p>
                     Ano de Serviço
-                    <select name="anoConsReGrupo" id="anoConsReGrupo" class="">
+                    <select name="anoConsReGrupo" id="anoConsReGrupo" class="selectP">
                         <option value=""></option>
                         <option value="2023">2023</option>
                         <option value="2024">2024</option>
@@ -373,7 +373,7 @@
  
                 <!-- <p> -->
                     Mês
-                    <select name="mesConsRelGrupo" id="mesConsRelGrupo" class="">
+                    <select name="mesConsRelGrupo" id="mesConsRelGrupo" class="selectP">
                         <option value="Janeiro">Janeiro</option>
                         <option value="Fevereiro">Fevereiro</option>
                         <option value="Março">Março</option>
@@ -427,8 +427,8 @@
             <form action="" class="formulario" id="formAssistencia" name="formAssistencia">
                 <h3>Enviar assistência</h3>
                 <br>
-                <input type="date" name="dataAssitencia" id="dataAssitencia">
-                <input type="number" name="numAssistencia" id="numAssistencia">
+                <input type="date" name="dataAssitencia" id="dataAssitencia" class="selectP">
+                <input type="number" name="numAssistencia" id="numAssistencia" class="selectP">
                 <span title="Enviar" class="spanBTN" onclick ="enviarAssistencia()" >⬆️</span>
                 <!-- <div  class="button" id="btnEnviaAssistencia" onclick ="enviarAssistencia()">ENVIAR</div> -->
                 
@@ -437,7 +437,7 @@
                 <h3>Consultar assistência por mês</h3>
                 <br>
                 Ano
-                <select name="anoConsAssistencia" id="anoConsAssistencia" class="">
+                <select name="anoConsAssistencia" id="anoConsAssistencia" class="selectP">
                     <option value=""></option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
@@ -448,7 +448,7 @@
                    
                 </select>
                 Mês
-                <select name="mesConsAssistencia" id="mesConsAssistencia" class="">
+                <select name="mesConsAssistencia" id="mesConsAssistencia" class="selectP">
                     <option value="1">Janeiro</option>
                     <option value="2">Fevereiro</option>
                     <option value="3">Março</option>

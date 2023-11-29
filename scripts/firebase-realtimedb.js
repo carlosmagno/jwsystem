@@ -15,18 +15,36 @@ var ref = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`
 function SalvarPublicador() {
     console.log("executandooo")
     var n = 0;
+    var formRegPub = document.getElementById("formRegPub")
+    var grupo = formRegPub.grupoPub.value
     ref.once('value').then(snapshot =>{
         console.log(snapshot.numChildren());  
         var n = snapshot.numChildren();
         n=n+1;
         capturaPublicador()
         console.log(NovoPublicador)
+
+    if(formRegPub.grupoPub.value==""||formRegPub.nomePub.value ==""||formRegPub.nascimento.value==""||formRegPub.sexo.value==""||formRegPub.esperanca.value==""||formRegPub.contatoEmg.value==""){
+        console.log("Falta um ou mais campos obrigatórios serem preenchidos. Verifique os campos: Grupo, Nome, Nascimento, Sexo, Esperança, Contato de Emergência")
+        alert("Falta um ou mais campos obrigatórios serem preenchidos. Verifique os campos: Grupo, Nome, Nascimento, Sexo, Esperança, Contato de Emergência")
+    }else{
         firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores/${NovoPublicador.grupoPub}/${NovoPublicador.nomePub}`).set(NovoPublicador)
         .then(
            console.log("Usuário cadastrado!"),
+           document.getElementById("formRegPub").reset(),
+          formRegPub.grupoPub.value = grupo,
+        //   formRegPub.nomePub.value ="",
+        //   formRegPub.nascimento.value="",
+        //   formRegPub.batismo.value="",
+        //   formRegPub.sexo.value="",
+        //   formRegPub.esperanca.value="",
+        //   formRegPub.PSvaroes.value="",
+        //   formRegPub.PScampo.value="",
+        //   formRegPub.contatoEmg.value="",
            alert("Usuário cadastrado!")
         );
-        document.getElementById("formRegPub").reset()
+    }
+    
     });
 
 
