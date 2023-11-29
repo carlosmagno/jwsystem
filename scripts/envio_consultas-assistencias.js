@@ -86,6 +86,7 @@ function consultarAssistencia(){
         }else{
             console.log("não há assistencia registrada para essa consulta")
             alert("Não há assistencia registrada para essa consulta")
+            contentConsAssistencia.innerHTML=""
         }
 
     });

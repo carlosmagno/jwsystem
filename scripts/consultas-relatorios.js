@@ -75,7 +75,7 @@ function consultaRelGrupo(){
 
     }else{
       console.log("Não há dados neste nó, aguarde ...");
-      contentConsRelGrupo.innerHTML==''
+      contentConsRelGrupo.innerHTML=''
       // var grupoCons = formConsultaRelGrupo.grupoConsRelGrupo.value
       // var anoCons = formConsultaRelGrupo.anoConsReGrupo.value
       // var mesCons = formConsultaRelGrupo.mesConsRelGrupo.value
