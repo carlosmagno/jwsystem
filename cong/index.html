@@ -95,7 +95,7 @@
     
         <section>
             <h2>Publicadores</h2>
-            <h3 id ="h3PubReg" onclick="abreRegPub()" class="oculto">Registro</h3>
+            <h3 id ="h3PubReg" onclick="abreRegPub()" class="oculto">Registro / Consulta individual</h3>
             <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="oculto">Consulta - Grupo</h3>
             <!-- <h3 id ="h3PubCongI"class="oculto">Consulta/Alteração - Individual <em>- desenvolvendo</em></h3> -->
 
@@ -120,18 +120,23 @@
     </div>
 
     <div id="Publicadores">
-        <div id="RegistrarPublicador" class="" >
+        <div id="RegistrarPublicador" class="oculto" >
             <p class="direita"><span onclick="fechaRegPub()">X</span></p>
+            <form action=""class="formulario">
+                <div id="divConsPubIndividual">
+                    <p>Consulta</p>
+                    
+                    <input list="nomePub" id="inpuTnomePub" name="inpuTnomePub" class="selectP" placeholder="Insira o nome e clique na lupa"/>
+                    <datalist name="nomePub" id="nomePub"></datalist>
+                    <span onclick="consultaBDPublicadores()" id="btnConsultaPublicador" class="spanBTN">&#128269;</span>
+                </div>
+            </form>
+
             <form action="" class="formulario" id="formRegPub">
                 
                 <h3>Registrar Publicador</h3>
                 <br>
-                <div id="divConsPubIndividual">
-                    <p>Consulta</p>
-                    <span onclick="" id="btnConsultaPublicador" class="spanBTN">&#128269;</span>
-                    <input list="nomePub" id="inpuTnomePub" name="inpuTnomePub" class="selectP" placeholder="Insira o nome e clique na lupa"/>
-                    <datalist name="nomePub" id="nomePub"></datalist>
-                </div>
+
                 <p>Grupo
                     <select name="grupoPub" id="grupoPub" class="selectP">
                         <option value=""></option>

@@ -17,7 +17,7 @@ function consultaRelGrupo(){
   var mesCons = formConsultaRelGrupo.mesConsRelGrupo.value
  
 
-  var refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Relatórios`).child(grupoCons).child(anoCons).child(mesCons);
+  var refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Relatórios`).child(anoCons).child(mesCons);
 
   
 

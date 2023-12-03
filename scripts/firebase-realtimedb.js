@@ -16,7 +16,7 @@ function SalvarPublicador() {
     console.log("executandooo")
     var n = 0;
     var formRegPub = document.getElementById("formRegPub")
-    var grupo = formRegPub.grupoPub.value
+    //var grupo = formRegPub.grupoPub.value
     ref.once('value').then(snapshot =>{
         console.log(snapshot.numChildren());  
         var n = snapshot.numChildren();
@@ -28,11 +28,11 @@ function SalvarPublicador() {
         console.log("Falta um ou mais campos obrigatórios serem preenchidos. Verifique os campos: Grupo, Nome, Nascimento, Sexo, Esperança, Contato de Emergência")
         alert("Falta um ou mais campos obrigatórios serem preenchidos. Verifique os campos: Grupo, Nome, Nascimento, Sexo, Esperança, Contato de Emergência")
     }else{
-        firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores/${NovoPublicador.grupoPub}/${NovoPublicador.nomePub}`).set(NovoPublicador)
+        firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores/${NovoPublicador.nomePub}`).set(NovoPublicador)
         .then(
            console.log("Usuário cadastrado!"),
            document.getElementById("formRegPub").reset(),
-          formRegPub.grupoPub.value = grupo,
+          //formRegPub.grupoPub.value = grupo,
         //   formRegPub.nomePub.value ="",
         //   formRegPub.nascimento.value="",
         //   formRegPub.batismo.value="",

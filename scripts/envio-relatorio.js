@@ -44,9 +44,12 @@ function abreEnvioRel(){
         console.log(grupoRel.value)
        
         var nomeRel = document.getElementById('nomeRel')
- nomeRel.innerHTML="";
+        nomeRel.innerHTML="";
         const refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
-        refPublicadores.child(grupoRel.value).get().then((snapshot)=>{
+
+        refPublicadores.orderByChild("grupoPub").equalTo(grupoRel.value).on("child_added", function(snapshot) {
+            // console.log(snapshot.val());
+            // console.log(snapshot.key);
             console.log(snapshot.val())
             snapshot.forEach((childSnapshot) =>{
                 var ValorNo1 = childSnapshot.val()
@@ -59,9 +62,26 @@ function abreEnvioRel(){
                 //novoNome.innerText= chave1
                 novoNome.setAttribute('value', chave1 )
                 nomeRel.appendChild(novoNome)
-            });
-        })
-    }
+        
+        });
+
+        // refPublicadores.child(grupoRel.value).get().then((snapshot)=>{
+        //     console.log(snapshot.val())
+        //     snapshot.forEach((childSnapshot) =>{
+        //         var ValorNo1 = childSnapshot.val()
+        //         var chave1 = childSnapshot.key
+
+        //         console.log(ValorNo1)
+        //         console.log(chave1)
+                
+        //         var novoNome = document.createElement("option")
+        //         //novoNome.innerText= chave1
+        //         novoNome.setAttribute('value', chave1 )
+        //         nomeRel.appendChild(novoNome)
+        //     });
+        // })
+    });
+};
 };
 
 function fechaEnvioRel(){ 
