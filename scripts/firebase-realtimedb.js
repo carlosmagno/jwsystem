@@ -55,8 +55,8 @@ var congregationNumber = document.getElementById('congregationNumber')
 if(localStorage.getItem("cong")){
     congregationNumber.value =localStorage.getItem("cong") 
 }
-var url = window.location.href.split('#')
-console.log(url[1])
+//var url = window.location.href.split('#')
+//console.log(url[1])
 function consultaBDCong(){
     var url = window.location.href.split('#')
     console.log(url[1])
@@ -70,7 +70,7 @@ function salvarRelatorio(){
     capturaRelatorio()
     console.log(novoRelatorio)
     //var mes = 
-    refRelatorios.child(novoRelatorio.grupoRel).child(`${novoRelatorio.anoRel}/${novoRelatorio.mesRel}`).child(novoRelatorio.inpuTnomeRel).set(novoRelatorio)
+    refRelatorios.child(`${novoRelatorio.anoRel}/${novoRelatorio.mesRel}`).child(novoRelatorio.inpuTnomeRel).set(novoRelatorio)
     .then(
        console.log("Relatório enviado!"),
        alert("Relatório enviado!"),
@@ -92,6 +92,11 @@ function salvarRelatorio(){
 
 
 }
+
+/**
+ * Consulta dos publicadores por grupo
+ */
+
 if(document.getElementById('grupoCampoCG')){
     var grupoCampoCG = document.getElementById('grupoCampoCG');
     var contentCG = document.getElementById('contentCG')

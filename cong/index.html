@@ -97,7 +97,7 @@
             <h2>Publicadores</h2>
             <h3 id ="h3PubReg" onclick="abreRegPub()" class="oculto">Registro</h3>
             <h3 id ="h3PubConG" onclick="abreConsultaGrupo()" class="oculto">Consulta - Grupo</h3>
-            <!-- <h3 id ="h3PubCongI"class="oculto">Consulta - Individual <em>- desenvolvendo</em></h3> -->
+            <!-- <h3 id ="h3PubCongI"class="oculto">Consulta/Alteração - Individual <em>- desenvolvendo</em></h3> -->
 
         </section>
 
@@ -120,14 +120,21 @@
     </div>
 
     <div id="Publicadores">
-        <div id="RegistrarPublicador" class="oculto" >
+        <div id="RegistrarPublicador" class="" >
             <p class="direita"><span onclick="fechaRegPub()">X</span></p>
             <form action="" class="formulario" id="formRegPub">
                 
                 <h3>Registrar Publicador</h3>
                 <br>
+                <div id="divConsPubIndividual">
+                    <p>Consulta</p>
+                    <span onclick="" id="btnConsultaPublicador" class="spanBTN">&#128269;</span>
+                    <input list="nomePub" id="inpuTnomePub" name="inpuTnomePub" class="selectP" placeholder="Insira o nome e clique na lupa"/>
+                    <datalist name="nomePub" id="nomePub"></datalist>
+                </div>
                 <p>Grupo
                     <select name="grupoPub" id="grupoPub" class="selectP">
+                        <option value=""></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -139,6 +146,7 @@
                         <option value="9">9</option>
                         <option value="10">10</option>
                     </select>
+
                 </p>
                 <!-- IDs para criar variáveis
                     nomePub, nascimento, batismo, sexo, esperanca, PSvaroes, PScampo

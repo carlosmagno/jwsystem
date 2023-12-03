@@ -77,7 +77,7 @@ var novoRelatorio;
 function capturaRelatorio(){
     
     var formRelatorio = document.getElementById('formRelatorio')
-    var grupoRel = formRelatorio.grupoRel.value// document.getElementById("grupoRel")
+    // var grupoRel = formRelatorio.grupoRel.value// document.getElementById("grupoRel")
     var anoRel = formRelatorio.anoRel.value
     var mesRel = formRelatorio.mesRel.value //document.getElementById("mesRel")
     var inpuTnomeRel = formRelatorio.inpuTnomeRel.value //document.getElementById("nomeRel")
@@ -99,7 +99,7 @@ function capturaRelatorio(){
     }
 
     novoRelatorio = {
-        grupoRel,
+        // grupoRel,
         anoRel,
         mesRel,
         inpuTnomeRel,
