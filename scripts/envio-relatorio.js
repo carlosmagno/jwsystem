@@ -47,7 +47,9 @@ function abreEnvioRel(){
         nomeRel.innerHTML="";
         const refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
 
-        refPublicadores.orderByChild("grupoPub").equalTo(grupoRel.value).on("child_added", function(snapshot) {
+        //.orderByChild("grupoPub").equalTo(this.value).
+
+        refPublicadores.orderByChild("grupoPub").equalTo(grupoRel.value).once('value').then(snapshot=>{
             // console.log(snapshot.val());
             // console.log(snapshot.key);
             console.log(snapshot.val())

@@ -109,7 +109,13 @@ if(document.getElementById('grupoCampoCG')){
        contentCG.innerHTML=""
        console.log("passei aqui")
 
-        ref.child(this.value).once('value').then(snapshot=>{
+    //    ref.orderByChild("grupoPub").equalTo(this.value).on("child_added", function(snapshot) {
+    //     console.log(snapshot.val());
+    //    console.log(snapshot.key);
+        
+    //    });
+
+       ref.orderByChild("grupoPub").equalTo(this.value).once('value').then(snapshot=>{
            
             var n=0;
             //var parImpar;
@@ -164,7 +170,7 @@ if(document.getElementById('grupoCampoCG')){
        
          });
         
-        })
+        });
     }
 }
 
