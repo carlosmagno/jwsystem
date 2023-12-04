@@ -79,7 +79,7 @@ function consultaRelGrupo(){
             if(nrelatorios<n){
               var num = n-nrelatorios
               console.log("falta(m) ",n-nrelatorios," enviar o relatório")
-               document.getElementById('msgrelatorios').innerText=`falta(m) ${num} enviar o relatório`
+               //document.getElementById('msgrelatorios').innerText=`falta(m) ${num} enviar o relatório`
             }
 
           }else{
