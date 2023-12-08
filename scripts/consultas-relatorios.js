@@ -82,8 +82,8 @@ function consultaRelGrupo(){
               console.log("Falta(m) ",num," enviar o relatório!")
                document.getElementById('msgrelatorios').innerText=`Falta(m) ${num} enviar o relatório!`
             }if(nrelatorios==n){
-              console.log("Todos os ",num," enviaram o relatório!")
-              document.getElementById('msgrelatorios').innerText=`Todos os ${num} enviaram o relatório!`
+              console.log("Todos os ",n," enviaram o relatório!")
+              document.getElementById('msgrelatorios').innerText=`Todos os ${n} enviaram o relatório!`
             }
 
           }else{
