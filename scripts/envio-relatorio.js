@@ -117,7 +117,7 @@ function capturaRelatorio(){
     if(pAux=="on"||pAux=="sim"){
         pAux="sim"
     }else{
-        pAux="não"
+        pAux=""
     }
 
     novoRelatorio = {
