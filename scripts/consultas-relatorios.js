@@ -28,6 +28,7 @@ function consultaRelGrupo(){
       if(contentConsRelGrupo.innerHTML==''){
         var n=0;
         var nrelatorios=0;
+        var num=0;
         /**
          * Para cada publicador vai procurar se existe o relatório
          */
@@ -77,9 +78,12 @@ function consultaRelGrupo(){
             console.log("total de relatórios: ", nrelatorios)
             console.log("total de publicadores: ", n)
             if(nrelatorios<n){
-              var num = n-nrelatorios
-              console.log("falta(m) ",n-nrelatorios," enviar o relatório")
-               //document.getElementById('msgrelatorios').innerText=`falta(m) ${num} enviar o relatório`
+              num = n-nrelatorios
+              console.log("Falta(m) ",num," enviar o relatório!")
+               document.getElementById('msgrelatorios').innerText=`Falta(m) ${num} enviar o relatório!`
+            }if(nrelatorios==n){
+              console.log("Todos os ",num," enviaram o relatório!")
+              document.getElementById('msgrelatorios').innerText=`Todos os ${num} enviaram o relatório!`
             }
 
           }else{

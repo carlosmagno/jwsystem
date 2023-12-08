@@ -109,12 +109,12 @@ function capturaRelatorio(){
     var horas = formRelatorio.horas.value //document.getElementById("horas")
     var obs = formRelatorio.obs.value //document.getElementById("obs")
 
-    if(participou=="on"){
+    if(participou=="on"||participou=="sim"){
         participou="sim"
     }else{
         participou="não"
     }
-    if(pAux=="on"){
+    if(pAux=="on"||pAux=="sim"){
         pAux="sim"
     }else{
         pAux="não"

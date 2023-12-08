@@ -70,16 +70,21 @@ function salvarRelatorio(){
     capturaRelatorio()
     console.log(novoRelatorio)
     //var mes = 
+
+    var grupoRel =  formRelatorio.grupoRel.value
+    var anoRel =  formRelatorio.anoRel.value
+    var mesRel =  formRelatorio.mesRel.value
     refRelatorios.child(`${novoRelatorio.anoRel}/${novoRelatorio.mesRel}`).child(novoRelatorio.inpuTnomeRel).set(novoRelatorio)
     .then(
        console.log("Relatório enviado!"),
        alert("Relatório enviado!"),
-       formRelatorio.inpuTnomeRel.value ="", //document.getElementById("nomeRel")
-       formRelatorio.participou.value="", //document.getElementById("participou")
-       formRelatorio.pAux.value="", //document.getElementById("pAux")
-       formRelatorio.eb.value ="", //document.getElementById("EB")
-       formRelatorio.horas.value="", //document.getElementById("horas")
-       formRelatorio.obs.value="" //document.getElementById("obs")
+       formRelatorio.reset(),
+       formRelatorio.grupoRel.value =grupoRel, //document.getElementById("nomeRel")
+       formRelatorio.anoRel.value=anoRel, //document.getElementById("participou")
+       formRelatorio.mesRel.value= mesRel, //document.getElementById("pAux")
+       //formRelatorio.eb.value ="", //document.getElementById("EB")
+      // formRelatorio.horas.value="", //document.getElementById("horas")
+       //formRelatorio.obs.value="" //document.getElementById("obs")
     );
     // refRelatorios.once('value').then(snapshot =>{
     //     //console.log(snapshot.numChildren());  
