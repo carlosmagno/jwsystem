@@ -82,6 +82,8 @@ function salvarRelatorio(){
        formRelatorio.grupoRel.value =grupoRel, //document.getElementById("nomeRel")
        formRelatorio.anoRel.value=anoRel, //document.getElementById("participou")
        formRelatorio.mesRel.value= mesRel, //document.getElementById("pAux")
+       formRelatorio.participou.value="" ,//document.getElementById("participou")
+       formRelatorio.pAux.value="" ,//document.getElementById("pAux")
        //formRelatorio.eb.value ="", //document.getElementById("EB")
       // formRelatorio.horas.value="", //document.getElementById("horas")
        //formRelatorio.obs.value="" //document.getElementById("obs")
