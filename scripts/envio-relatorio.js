@@ -133,5 +133,5 @@ function capturaRelatorio(){
         obs
 
     }
-    return novoRelatorio
+    //return novoRelatorio
 }
