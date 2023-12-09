@@ -95,9 +95,9 @@ function fechaEnvioRel(){
 
 };
 
-
+var novoRelatorio;
 function capturaRelatorio(){
-    var novoRelatorio={};
+    
     var formRelatorio = document.getElementById('formRelatorio')
     // var grupoRel = formRelatorio.grupoRel.value// document.getElementById("grupoRel")
     var anoRel = formRelatorio.anoRel.value
