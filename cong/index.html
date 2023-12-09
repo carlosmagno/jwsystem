@@ -103,7 +103,7 @@
 
         <section>
             <h2>Relatórios</h2>
-            <h3 id ="h3RelReg" onclick="abreEnvioRel()" class="oculto">Registro</h3>
+            <h3 id ="h3RelReg" onclick="abreEnvioRel()" class="">Registro</h3>
             <h3 id ="h3RelConG" class="oculto" onclick="abreConsultaRelGrupo()">Consulta - Grupo</h3>
             <h3 id ="h3RelConI" class="oculto">Consulta - Individual <em> - desenvolvendo</em></h3>
 
@@ -334,8 +334,35 @@
                         <!-- <option value="Guilherme Félix">Guilherme Félix</option> -->
                     </datalist>
                 </p>
-                <p class="pCheck"><input type="checkbox" name="" id="participou">Participou </p>
-                <p class="pCheck"><input type="checkbox" name="" id="pAux">Pioneiro auxiliar</p>
+
+                <fieldset id="fieldPart">
+                    <legend></legend>
+                    <p>Participou?
+                        <input type="radio" name="participou" id="Partsim" value="sim"><label for="Partsim">Sim</label>
+                        <input type="radio" name="participou" id="Partnao" value="não"><label for="Partnao">Não</label>
+                    </p>
+
+                </fieldset>
+
+
+                <!-- <p class="pCheck"><input type="checkbox" name="participou" id="participou">Participou </p> -->
+
+                <!-- <fieldset>
+                    <legend></legend> -->
+                    <p class="pCheck">Pioneiro auxiliar?
+                        <select name="pAux" id="pAux" class="selectP" >
+                            <option value=""></option>
+                            <option value="sim">Sim</option> 
+                        </select>
+                        <!-- <input type="radio" name="pAux" id="pAuxsim" value="sim"><label for="pAuxsim">Sim</label>
+                        <input type="radio" name="pAux" id="pAuxnao" value="não"><label for="pAuxnao" aria-selected="">Não</label> -->
+                    </p>
+
+                <!-- </fieldset> -->
+
+
+                <!-- <p class="pCheck"><input type="checkbox" name="pAux" id="pAux">Pioneiro auxiliar</p> -->
+
                 <p><input type="number" name="" id="eb" class="input-number">Estudos Bíblicos</p>
                 
                 <p><input type="number" name="" id="horas" class="input-number">Horas (pioneiro ou missionário)</p>

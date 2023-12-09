@@ -109,17 +109,20 @@ function capturaRelatorio(){
     var horas = formRelatorio.horas.value //document.getElementById("horas")
     var obs = formRelatorio.obs.value //document.getElementById("obs")
 
-    if(participou=="on"){
-        participou="sim"
-    }else{
-        participou="não"
-    };
+    // if(participou=="sim"){
+    //     participou="sim"
+    // }else{
+    //     participou="não"
+    // };
 
-    if(pAux=="on"){
-        pAux="sim"
-    }else{
-        pAux=" "
-    }
+    // if(pAux=="on"){
+    //     console.log(pAux)
+    //     pAux="sim"
+    //     console.log(pAux)
+    // }else{
+    //     console.log(pAux)
+    //     pAux=" "
+    // }
 
     novoRelatorio = {
         // grupoRel,

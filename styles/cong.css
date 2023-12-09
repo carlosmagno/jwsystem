@@ -175,10 +175,14 @@ input[type="checkbox"]  {
     height: 20px;
     line-height: 40px;
 } */
-
+#fieldPart{
+    padding: 5px;
+    width: 93%;
+}
 fieldset{
     width: 90%;
     margin:5px 0;
+    /* border: none; */
     /* padding: 1%; */
     /* align-self: flex-start; */
 }
