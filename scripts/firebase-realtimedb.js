@@ -87,6 +87,7 @@ function salvarRelatorio(){
        //formRelatorio.eb.value ="", //document.getElementById("EB")
       // formRelatorio.horas.value="", //document.getElementById("horas")
        //formRelatorio.obs.value="" //document.getElementById("obs")
+       novoRelatorio={}
     );
     // refRelatorios.once('value').then(snapshot =>{
     //     //console.log(snapshot.numChildren());  

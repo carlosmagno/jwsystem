@@ -95,7 +95,7 @@ function fechaEnvioRel(){
 
 };
 
-var novoRelatorio;
+var novoRelatorio={};
 function capturaRelatorio(){
     
     var formRelatorio = document.getElementById('formRelatorio')
@@ -113,11 +113,12 @@ function capturaRelatorio(){
         participou="sim"
     }else{
         participou="não"
-    }
+    };
+
     if(pAux=="on"){
         pAux="sim"
     }else{
-        pAux=""
+        pAux=" "
     }
 
     novoRelatorio = {
