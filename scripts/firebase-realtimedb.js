@@ -7,6 +7,7 @@
 * .child(): metodo que acessa o nó filho passado como parametro.
 */
 
+
 var NovoPublicador;
 var Congregacao;
 //Criando a referencia principal do banco de dados realtime do firebase para os dados que quero trabalhar
@@ -122,6 +123,14 @@ if(document.getElementById('grupoCampoCG')){
     //    console.log(snapshot.key);
         
     //    });
+
+
+    //ref.orderByChild("grupoPub").equalTo(this.value).once('value').then(snapshot=>{
+    //  snapshot.forEach(function (childSnapshot){
+    //      var valorNO =  childSnapshot.val()
+    //      var chave= childSnapshot.key
+    //  });
+    //});
 
        ref.orderByChild("grupoPub").equalTo(this.value).once('value').then(snapshot=>{
            
