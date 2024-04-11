@@ -18,8 +18,8 @@
             text-align: center;
             margin:20px 0 10px 0;
         }
-        p{
-            margin: 5px 0;
+        p,div{
+            margin: 3px 0;
         }
         table{
             border-collapse: collapse;
@@ -31,45 +31,117 @@
         }
         td{
             text-align: center;
+            /* width: 10px; */
         }
         tbody th{
             text-align: start;
+        }
+        tr th{
+            width:80px;
+        }
+
+        th#colObs{
+            width:320px;
         }
         input{
             background-color: rgb(203, 224, 216);
             border: none;
             padding: 5px;
+            
+        }
+
+        input[type='date']{
+            width: 40%;
+        }
+        #inpDateBatismo{
+            width:43.6%;
+        }
+
+        p input[type="text"]{
+            display: inline-block;
+            width:92%;
+            /* background-color: blue; */
+        }
+
+        
+        th input[type="text"]{
+            display: inline-block;
+            width:89%;
+            /* background-color: blue; */
+        }
+        td input[type="text"]{
+            width:97%;
+        }
+        input[type="checkbox"]{
+            /* height: 50px; */
+            border: none;
+         
+        }
+        input[type="number"]{
+            width: 50px;
+        }
+        
+        .percent20{
+            display: inline-block;
+            /* width: 18%; */
+            /* background-color: aqua; */
+        }
+
+        .group1{
+            display: inline-block;
+            /* width: 30%; */
+            /* background-color: blue; */
+        }
+        
+        .group2{
+            display: inline-block;
+            margin-left: 15px;
+            /* width: 50%; */
+        }
+        .lineCheks{
+            margin-left: 8px;
+        }
+        .colEB{
+            width: 30px;
+        }
+        #small{
+            font-size: 9px;
         }
     </style>
 </head>
 <body>
     <h2>REGISTRO DE PUBLICADOR DE CONGREGAÇÃO</h2>
     <div>
-    <P>Nome: <input type="text" name="" id=""></P>
-    <p>Data de Nascimento:<input type="date" name="" id="">
-        <input type="checkbox" name="" id="">Masculino
-        <input type="checkbox" name="" id="">Feminino
-    </p>
-    <p>Data de Batismo:<input type="date" name="" id="">
-       <input type="checkbox" name="" id="">Outras Ovelhas
-       <input type="checkbox" name="" id="">Ungido
-    </p>
-    <p><input type="checkbox" name="" id="">Ancião
-       <input type="checkbox" name="" id="">Servo ministerial
-       <input type="checkbox" name="" id="">Pioneiro regular
-       <input type="checkbox" name="" id="">Pioneiro especial
-       <input type="checkbox" name="" id="">Missionário em campo
+    <P><span class="percent20">Nome: </span><input type="text" name="" id=""></P>
+    <div>Data de Nascimento:<input type="date" name="" id="">
+        <div class="group2">
+            <input type="checkbox" name="" id=""> Masculino
+            <input type="checkbox" name="" id=""> Feminino
+        </div>
+    </div>
+    <div>Data de Batismo:<input type="date" name="" id="inpDateBatismo">
+        <div class="group2">
+            <input type="checkbox" name="" id=""> Outras Ovelhas
+            <input type="checkbox" name="" id=""> Ungido         
+        </div>
+
+    </div>
+    <p><input type="checkbox" name="" id="" class="lineCheks"> Ancião 
+       <input type="checkbox" name="" id="" class="lineCheks"> Servo ministerial 
+       <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro regular 
+       <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro especial 
+       <input type="checkbox" name="" id="" class="lineCheks"> Missionário em campo 
     </p>
     </div>
     <table>
         <thead>
             <tr>
-                <th>Ano de serviço</th>
-                <th>Participou no ministério</th>
-                <th>Estudos bíblicos</th>
+                <th><p>Ano de serviço</p> <input type="text" name="as" id="as"></th>
+                <th>Participou <p>no</p>  ministério</th>
+                <th  class="colEB" scope="col">Estudos bíblicos</th>
                 <th>Pioneiro auxiliar</th>
-                <th>Horas <span>(Se for pioneiro ou missionário em campo)</span></th>
-                <th>Observações</th>
+                <th>Horas <p id="small">(Se for pioneiro ou missionário em campo)</p></th>
+                <th id="colObs"><span></span>   Observações   <span></span></th>
 
             </tr>
         </thead>
@@ -78,7 +150,7 @@
             <tr>
                 <th>Setembro</td>
                 <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
+                <td ><input type="number" name="eb9" id="eb9" ></td>
                 <td><input type="checkbox" name="pa9" id="pa9"></td>
                 <td><input type="number" name="h9" id="h9"></td>
                 <td><input type="text" name="ob9" id="ob9"></td>
