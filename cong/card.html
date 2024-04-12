@@ -4,21 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartão de Publicador</title>
+    <!-- <link rel="stylesheet" href="../styles/cong.css"> -->
     <style>
         *{
-            margin:0 auto;
+            margin:0;
             padding: 0;
+
+        }
+        body{          
             font-family:Arial, 'Arial Narrow', sans-serif, Helvetica, sans-serif;
             font-weight: 700;
+            /* width: 50vw;
+            background-color: aqua ;
+            border: 1px solid black; */
+        
+        } 
+
+        #controles{
+            /* background-color: red; */
+            width: 30%;
+            border-right: 1px solid gray;
+
         }
-        body{
-            width: 50vw;
+        #registro{
+            /* background-color: pink; */
+            width:69%;
+            float: right;
+           
+            
+        }
+        div.partes{
+            height: 94vh;
+            display: inline-block;
+            /* margin: 0 auto; */
+        }
+        p.direita{
+        font-weight: bold;
+        padding: 10px;
+        /* height: 5vh; */
+        text-align: end;
+        background-color: blueviolet;
+        color:white;
+        }
+        p.direita> span{
+            display: inline-block;
+            border: 1px solid rgb(197, 41, 41);
+            padding: 2px 5px;
+            border-radius:4px;
+            background-color:rgb(203, 26, 26);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        p.direita> span:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+        }
+
+        div#controles select, button{
+            display: inline-block;
+            width: 47%;
+            margin:1%;
+            padding: 2%;
+            text-align: center;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px gray;
+        }
+
+        div#controles p{
+            padding: 2%;
+            margin: 1% 0;
+            box-shadow: 1px 1px 3px gray;
+        }
+
+        div#listaPubs{
+            background-color: white;
+            width: 95%;
+            margin: 1%;
+            overflow-y: scroll;
+            padding:1%;
+            border-radius: 3px;
         }
         h2{
             text-align: center;
-            margin:20px 0 10px 0;
+            margin:5px 0 10px 0;
         }
-        p,div{
+        #int-registro p,div{
             margin: 3px 0;
         }
         table{
@@ -59,7 +130,7 @@
 
         p input[type="text"]{
             display: inline-block;
-            width:92%;
+            width:85%;
             /* background-color: blue; */
         }
 
@@ -107,146 +178,192 @@
         #small{
             font-size: 9px;
         }
+        #int-registro{
+            width: 80%;
+            /* background-color: aqua; */
+            margin: 0 auto;
+            padding:5px 20px 10px;
+            margin-top: 5px;
+            border-radius: 10px;
+            box-shadow: 1px 3px 3px 3px gray;
+        }
+
+        @media print {
+            /* body{
+                width:100vw;
+            } */
+
+            .formulario{
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <h2>REGISTRO DE PUBLICADOR DE CONGREGAÇÃO</h2>
-    <div>
-    <P><span class="percent20">Nome: </span><input type="text" name="" id=""></P>
-    <div>Data de Nascimento:<input type="date" name="" id="">
-        <div class="group2">
-            <input type="checkbox" name="" id=""> Masculino
-            <input type="checkbox" name="" id=""> Feminino
+    <div id="grid">
+
+        <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p>
+
+        <div id="controles" class="partes">
+            <select name="anoServico" id="anoServico">
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+            <button>Imprimir registro atual</button>
+            <select name="grupo" id="grupo">
+                <option value="Grupo 1">Grupo 1</option>
+                <option value="Grupo 1">Grupo 2</option>
+            </select>
+            <button>Imprimir registros do grupo</button>
+            <div id="listaPubs">
+                <p>Carlos Magno Bandeira dos Santos</p>
+                <p>Raquel Matos da Serra dos Santos</p>
+            </div>
         </div>
-    </div>
-    <div>Data de Batismo:<input type="date" name="" id="inpDateBatismo">
-        <div class="group2">
-            <input type="checkbox" name="" id=""> Outras Ovelhas
-            <input type="checkbox" name="" id=""> Ungido         
+
+        <div id="registro" class="partes">
+            <div id="int-registro">
+                <h2>REGISTRO DE PUBLICADOR DE CONGREGAÇÃO</h2>
+                <div>
+                <p><span class="percent20">Nome: </span><input type="text" name="" id=""></p>
+                <div>Data de Nascimento:<input type="date" name="" id="">
+                    <div class="group2">
+                        <input type="checkbox" name="" id=""> Masculino
+                        <input type="checkbox" name="" id=""> Feminino
+                    </div>
+                </div>
+                <div>Data de Batismo:<input type="date" name="" id="inpDateBatismo">
+                    <div class="group2">
+                        <input type="checkbox" name="" id=""> Outras Ovelhas
+                        <input type="checkbox" name="" id=""> Ungido         
+                    </div>
+
+                </div>
+                <p><input type="checkbox" name="" id="" class="lineCheks"> Ancião 
+                <input type="checkbox" name="" id="" class="lineCheks"> Servo ministerial 
+                <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro regular 
+                <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro especial 
+                <input type="checkbox" name="" id="" class="lineCheks"> Missionário em campo 
+                </p>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><p>Ano de serviço</p> <input type="text" name="as" id="as"></th>
+                            <th>Participou <p>no</p>  ministério</th>
+                            <th  class="colEB" scope="col">Estudos bíblicos</th>
+                            <th>Pioneiro auxiliar</th>
+                            <th>Horas <p id="small">(Se for pioneiro ou missionário em campo)</p></th>
+                            <th id="colObs"><span></span>   Observações   <span></span></th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th>Setembro</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td ><input type="number" name="eb9" id="eb9" ></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Outubro</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Novembro</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Dezembro</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Janeiro</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Fevereiro</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Março</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Abril</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Maio</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Junho</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Julho</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                        <tr>
+                            <th>Agosto</td>
+                            <td><input type="checkbox" name="pm9" id="pm9"></td>
+                            <td><input type="number" name="eb9" id="eb9"></td>
+                            <td><input type="checkbox" name="pa9" id="pa9"></td>
+                            <td><input type="number" name="h9" id="h9"></td>
+                            <td><input type="text" name="ob9" id="ob9"></td>
+                        </tr>
+                    </tbody>
+
+                
+                </table>
+            </div>
         </div>
 
     </div>
-    <p><input type="checkbox" name="" id="" class="lineCheks"> Ancião 
-       <input type="checkbox" name="" id="" class="lineCheks"> Servo ministerial 
-       <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro regular 
-       <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro especial 
-       <input type="checkbox" name="" id="" class="lineCheks"> Missionário em campo 
-    </p>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th><p>Ano de serviço</p> <input type="text" name="as" id="as"></th>
-                <th>Participou <p>no</p>  ministério</th>
-                <th  class="colEB" scope="col">Estudos bíblicos</th>
-                <th>Pioneiro auxiliar</th>
-                <th>Horas <p id="small">(Se for pioneiro ou missionário em campo)</p></th>
-                <th id="colObs"><span></span>   Observações   <span></span></th>
 
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <th>Setembro</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td ><input type="number" name="eb9" id="eb9" ></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Outubro</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Novembro</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Dezembro</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Janeiro</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Fevereiro</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Março</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Abril</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Maio</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Junho</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Julho</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-            <tr>
-                <th>Agosto</td>
-                <td><input type="checkbox" name="pm9" id="pm9"></td>
-                <td><input type="number" name="eb9" id="eb9"></td>
-                <td><input type="checkbox" name="pa9" id="pa9"></td>
-                <td><input type="number" name="h9" id="h9"></td>
-                <td><input type="text" name="ob9" id="ob9"></td>
-            </tr>
-        </tbody>
-
-    
-    </table>
-    
 </body>
 </html>
