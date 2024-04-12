@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartão de Publicador</title>
+    <!-- Scripts pre-onload archives -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth__pt_br.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth__pt_br.js"></script> -->
+    <script  src="../scripts/firebase-initialize.js"></script>  
+    <script src="../scripts/firebase-authenticathion-UI.js"></script>
+    <!-- <script src="../scripts/firebase-state_auth.js"></script> -->
+<!-- *************************** -->
     <!-- <link rel="stylesheet" href="../styles/cong.css"> -->
     <style>
         *{
@@ -211,8 +222,8 @@
             </select>
             <button>Imprimir registro atual</button>
             <select name="grupo" id="grupo">
-                <option value="Grupo 1">Grupo 1</option>
-                <option value="Grupo 1">Grupo 2</option>
+                <option value="Grupo 1">1</option>
+                <option value="Grupo 1">2</option>
             </select>
             <button>Imprimir registros do grupo</button>
             <div id="listaPubs">
@@ -225,31 +236,31 @@
             <div id="int-registro">
                 <h2>REGISTRO DE PUBLICADOR DE CONGREGAÇÃO</h2>
                 <div>
-                <p><span class="percent20">Nome: </span><input type="text" name="" id=""></p>
-                <div>Data de Nascimento:<input type="date" name="" id="">
+                <p><span class="percent20">Nome: </span><input type="text" name="nomePub" id="nomePub"></p>
+                <div>Data de Nascimento:<input type="date" name="dataNasPub" id="dataNasPub">
                     <div class="group2">
-                        <input type="checkbox" name="" id=""> Masculino
-                        <input type="checkbox" name="" id=""> Feminino
+                        <input type="checkbox" name="" id="mas"> Masculino
+                        <input type="checkbox" name="" id="fem"> Feminino
                     </div>
                 </div>
                 <div>Data de Batismo:<input type="date" name="" id="inpDateBatismo">
                     <div class="group2">
-                        <input type="checkbox" name="" id=""> Outras Ovelhas
-                        <input type="checkbox" name="" id=""> Ungido         
+                        <input type="checkbox" name="" id="oo"> Outras Ovelhas
+                        <input type="checkbox" name="" id="un"> Ungido         
                     </div>
 
                 </div>
-                <p><input type="checkbox" name="" id="" class="lineCheks"> Ancião 
-                <input type="checkbox" name="" id="" class="lineCheks"> Servo ministerial 
-                <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro regular 
-                <input type="checkbox" name="" id="" class="lineCheks"> Pioneiro especial 
-                <input type="checkbox" name="" id="" class="lineCheks"> Missionário em campo 
+                <p><input type="checkbox" name="" id="anc" class="lineCheks"> Ancião 
+                <input type="checkbox" name="" id="sm" class="lineCheks"> Servo ministerial 
+                <input type="checkbox" name="" id="pr" class="lineCheks"> Pioneiro regular 
+                <input type="checkbox" name="" id="pe" class="lineCheks"> Pioneiro especial 
+                <input type="checkbox" name="" id="mc" class="lineCheks"> Missionário em campo 
                 </p>
                 </div>
                 <table>
                     <thead>
                         <tr>
-                            <th><p>Ano de serviço</p> <input type="text" name="as" id="as"></th>
+                            <th><p>Ano de serviço</p> <input type="text" name="aserv" id="aserv"></th>
                             <th>Participou <p>no</p>  ministério</th>
                             <th  class="colEB" scope="col">Estudos bíblicos</th>
                             <th>Pioneiro auxiliar</th>
@@ -364,6 +375,8 @@
         </div>
 
     </div>
+    <!-- <script src="../scripts/firebase-realtimedb.js"></script> -->
+    <script src="../scripts/consultas-relatorios.js"></script>
 
 </body>
 </html>

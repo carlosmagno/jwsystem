@@ -102,86 +102,79 @@ function consultaRelGrupo(){
 
       }else{
         console.log('Já esta exibindo a consulta')
-        //contentConsRelGrupo.innerHTML=''
       }
 
     }else{
       console.log("Não há dados neste nó, aguarde ...");
       contentConsRelGrupo.innerHTML=''
-      // var grupoCons = formConsultaRelGrupo.grupoConsRelGrupo.value
-      // var anoCons = formConsultaRelGrupo.anoConsReGrupo.value
-      // var mesCons = formConsultaRelGrupo.mesConsRelGrupo.value
       alert("Não foram encontrados resultados para esta consulta!")
     }
 
   });
 
-  /*
-  refRelatorios.get().then((snapshot)=>{
-
-    if (snapshot.exists()) {
-
-      if(contentConsRelGrupo.innerHTML==''){
-        var n=0;
-        snapshot.forEach((childSnapshot) =>{
-         var ValorNo = childSnapshot.val()
-         var  chave = childSnapshot.key
-
-         var linhaCG = document.createElement('tr')
-         linhaCG.setAttribute('id', chave )
-
-         if(n % 2 === 0) {
-          //console.log("O número é par", n);
-          linhaCG.setAttribute('class','tr2')
-       }else{
-          //console.log("O número é impar", n);
-          linhaCG.setAttribute('class','tr3')
-        }
-        n+=1
-
-         var celNome = document.createElement('td')
-         var participou = document.createElement('td')
-         var pAux = document.createElement('td')
-         var estBib = document.createElement('td')
-         var horas = document.createElement('td')
-         var obs = document.createElement('td')
-
-         celNome.innerText = ValorNo.inpuTnomeRel
-         participou.innerText = ValorNo.participou
-         pAux.innerText = ValorNo.pAux
-         estBib.innerText = ValorNo.eb
-         horas.innerText = ValorNo.horas
-         obs.innerText = ValorNo.obs
-
-         linhaCG.appendChild(celNome)
-         linhaCG.appendChild(participou)
-         linhaCG.appendChild(pAux)
-         linhaCG.appendChild(estBib)
-         linhaCG.appendChild(horas)
-         linhaCG.appendChild(obs)
-         contentConsRelGrupo.appendChild(linhaCG)
-              
-
-        });
-
-
-      }else{
-        console.log('Já esta exibindo a consulta')
-      }
-
-    }else{
-      console.log("Não há dados neste nó, aguarde ...");
-      contentConsRelGrupo.innerHTML=''
-      // var grupoCons = formConsultaRelGrupo.grupoConsRelGrupo.value
-      // var anoCons = formConsultaRelGrupo.anoConsReGrupo.value
-      // var mesCons = formConsultaRelGrupo.mesConsRelGrupo.value
-      alert("Não foram encontrados resultados para esta consulta!")
-    }
-
-  })
-  */
 }
 
+var listaPubs = document.getElementById('listaPubs')
+var nomePub = document.getElementById('nomePub')
+var nomeAtual;
+// var targetAnterior;
+listaPubs.addEventListener('click', (e)=>{
+  // targetAnterior =e.target
+  if (e.target.localName=="p"){
+    //console.log("p ", e)
+    // e.target.style.backgroundColor="red"
+    nomeAtual = e.target.innerText
+    nomePub.value = ""
+    nomePub.value = nomeAtual
+    consultaRelPublicador()
+    //console.log(e.target.innerText)
+  }else{
+    //console.log("div ", e)
+  }
+  
+})
+
 function consultaRelPublicador(){
+
+  // var contentConsRelGrupo = document.getElementById('contentConsRelGrupo')
+  // var formConsultaRelGrupo = document.getElementById('formConsultaRelGrupo')
+  var grupoCons = document.getElementById('grupo') 
+  var anoCons = document.getElementById('anoServico')
+  var mesCons="Novembro";
+  var nomeCons;
+  var listaPubs = document.getElementById('listaPubs')
+
+  var nomePub = document.getElementById('nomePub')
+  var dataNasPub = document.getElementById('dataNasPub')
+  var mas = document.getElementById('mas')
+  var fem = document.getElementById('fem')
+  var inpDateBatismo = document.getElementById('inpDateBatismo')
+  var oo = document.getElementById('oo')
+  var un  = document.getElementById('un')
+  var anc = document.getElementById('anc')
+  var sm = document.getElementById('sm')
+  var pr  = document.getElementById('pr')
+  var pe  = document.getElementById('pe')
+  var mc  = document.getElementById('mc')
+  var aserv = document.getElementById('aserv')
+  
+  var pm9
+  var eb9
+  var pa9
+  var h9
+  var ob9
+ 
+
+  console.log('mudou')
+
+  // var refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Relatórios`).child(anoCons.value).child(mesCons).child(nomeAtual);
+  var refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
+
+  refPublicadores.orderByChild("grupoPub").equalTo(grupoCons.value).once('value').then(snapshot=>{
+    if (snapshot.exists()) {
+      var dados = snapshot.val()
+      console.log("dados: ", dados)
+    }
+  });
 
 }
