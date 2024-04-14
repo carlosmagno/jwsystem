@@ -95,6 +95,7 @@
             overflow-y: scroll;
             padding:1%;
             border-radius: 3px;
+            max-height: 92vh;
         }
         h2{
             text-align: center;
@@ -162,6 +163,11 @@
         input[type="number"]{
             width: 50px;
         }
+
+        /* input[disabled]{
+            background-color: black;
+            color: brown;
+        } */
         
         .percent20{
             display: inline-block;
@@ -200,13 +206,21 @@
         }
 
         @media print {
-            /* body{
-                width:100vw;
-            } */
+            body{
+                scale: 1;
+                background-color: aqua;
+            }
 
-            .formulario{
+            .formulario, #controles{
                 display: none;
             }
+
+            #registro{
+                width: 100%;
+                scale: 0.85;
+            }
+
+            
         }
     </style>
 </head>
@@ -217,50 +231,77 @@
 
         <div id="controles" class="partes">
             <select name="anoServico" id="anoServico">
+                <option value="Selecione o ano">Selecione o ano</option>
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
             </select>
             <button>Imprimir registro atual</button>
             <select name="grupo" id="grupo">
-                <option value="Grupo 1">1</option>
-                <option value="Grupo 1">2</option>
+                <option value="Selecione o grupo">Selecione o grupo</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
             </select>
             <button>Imprimir registros do grupo</button>
             <div id="listaPubs">
-                <p>Carlos Magno Bandeira dos Santos</p>
-                <p>Raquel Matos da Serra dos Santos</p>
+                <!-- <p>Carlos Magno Bandeira dos Santos</p>
+                <p>Raquel Matos da Serra dos Santos</p> -->
             </div>
         </div>
 
         <div id="registro" class="partes">
             <div id="int-registro">
                 <h2>REGISTRO DE PUBLICADOR DE CONGREGAÇÃO</h2>
-                <div>
-                <p><span class="percent20">Nome: </span><input type="text" name="nomePub" id="nomePub"></p>
-                <div>Data de Nascimento:<input type="date" name="dataNasPub" id="dataNasPub">
-                    <div class="group2">
-                        <input type="checkbox" name="" id="mas"> Masculino
-                        <input type="checkbox" name="" id="fem"> Feminino
+                <form id="formConsRegPub">
+                    <p><span class="percent20">Nome: </span><input type="text" name="nomePub" id="nomePub"></p>
+                    <div>Data de Nascimento:<input type="date" name="dataNasPub" id="dataNasPub" disabled>
+                        <div class="group2">
+                            <!-- <fieldset> -->
+                                <input type="radio" name="sexo" id="mas" value="Masculino" disabled><label for="masculino" >Masculino</label>
+                                <input type="radio" name="sexo" id="fem" value="Feminino" disabled><label for="feminino" >Feminino</label>
+                            <!-- </fieldset> -->
+                            <!-- <input type="checkbox" name="" id="mas"> Masculino
+                            <input type="checkbox" name="" id="fem"> Feminino -->
+                        </div>
                     </div>
-                </div>
-                <div>Data de Batismo:<input type="date" name="" id="inpDateBatismo">
-                    <div class="group2">
-                        <input type="checkbox" name="" id="oo"> Outras Ovelhas
-                        <input type="checkbox" name="" id="un"> Ungido         
+                    <div>Data de Batismo:<input type="date" name="" id="inpDateBatismo" disabled value="">
+                        <div class="group2">
+                            <!-- <fieldset> -->
+                                <input type="radio" name="esperanca" id="oo" value="Outras ovelhas" disabled><label for="oo">Outras ovelhas</label>
+                                <input type="radio" name="esperanca" id="un" value="Ungido" disabled><label for="ungido">Ungido</label>
+                            <!-- </fieldset> -->
+                            <!-- <input type="checkbox" name="" id="oo"> Outras Ovelhas
+                            <input type="checkbox" name="" id="un"> Ungido          -->
+                        </div>
                     </div>
-
-                </div>
-                <p><input type="checkbox" name="" id="anc" class="lineCheks"> Ancião 
-                <input type="checkbox" name="" id="sm" class="lineCheks"> Servo ministerial 
-                <input type="checkbox" name="" id="pr" class="lineCheks"> Pioneiro regular 
-                <input type="checkbox" name="" id="pe" class="lineCheks"> Pioneiro especial 
-                <input type="checkbox" name="" id="mc" class="lineCheks"> Missionário em campo 
-                </p>
-                </div>
+                    <p>
+                        <!-- <fieldset> -->
+                            <input type="radio" name="PSvaroes" id="anc" value="Ancião" disabled><label for="anciao">Ancião</label>
+                            <input type="radio" name="PSvaroes" id="sm" value="Servo ministerial" disabled><label for="servoministerial">Servo Ministerial</label>
+                        <!-- </fieldset> -->
+                        <!-- <input type="checkbox" name="" id="anc" class="lineCheks"> Ancião 
+                        <input type="checkbox" name="" id="sm" class="lineCheks"> Servo ministerial  -->
+                        <!-- <fieldset> -->
+                            <input type="radio" name="PScampo" id="pr" value="Pioneiro regular" disabled><label for="pioneiroregular">Pioneiro regular</label>
+                            <input type="radio" name="PScampo" id="pe" value="Pioneiro especial" disabled><label for="pioneiroespecial">Pioneiro especial</label>
+                            <input type="radio" name="PScampo" id="mc" value="Missionário em campo" disabled><label for="missionarioemcampo">Missionário em Campo</label>
+                        <!-- </fieldset> -->
+                        <!-- <input type="checkbox" name="" id="pr" class="lineCheks"> Pioneiro regular 
+                        <input type="checkbox" name="" id="pe" class="lineCheks"> Pioneiro especial 
+                        <input type="checkbox" name="" id="mc" class="lineCheks"> Missionário em campo  -->
+                    </p>
+                </form>
                 <table>
                     <thead>
                         <tr>
-                            <th><p>Ano de serviço</p> <input type="text" name="aserv" id="aserv"></th>
+                            <th><p>Ano de serviço</p> <input type="text" name="aserv" id="aserv" disabled></th>
                             <th>Participou <p>no</p>  ministério</th>
                             <th  class="colEB" scope="col">Estudos bíblicos</th>
                             <th>Pioneiro auxiliar</th>
@@ -269,105 +310,117 @@
 
                         </tr>
                     </thead>
-
+                    <form action="" id="formAtividades">
                     <tbody>
                         <tr>
-                            <th>Setembro</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td ><input type="number" name="eb9" id="eb9" ></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
+                            <th>Setembro</th>
+                            <td><input type="checkbox" name="pm9" id="pm9" class="checkDS" disabled></td>
+                            <td ><input type="number" name="eb9" id="eb9" disabled></td>
+                            <td><input type="checkbox" name="pa9" id="pa9" class="checkDS" disabled></td>
+                            <td><input type="number" name="h9" id="h9"disabled></td>
+                            <td><input type="text" name="ob9" id="ob9"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Outubro</th>
+                            <td><input type="checkbox" name="pm10" id="pm10" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb10" id="eb10" disabled></td>
+                            <td><input type="checkbox" name="pa10" id="pa10" class="checkDS"disabled></td>
+                            <td><input type="number" name="h10" id="h10"disabled></td>
+                            <td><input type="text" name="ob10" id="ob10"disabled></td>
                         </tr>
+                       
+                       <tr>
+                            <th>Novembro</th>
+                            <td><input type="checkbox" name="pm11" id="pm11" class="checkDS" disabled></td>
+                            <td ><input type="number" name="eb11" id="eb11" disabled></td>
+                            <td><input type="checkbox" name="pa11" id="pa11" class="checkDS" disabled></td>
+                            <td><input type="number" name="h11" id="h11" disabled></td>
+                            <td><input type="text" name="ob11" id="ob11" disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Dezembro</th>
+                            <td><input type="checkbox" name="pm12" id="pm12" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb12" id="eb12" disabled></td>
+                            <td><input type="checkbox" name="pa12" id="pa12" class="checkDS"disabled></td>
+                            <td><input type="number" name="h12" id="h12"disabled></td>
+                            <td><input type="text" name="ob12" id="ob12"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Janeiro</th>
+                            <td><input type="checkbox" name="pm1" id="pm1" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb1" id="eb1" disabled></td>
+                            <td><input type="checkbox" name="pa1" id="pa1" class="checkDS"disabled></td>
+                            <td><input type="number" name="h1" id="h1"disabled></td>
+                            <td><input type="text" name="ob1" id="ob1"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Fevereiro</th>
+                            <td><input type="checkbox" name="pm2" id="pm2" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb2" id="eb2" disabled></td>
+                            <td><input type="checkbox" name="pa2" id="pa2" class="checkDS"disabled></td>
+                            <td><input type="number" name="h2" id="h2"disabled></td>
+                            <td><input type="text" name="ob2" id="ob2"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Março</th>
+                            <td><input type="checkbox" name="pm3" id="pm3" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb3" id="eb3" disabled></td>
+                            <td><input type="checkbox" name="pa3" id="pa3" class="checkDS"disabled></td>
+                            <td><input type="number" name="h3" id="h3"disabled></td>
+                            <td><input type="text" name="ob3" id="ob3"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Abril</th>
+                            <td><input type="checkbox" name="pm4" id="pm4" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb4" id="eb4" disabled></td>
+                            <td><input type="checkbox" name="pa4" id="pa4" class="checkDS"disabled></td>
+                            <td><input type="number" name="h4" id="h4"disabled></td>
+                            <td><input type="text" name="ob4" id="ob4"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Maio</th>
+                            <td><input type="checkbox" name="pm5" id="pm5" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb5" id="eb5" disabled></td>
+                            <td><input type="checkbox" name="pa5" id="pa5" class="checkDS"disabled></td>
+                            <td><input type="number" name="h5" id="h5"disabled></td>
+                            <td><input type="text" name="ob5" id="ob5"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Junho</th>
+                            <td><input type="checkbox" name="pm6" id="pm6" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb6" id="eb6" disabled></td>
+                            <td><input type="checkbox" name="pa6" id="pa6" class="checkDS"disabled></td>
+                            <td><input type="number" name="h6" id="h6"disabled></td>
+                            <td><input type="text" name="ob6" id="ob6"disabled></td>
+                       </tr>
+                       
+                       <tr>
+                            <th>Julho</th>
+                            <td><input type="checkbox" name="pm7" id="pm7" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb7" id="eb7" disabled></td>
+                            <td><input type="checkbox" name="pa7" id="pa7" class="checkDS"disabled></td>
+                            <td><input type="number" name="h7" id="h7"disabled></td>
+                            <td><input type="text" name="ob7" id="ob7"disabled></td>
+                       </tr>
+                       
                         <tr>
-                            <th>Outubro</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Novembro</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Dezembro</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Janeiro</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Fevereiro</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Março</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Abril</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Maio</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Junho</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Julho</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
-                        </tr>
-                        <tr>
-                            <th>Agosto</td>
-                            <td><input type="checkbox" name="pm9" id="pm9"></td>
-                            <td><input type="number" name="eb9" id="eb9"></td>
-                            <td><input type="checkbox" name="pa9" id="pa9"></td>
-                            <td><input type="number" name="h9" id="h9"></td>
-                            <td><input type="text" name="ob9" id="ob9"></td>
+                            <th>Agosto</th>
+                            <td><input type="checkbox" name="pm8" id="pm8" class="checkDS"disabled></td>
+                            <td ><input type="number" name="eb8" id="eb8" disabled></td>
+                            <td><input type="checkbox" name="pa8" id="pa8" class="checkDS"disabled></td>
+                            <td><input type="number" name="h8" id="h8"disabled></td>
+                            <td><input type="text" name="ob8" id="ob8"disabled></td>
                         </tr>
                     </tbody>
+                </form>
 
                 
                 </table>
