@@ -24,7 +24,7 @@
         }
         body{          
             font-family:Arial, 'Arial Narrow', sans-serif, Helvetica, sans-serif;
-            font-weight: 700;
+            font-weight: 500;
             /* width: 50vw;
             background-color: aqua ;
             border: 1px solid black; */
@@ -134,10 +134,10 @@
         }
 
         input[type='date']{
-            width: 40%;
+            width: 30%;
         }
         #inpDateBatismo{
-            width:43.6%;
+            width:33.4%;
         }
 
         p input[type="text"]{
@@ -209,18 +209,27 @@
             body{
                 scale: 1;
                 background-color: aqua;
+                margin: 0 auto;
+                width: 100%;
             }
 
-            .formulario, #controles{
+            .formulario, #controles, .direita{
                 display: none;
             }
 
             #registro{
-                width: 100%;
-                scale: 0.85;
+                width: 120%;
+                scale: 0.80;
+                margin: 0 auto;
+                background-color: aqua;
             }
-
+            /* th#colObs{
+            width:350px;
+            } */
             
+            #grid{
+                padding-left: 20px;
+            }
         }
     </style>
 </head>
@@ -235,7 +244,7 @@
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
             </select>
-            <button>Imprimir registro atual</button>
+            <button onclick="window.print()">Imprimir registro atual</button>
             <select name="grupo" id="grupo">
                 <option value="Selecione o grupo">Selecione o grupo</option>
                 <option value="1">1</option>
@@ -264,8 +273,8 @@
                     <div>Data de Nascimento:<input type="date" name="dataNasPub" id="dataNasPub" disabled>
                         <div class="group2">
                             <!-- <fieldset> -->
-                                <input type="radio" name="sexo" id="mas" value="Masculino" disabled><label for="masculino" >Masculino</label>
-                                <input type="radio" name="sexo" id="fem" value="Feminino" disabled><label for="feminino" >Feminino</label>
+                                <input type="radio" name="sexo" id="mas" value="Masculino" disabled><label for="masculino" > Masculino</label>
+                                <input type="radio" name="sexo" id="fem" value="Feminino" disabled><label for="feminino" > Feminino</label>
                             <!-- </fieldset> -->
                             <!-- <input type="checkbox" name="" id="mas"> Masculino
                             <input type="checkbox" name="" id="fem"> Feminino -->
@@ -274,8 +283,8 @@
                     <div>Data de Batismo:<input type="date" name="" id="inpDateBatismo" disabled value="">
                         <div class="group2">
                             <!-- <fieldset> -->
-                                <input type="radio" name="esperanca" id="oo" value="Outras ovelhas" disabled><label for="oo">Outras ovelhas</label>
-                                <input type="radio" name="esperanca" id="un" value="Ungido" disabled><label for="ungido">Ungido</label>
+                                <input type="radio" name="esperanca" id="oo" value="Outras ovelhas" disabled><label for="oo"> Outras ovelhas</label>
+                                <input type="radio" name="esperanca" id="un" value="Ungido" disabled><label for="ungido"> Ungido</label>
                             <!-- </fieldset> -->
                             <!-- <input type="checkbox" name="" id="oo"> Outras Ovelhas
                             <input type="checkbox" name="" id="un"> Ungido          -->
@@ -283,15 +292,15 @@
                     </div>
                     <p>
                         <!-- <fieldset> -->
-                            <input type="radio" name="PSvaroes" id="anc" value="Ancião" disabled><label for="anciao">Ancião</label>
-                            <input type="radio" name="PSvaroes" id="sm" value="Servo ministerial" disabled><label for="servoministerial">Servo Ministerial</label>
+                            <input type="radio" name="PSvaroes" id="anc" value="Ancião" disabled><label for="anciao"> Ancião</label>
+                            <input type="radio" name="PSvaroes" id="sm" value="Servo ministerial" disabled><label for="servoministerial"> Servo Ministerial</label>
                         <!-- </fieldset> -->
                         <!-- <input type="checkbox" name="" id="anc" class="lineCheks"> Ancião 
                         <input type="checkbox" name="" id="sm" class="lineCheks"> Servo ministerial  -->
                         <!-- <fieldset> -->
-                            <input type="radio" name="PScampo" id="pr" value="Pioneiro regular" disabled><label for="pioneiroregular">Pioneiro regular</label>
-                            <input type="radio" name="PScampo" id="pe" value="Pioneiro especial" disabled><label for="pioneiroespecial">Pioneiro especial</label>
-                            <input type="radio" name="PScampo" id="mc" value="Missionário em campo" disabled><label for="missionarioemcampo">Missionário em Campo</label>
+                            <input type="radio" name="PScampo" id="pr" value="Pioneiro regular" disabled><label for="pioneiroregular"> Pioneiro regular</label>
+                            <input type="radio" name="PScampo" id="pe" value="Pioneiro especial" disabled><label for="pioneiroespecial"> Pioneiro especial</label>
+                            <input type="radio" name="PScampo" id="mc" value="Missionário em campo" disabled><label for="missionarioemcampo"> Missionário em Campo</label>
                         <!-- </fieldset> -->
                         <!-- <input type="checkbox" name="" id="pr" class="lineCheks"> Pioneiro regular 
                         <input type="checkbox" name="" id="pe" class="lineCheks"> Pioneiro especial 
