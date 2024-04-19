@@ -215,6 +215,8 @@ function consultaRelPublicador(){
 
   var pm8 = document.getElementById('pm8'); var eb8 = document.getElementById('eb8'); var pa8 = document.getElementById('pa8'); var h8 = document.getElementById('h8'); var ob8 = document.getElementById('ob8')
   
+  var totalH = document.getElementById('totalH');
+
 //   for (var i = 1; i <= 12; i++) {
 //     console.log(
 // `<tr>
@@ -277,7 +279,7 @@ function consultaRelPublicador(){
           item.removeAttribute('checked')
        }
           
-        
+        var horas = 0
         
         snapshot.forEach((childSnapshot) =>{
 
@@ -286,7 +288,8 @@ function consultaRelPublicador(){
           var dadosPub = dados[nomeAtual]
           // console.log(mes)
           // console.log(dados[nomeAtual])
-
+          horas+=Number(dadosPub.horas) 
+          
           //var mes
           switch (mes){
             case 'Setembro':
@@ -394,6 +397,7 @@ function consultaRelPublicador(){
             break;
 
           }
+          totalH.value=horas
           // if(dados[nomeAtual].mesRel=="Setembro"){
           //   //console.log("as horas em Dezembro foram: ", dados[nomeAtual].horas)
           // }

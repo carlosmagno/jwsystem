@@ -22,9 +22,14 @@
             padding: 0;
 
         }
+
+        .oculto{
+            display: none;
+        }
         body{          
             font-family:Arial, 'Arial Narrow', sans-serif, Helvetica, sans-serif;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 14px;
             /* width: 50vw;
             background-color: aqua ;
             border: 1px solid black; */
@@ -107,6 +112,7 @@
         table{
             border-collapse: collapse;
             border: 1px solid black;
+            width: 100%;
         }
         td, th{
             border: 1px solid black;
@@ -115,6 +121,12 @@
         td{
             text-align: center;
             /* width: 10px; */
+        }
+
+        td.ofBorder{
+            border: 1 px solid white;
+            /* background-color: brown; */
+            text-align: end;
         }
         tbody th{
             text-align: start;
@@ -204,6 +216,13 @@
             border-radius: 10px;
             box-shadow: 1px 3px 3px 3px gray;
         }
+        .pointer{
+            transition: transform 0.3s;
+        }
+        .pointer:hover{
+            cursor: pointer;
+            transform:scale(1.05);
+        }
 
         @media print {
             body{
@@ -235,16 +254,17 @@
 </head>
 <body>
     <div id="grid">
-
-        <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p>
+        
+        <p class="direita"><span onclick="window.history.back()">X</span></p>
+        <!-- <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p> -->
 
         <div id="controles" class="partes">
-            <select name="anoServico" id="anoServico">
+            <select name="anoServico" id="anoServico" class="pointer">
                 <option value="Selecione o ano">Selecione o ano</option>
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
             </select>
-            <button onclick="window.print()">Imprimir registro atual</button>
+            <button onclick="window.print()" class="pointer">Imprimir registro atual</button>
             <select name="grupo" id="grupo">
                 <option value="Selecione o grupo">Selecione o grupo</option>
                 <option value="1">1</option>
@@ -258,7 +278,7 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button>Imprimir registros do grupo</button>
+            <button  class="pointer" onclick="imprimeTodos()">Imprimir registros do grupo</button>
             <div id="listaPubs">
                 <!-- <p>Carlos Magno Bandeira dos Santos</p>
                 <p>Raquel Matos da Serra dos Santos</p> -->
@@ -423,10 +443,16 @@
                         <tr>
                             <th>Agosto</th>
                             <td><input type="checkbox" name="pm8" id="pm8" class="checkDS"disabled></td>
-                            <td ><input type="number" name="eb8" id="eb8" disabled></td>
+                            <td><input type="number" name="eb8" id="eb8" disabled></td>
                             <td><input type="checkbox" name="pa8" id="pa8" class="checkDS"disabled></td>
                             <td><input type="number" name="h8" id="h8"disabled></td>
                             <td><input type="text" name="ob8" id="ob8"disabled></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="ofBorder"><span>Total</span></td>
+                            <td><input type="number" name="totalH" id="totalH"disabled></td>
+                            <td><input type="text" name="totalOb" id="totalOb"disabled></td>
                         </tr>
                     </tbody>
                 </form>
@@ -439,6 +465,7 @@
     </div>
     <!-- <script src="../scripts/firebase-realtimedb.js"></script> -->
     <script src="../scripts/consultas-relatorios.js"></script>
+    <script src="../scripts/impressao-relatorios-grupo.js"></script>
 
 </body>
 </html>
