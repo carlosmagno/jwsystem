@@ -7,7 +7,7 @@ var refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Rel
 function imprimeTodos() {
     var intRegistro = document.getElementById('int-registro')
     //var registro = document.getElementById('registro')
-    intRegistro.setAttribute('class', 'oculto')
+    // intRegistro.setAttribute('class', 'oculto')
     registro.innerHTML=""
     var Rel;
 
@@ -3525,12 +3525,13 @@ var nome
         // console.log(element.sexo)
         // console.log(element.esperanca)
         var divRegistro= document.createElement('div')
+        //divRegistro.setAttribute('class', 'impressao')
 
 /**
  * 
  */
 divRegistro.innerHTML=`
-<div id="int-registro">
+<div id="int-registro" class="quebrapagina">
 <h2>REGISTRO DE PUBLICADOR DE CONGREGAÇÃO</h2>
 <form id="formConsRegPub${n}">
     <p><span class="percent20">Nome: </span><input type="text" name="nomePub" id="nomePub${n}" value="${element.nomePub}"></p>
@@ -3919,5 +3920,7 @@ var totalH = document.getElementById('totalH'+n);
             
             })
     }
+    
 }
+
 }

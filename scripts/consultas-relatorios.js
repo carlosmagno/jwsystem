@@ -178,7 +178,8 @@ function listarPublicadores(){
 var formConsRegPub = document.getElementById('formConsRegPub')
 var formAtividades = document.getElementById('formAtividades')
 function consultaRelPublicador(){
-
+  // registro.innerHTML=""
+  // intRegistro.setAttribute('class', 'aparente')
   // var contentConsRelGrupo = document.getElementById('contentConsRelGrupo')
   // var formConsultaRelGrupo = document.getElementById('formConsultaRelGrupo')
 

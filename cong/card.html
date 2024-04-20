@@ -223,12 +223,16 @@
             cursor: pointer;
             transform:scale(1.05);
         }
+        .aparente{
+            display:block
+        }
 
         @media print {
             body{
                 scale: 1;
                 background-color: aqua;
-                margin: 0 auto;
+                margin: 0;
+                padding: 0;
                 width: 100%;
             }
 
@@ -249,6 +253,20 @@
             #grid{
                 padding-left: 20px;
             }
+
+            /* .impressao{
+                width: 210mm;
+                height: 297mm;
+                
+            } */
+
+            .quebrapagina{
+                page-break-after: always;
+            }
+
+            @page{
+                margin: 0.5cm;
+            }
         }
     </style>
 </head>
@@ -264,7 +282,7 @@
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
             </select>
-            <button onclick="window.print()" class="pointer">Imprimir registro atual</button>
+            <button onclick="window.print()" class="pointer">Imprimir</button>
             <select name="grupo" id="grupo">
                 <option value="Selecione o grupo">Selecione o grupo</option>
                 <option value="1">1</option>
@@ -278,7 +296,7 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button  class="pointer" onclick="imprimeTodos()">Imprimir registros do grupo</button>
+            <button  class="pointer" onclick="imprimeTodos()">Ver registros do grupo</button>
             <div id="listaPubs">
                 <!-- <p>Carlos Magno Bandeira dos Santos</p>
                 <p>Raquel Matos da Serra dos Santos</p> -->
