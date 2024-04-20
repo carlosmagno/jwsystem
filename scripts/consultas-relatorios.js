@@ -138,16 +138,18 @@ var grupoCons = document.getElementById('grupo')
 var refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
 
 grupoCons.addEventListener('change',(e)=>{
-  console.log('grupo: ', grupoCons.value)
+  //console.log('grupo: ', grupoCons.value)
   listarPublicadores()
 })
+var arrayPublicadores =Array()
 
 function listarPublicadores(){
+  arrayPublicadores=[]
   /** Recupera lista dos publicadores do grupo selecionado */
   refPublicadores.orderByChild("grupoPub").equalTo(grupoCons.value).once('value').then(snapshot=>{
     if (snapshot.exists()) {
       var dados = snapshot.val()
-      console.log("dados: ", dados)
+      //console.log("dados: ", dados)
       listaPubs.innerHTML=""
       snapshot.forEach((childSnapshot) =>{
 
@@ -155,8 +157,10 @@ function listarPublicadores(){
         var pNome = document.createElement('p')
         pNome.innerText = chave
         listaPubs.appendChild(pNome)
-
+        arrayPublicadores.push(chave)
+        
       });
+      //console.log(arrayPublicadores)
     }else{
       console.log("não existe")
     }
