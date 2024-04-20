@@ -142,6 +142,7 @@ grupoCons.addEventListener('change',(e)=>{
   listarPublicadores()
 })
 var arrayPublicadores =Array()
+var arrayDadosPublicadores=Array()
 
 function listarPublicadores(){
   arrayPublicadores=[]
@@ -153,12 +154,19 @@ function listarPublicadores(){
       listaPubs.innerHTML=""
       snapshot.forEach((childSnapshot) =>{
 
-        var  chave = childSnapshot.key 
+        var  chave = childSnapshot.key
+        var valor = childSnapshot.val()
         var pNome = document.createElement('p')
         pNome.innerText = chave
         listaPubs.appendChild(pNome)
-        arrayPublicadores.push(chave)
         
+        //arrayPublicadores[chave]=valor
+        arrayPublicadores.push(valor)
+        //arrayDadosPublicadores.push({chave:valor})
+        // var dados = 
+        // {
+        //   chave:
+        // }
       });
       //console.log(arrayPublicadores)
     }else{

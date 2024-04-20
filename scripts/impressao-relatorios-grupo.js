@@ -276,13 +276,7 @@ function imprimeTodos() {
                         pa9.setAttribute('checked','checked' )
                     }
                     eb9.value=dadosPub.eb;  h9.value=dadosPub.horas; ob9.value=dadosPub.obs;
-                }
-                // pm9.removeAttribute('id')
-                // pa9.removeAttribute('id')
-                // eb9.removeAttribute('id')
-                // h9.removeAttribute('id')
-                // ob9.removeAttribute('id')
-                
+                }               
               break;
   
               case 'Outubro':
@@ -291,12 +285,6 @@ function imprimeTodos() {
                     if(dadosPub.pAux=="sim"){pa10.setAttribute('checked','checked' )}
                     eb10.value=dadosPub.eb;  h10.value=dadosPub.horas; ob10.value=dadosPub.obs;
                 }
-                // pm10.removeAttribute('id')
-                // pa10.removeAttribute('id')
-                // eb10.removeAttribute('id')
-                // h10.removeAttribute('id')
-                // ob10.removeAttribute('id')
-                
               break;
   
               case 'Novembro':
@@ -304,13 +292,7 @@ function imprimeTodos() {
                     if(dadosPub.participou=="sim"){pm11.setAttribute('checked','checked' )}
                     if(dadosPub.pAux=="sim"){pa11.setAttribute('checked','checked' )}
                     eb11.value=dadosPub.eb;  h11.value=dadosPub.horas; ob11.value=dadosPub.obs;
-                }
-                // pm11.removeAttribute('id')
-                // pa11.removeAttribute('id')
-                // eb11.removeAttribute('id')
-                // h11.removeAttribute('id')
-                // ob11.removeAttribute('id')
-                
+                } 
               break;
   
               case 'Dezembro':
