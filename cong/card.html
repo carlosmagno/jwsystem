@@ -227,13 +227,42 @@
             display:block
         }
 
+        p.direita img{
+            position: sticky;
+            left: 10px;
+            display: none;
+        }
+
+        @media screen and (max-width:800px) {
+            
+            /* #grid{
+                width: 100vw;
+            } */
+            p.direita img{
+                display: block;
+            }
+
+            div#controles{
+                display: none;
+                width: 100vw;
+                height: 100vh;
+                background-color: white;
+            }
+            div#registro{
+                background-color: aqua;
+                margin:0 auto;
+                width: 100vw;
+                height: 100%;
+            }
+        }
+
         @media print {
             body{
-                scale: 1;
+                /* scale: 1; */
                 background-color: aqua;
                 margin: 0;
                 padding: 0;
-                width: 100%;
+                /* width: 100%; */
             }
 
             .formulario, #controles, .direita{
@@ -273,7 +302,7 @@
 <body>
     <div id="grid">
         
-        <p class="direita"><span onclick="window.history.back()">X</span></p>
+        <p class="direita"><img id="btmenu" src="../icons-actions/menu_FILL0_wght400_GRAD0_opsz24.png" alt=""><span onclick="window.history.back()">X</span></p>
         <!-- <p class="direita"><span onclick="fechaAreaAdmin()">X</span></p> -->
 
         <div id="controles" class="partes">

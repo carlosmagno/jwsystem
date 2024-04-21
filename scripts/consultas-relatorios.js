@@ -9,6 +9,20 @@ function fechaConsultaRelGrupo(){
    
 };
 
+var btMenu = document.getElementById('btmenu')
+
+btMenu.addEventListener('click', (e)=>{
+  displayControles()
+})
+
+function displayControles(){
+  if(document.getElementById('controles').style.display=='none'){
+    document.getElementById('controles').style.display='block'
+  }else{
+    document.getElementById('controles').style.display='none'
+  }
+  console.log('cliquei')
+}
 function consultaRelGrupo(){
   var contentConsRelGrupo = document.getElementById('contentConsRelGrupo')
   var formConsultaRelGrupo = document.getElementById('formConsultaRelGrupo')
