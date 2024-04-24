@@ -3575,7 +3575,7 @@ divRegistro.innerHTML=`
 <table>
     <thead>
         <tr>
-            <th><p>Ano de serviço</p> <input type="text" name="aserv" id="aserv" disabled></th>
+            <th><p>Ano de serviço</p> <input type="text" name="aserv" id="aserv${n}" disabled></th>
             <th>Participou <p>no</p>  ministério</th>
             <th  class="colEB" scope="col">Estudos bíblicos</th>
             <th>Pioneiro auxiliar</th>
@@ -3708,10 +3708,12 @@ divRegistro.innerHTML=`
 `
 registro.appendChild(divRegistro)
 var formConsRegPub = document.getElementById(`formConsRegPub${n}`);
+var aserv = document.getElementById(`aserv${n}`)
     formConsRegPub.sexo.value = element.sexo;
     formConsRegPub.esperanca.value = element.esperanca;
     formConsRegPub.PSvaroes.value = element.PSvaroes;
     formConsRegPub.PScampo.value = element.PScampo;
+    aserv.value = anoCons.value
 
 var pm9 = document.getElementById(`pm9${n}`); var eb9 = document.getElementById('eb9'+n); var pa9 = document.getElementById('pa9'+n); var h9 = document.getElementById('h9'+n); var ob9 = document.getElementById('ob9'+n)
 

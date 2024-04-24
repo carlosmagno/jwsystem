@@ -18,18 +18,22 @@ btMenu.addEventListener('click', (e)=>{
 function displayControles(){
   if(document.getElementById('controles').style.display=='none'){
     document.getElementById('controles').style.display='block'
+    document.getElementById('registro').style.display='none'
   }else{
     document.getElementById('controles').style.display='none'
+    document.getElementById('registro').style.display='block'
   }
   console.log('cliquei')
 }
+
+
 function consultaRelGrupo(){
   var contentConsRelGrupo = document.getElementById('contentConsRelGrupo')
   var formConsultaRelGrupo = document.getElementById('formConsultaRelGrupo')
   var grupoCons = formConsultaRelGrupo.grupoConsRelGrupo.value
   var anoCons = formConsultaRelGrupo.anoConsReGrupo.value
   var mesCons = formConsultaRelGrupo.mesConsRelGrupo.value
- 
+
 
   var refRelatorios = firebase.database().ref(`${localStorage.getItem("cong")}/Relatórios`).child(anoCons).child(mesCons);
   var refPublicadores = firebase.database().ref(`${localStorage.getItem("cong")}/Publicadores`);
@@ -128,11 +132,17 @@ function consultaRelGrupo(){
 
 }
 
+
 var listaPubs = document.getElementById('listaPubs')
 var nomePub = document.getElementById('nomePub')
 var nomeAtual;
+
+var temp  = document.getElementById('registro').innerHTML
+//var temp
 // var targetAnterior;
 listaPubs.addEventListener('click', (e)=>{
+  document.getElementById('registro').innerHTML = temp
+//temp = document.getElementById('registro').innerHTML
   // targetAnterior =e.target
   if (e.target.localName=="p"){
     //console.log("p ", e)
@@ -141,7 +151,7 @@ listaPubs.addEventListener('click', (e)=>{
     // nomePub.value = ""
     // nomePub.value = nomeAtual
     consultaRelPublicador()
-    //console.log(e.target.innerText)
+    console.log(e.target.innerText)
   }else{
     //console.log("div ", e)
   }
@@ -197,8 +207,11 @@ function consultaRelPublicador(){
   // var contentConsRelGrupo = document.getElementById('contentConsRelGrupo')
   // var formConsultaRelGrupo = document.getElementById('formConsultaRelGrupo')
 
+
+  //document.getElementById('registro').innerHTML=""
+  // document.getElementById('registro').innerHTML = temp
   var anoCons = document.getElementById('anoServico')
-  var mesCons="Novembro";
+  //var mesCons="Novembro";
   // var nomeCons;
   // var listaPubs = document.getElementById('listaPubs')
 
@@ -212,7 +225,8 @@ function consultaRelPublicador(){
   var un  = document.getElementById('un')
   var anc = document.getElementById('anc')
   var sm = document.getElementById('sm')
-  var pr  = document.getElementById('pr')
+  var pr  = document.getElementById('pr'
+)
   var pe  = document.getElementById('pe')
   var mc  = document.getElementById('mc')
   var aserv = document.getElementById('aserv')
@@ -271,18 +285,21 @@ function consultaRelPublicador(){
  
   refPublicadores.child(nomeAtual).once('value').then(snapshot=>{
     if (snapshot.exists()) {
+      var formConsRegPub = document.getElementById('formConsRegPub')
       var dados = snapshot.val()
       console.log("dados: ", dados)
       var dadosPublicador = snapshot.val()
-      formConsRegPub.reset()
+      //formConsRegPub.reset()
       // nomePub.value = ""
-      nomePub.value = nomeAtual
+      formConsRegPub.nomePub.value = dadosPublicador.nomePub
+      console.log( 'passei aqui', nomePub.value)
       dataNasPub.value = dadosPublicador.nascimento
       inpDateBatismo.value = dadosPublicador.batismo
       formConsRegPub.sexo.value = dadosPublicador.sexo
       formConsRegPub.esperanca.value = dadosPublicador.esperanca
       formConsRegPub.PSvaroes.value = dadosPublicador.PSvaroes
       formConsRegPub.PScampo.value = dadosPublicador.PScampo
+      aserv.value = anoCons.value
 
     }else{
       console.log('não existe')
@@ -297,6 +314,7 @@ function consultaRelPublicador(){
    
    //Laço de repetição 
    refRelatorios.once('value').then(snapshot=>{
+     
       if (snapshot.exists()) {
         // var dados = snapshot.val()
         // console.log("dados: ", dados)
@@ -312,10 +330,19 @@ function consultaRelPublicador(){
 
           var  mes = childSnapshot.key
           var dados = childSnapshot.val()
-          var dadosPub = dados[nomeAtual]
+          if(dados[nomeAtual]){
+            var dadosPub = dados[nomeAtual]
+            horas+=Number(dadosPub.horas)
+          }else{
+           // alert("Sua consulta não retornou resultados")
+           
+          }
+          
           // console.log(mes)
-          // console.log(dados[nomeAtual])
-          horas+=Number(dadosPub.horas) 
+           //console.log(dados)
+          // if(dadosPub.horas){
+            
+          // }
           
           //var mes
           switch (mes){
@@ -431,9 +458,11 @@ function consultaRelPublicador(){
           
           // do while(chave)
         });
-      }else{
-        console.log("não existe")
-      }
+        }else{
+        console.log("Sua consulta não retornou resultados")
+        alert("Sua consulta não retornou resultados")
+        }
+       
    });
 
    //.child(mesCons).child(nomeAtual)
