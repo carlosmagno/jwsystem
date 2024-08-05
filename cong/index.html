@@ -114,7 +114,8 @@
             <!-- <h3 id ="h3ReuCons" class="" onclick="abreConsultaAssistencia()">Consulta <em> - desenvolvendo</em></h3> -->
         </section>
         <section>
-            <!-- <h2>Resumo Mensal</h2> -->
+            <h2>Resumo</h2>
+            <h3 id ="h3ResMensal" class="" onclick="abreResumoMensal()">Relatório da Congregação</h3>
         </section>
 
     </div>
@@ -528,6 +529,74 @@
             </form>
         </div>
     </div>
+
+    <div id="resumoMensal" class="">
+        <p class="direita" id="pResumoMensal"><span onclick="fechaResumoMensal()" >X</span></p> 
+        <form action="" class="formulario" id="formResumoMensal" name="formResumoMensal">
+            <h3>Totais atuais</h3>
+            <br>
+
+            <table class="">
+                <br>
+                <thead>
+                    <tr>
+                    <th colspan="6">
+                        <tr class="tr1">
+                            <td>Total publicadores</td>
+                            <td>Pioneiros Regulares</td>
+                            <td>Batizados</td>
+                            <td>Não Batizados</td>
+                            <td>Servos Ministeriais</td>
+                            <td>Anciãos</td>
+                            
+                           
+                            
+                        </tr>
+                    </th>
+                    </tr>
+
+
+                </thead>
+                <tbody id="">
+                    <tr>
+                        <td>123</td>
+                        <td>12</td>
+                        <td>87</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>4</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Ano de Serviço
+               
+                    <select name="anoResumo" id="anoResumo" class="selectP">
+                        
+                    </select>
+                
+                Mês
+                
+                    <select name="mesResumo" id="mesResumo" class="selectP">
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+            </p>
+            <h2>Detalhamento para o mês consultado</h2>
+
+        </form>
+    </div>
     <div class="fimPagina"></div>
 
     <nav id="barraInferior" class="barra">
@@ -549,5 +618,6 @@
     <script src="../scripts/consultas-publicadores.js"></script>
     <script src="../scripts/consultas-relatorios.js"></script>
     <script src="../scripts/envio_consultas-assistencias.js"></script>
+    <script src="../scripts/resumo-mensal.js"></script>
 </body>
 </html>
